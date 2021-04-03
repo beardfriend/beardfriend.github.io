@@ -4,7 +4,7 @@
   "description": "A simple starter to get up and developing quickly with Gatsby",
   "version": "0.1.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
-   "homepage" : "https://beardfriend.github.io/",
+   
   "dependencies": {
     "gatsby": "^3.1.2",
     "gatsby-image": "^3.2.0",
@@ -38,8 +38,8 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
-     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    
+    "deploy": "gatsby build && gh-pages -d public -b master",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",
