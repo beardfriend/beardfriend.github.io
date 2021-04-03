@@ -1,12 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
-
+import {Link} from 'gatsby'
 import  Logo from '../../images/text.png'
 const index = () => {
   return (
     <NavContainer>
 
-      <img className="logo" src={Logo}/>
+     <Link to='/'> <img className="logo" src={Logo}/></Link>
     </NavContainer>
   )
 }

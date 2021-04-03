@@ -1,9 +1,10 @@
 import React from 'react'
-
-const index = () => {
+import Header from '../Header'
+const index = ({children}:any) => {
     return (
         <div>
-            hello
+         <Header/>
+         {children}
         </div>
     )
 }

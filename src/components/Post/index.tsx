@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { graphql,useStaticQuery } from 'gatsby';
+import { graphql,useStaticQuery, Link } from 'gatsby';
 
 
 const index = () => {
@@ -10,6 +10,9 @@ const index = () => {
     edges {
       node {
         id
+          fields {
+              slug
+            }
         frontmatter {
           tags
           title
@@ -29,9 +32,11 @@ const index = () => {
           const {node} = nodes
           return(
             <Layout>
+              <Link to={node.fields.slug}>
         <h1>{node.frontmatter.title}</h1>
         <p>{node.frontmatter.subtitle}</p>
         <p>📆{node.frontmatter.date}</p>
+        </Link>
             </Layout>
           )
         })}
@@ -48,9 +53,15 @@ const Layout = styled.div `
   height:200px;
   border-bottom:1px solid #dddddd;
   margin: 0 auto;
-
+  
   h1{
-    
+    cursor:pointer;
   }
 
+  a{
+    text-decoration: none;
+    &:hover, :active, :visited {
+      color:black;
+    }
+  }
 `
