@@ -4,10 +4,16 @@
   "description": "A simple starter to get up and developing quickly with Gatsby",
   "version": "0.1.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
-   
   "dependencies": {
+    "@chakra-ui/gatsby-plugin": "^2.0.1",
+    "@chakra-ui/react": "^1.6.4",
+    "@emotion/react": "^11.4.0",
+    "@emotion/styled": "^11.3.0",
+    "framer-motion": "^4.1.17",
     "gatsby": "^3.1.2",
+    "gatsby-alias-imports": "^1.0.6",
     "gatsby-image": "^3.2.0",
+    "gatsby-plugin-alias-imports": "^1.0.5",
     "gatsby-plugin-gatsby-cloud": "^2.1.0",
     "gatsby-plugin-image": "^1.1.2",
     "gatsby-plugin-manifest": "^3.1.0",
@@ -28,7 +34,12 @@
     "typescript": "^4.2.3"
   },
   "devDependencies": {
+    "@types/node": "^15.12.4",
+    "@types/react": "^17.0.11",
+    "@types/react-dom": "^17.0.8",
     "@types/styled-components": "^5.1.9",
+    "gatsby-plugin-root-import": "^2.0.6",
+    "gatsby-plugin-ts-config": "^1.1.5",
     "prettier": "2.2.1"
   },
   "keywords": [
@@ -38,7 +49,6 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
-    
     "deploy": "gatsby build && gh-pages -d public -b master",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "start": "npm run develop",

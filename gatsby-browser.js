@@ -1,7 +1,22 @@
-/**
- * Implement Gatsby's Browser APIs in this file.
- *
- * See: https://www.gatsbyjs.com/docs/browser-apis/
- */
+import { ChakraProvider, ColorModeScript, extendTheme } from "@chakra-ui/react"
 
-// You can delete this file if you're not using it
+import React from "react"
+import { createBreakpoints } from "@chakra-ui/theme-tools"
+import theme from "./theme"
+
+const breakpoints = createBreakpoints({
+  sm: "30em",
+  md: "48em",
+  lg: "62em",
+  xl: "80em",
+  "2xl": "96em",
+})
+const themes = extendTheme({ breakpoints })
+export const wrapRootElement = ({ element, props }) => {
+  return (
+    <ChakraProvider {...props} theme={themes}>
+      <ColorModeScript initialColorMode={theme.config.initialColorMode} />
+      {element}
+    </ChakraProvider>
+  )
+}
