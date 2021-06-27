@@ -1,12 +1,12 @@
-import React from 'react'
-import Header from '../Header'
-const index = ({children}:any) => {
-    return (
-        <div>
-         <Header/>
-         {children}
-        </div>
-    )
-}
+import Header from '../Header';
+import React from 'react';
+const index = ({ children }: any) => {
+  return (
+    <>
+      <Header />
+      {children}
+    </>
+  );
+};
 
-export default index
+export default index;
