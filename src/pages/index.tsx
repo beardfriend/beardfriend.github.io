@@ -1,15 +1,16 @@
-import React from 'react'
-import Header from '../components/Header'
-import Post from '../components/Post'
-import Layout from '../components/Layout'
-import '../global/reset.css'
-const index  = () => {
-    return (
-        <Layout>
-          
-            <Post/>
-        </Layout>
-    )
+import "../global/reset.css"
+
+import { Box, Button, Text, useColorMode } from "@chakra-ui/react"
+import React, { useEffect } from "react"
+
+import Layout from "@Components/Layout"
+
+const index = () => {
+  return (
+    <Layout>
+      <Text fontSize={{ base: "40px", md: "55px" }}>test</Text>
+    </Layout>
+  )
 }
 
 export default index
