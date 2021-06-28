@@ -104,14 +104,16 @@ export default function Earth(ref, state) {
 
   renderer.setSize(sizes.width - ref.current.offsetWidth, ref.current.offsetHeight);
   const handleResize = () => {
-    sizes.width = window.innerWidth;
-    sizes.height = window.innerHeight;
+    if (ref.current) {
+      sizes.width = window.innerWidth;
+      sizes.height = window.innerHeight;
 
-    camera.aspect = sizes.width / sizes.height;
-    camera.updateProjectionMatrix();
+      camera.aspect = sizes.width / sizes.height;
+      camera.updateProjectionMatrix();
 
-    renderer.setSize(sizes.width - ref.current.offsetWidth, ref.current.offsetHeight);
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+      renderer.setSize(sizes.width - ref.current.offsetWidth, ref.current.offsetHeight);
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    }
   };
   window.addEventListener('resize', handleResize);
 
@@ -146,8 +148,12 @@ export default function Earth(ref, state) {
   animate();
 
   function move(event) {
-    mouse.x = (event.clientX / sizes.width) * 2 - 1;
-    mouse.y = -(event.clientY / sizes.height) * 2 + 1;
+    if (ref.current) {
+      if (event.clientX > ref.current.getBoundingClientRect().width) {
+        mouse.x = (event.clientX / sizes.width) * 2 - 1;
+        mouse.y = -(event.clientY / sizes.height) * 2 + 1;
+      }
+    }
   }
   console.log(scene);
   window.addEventListener('mousemove', move);
