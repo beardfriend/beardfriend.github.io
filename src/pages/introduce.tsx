@@ -9,6 +9,7 @@ const Introduce = () => {
       <LeftHeader />
       <Container>
         <InnerBox>
+          <h1 style={{ textAlign: 'center' }}>자기소개</h1>
           <h1>🙏🏻명상</h1>
           <p>
             꿈속에서도 코딩을 한다는 말을 들어보셨습니까?
@@ -164,7 +165,7 @@ const Introduce = () => {
           <p>
             시각적인 아름다움을 만들어 내는 게 너무 재밌습니다.
             <br />
-            지금은 내 아이디어를 화면에 그려내기에는 실력이 부족하기에,
+            지금은 상상을 입체적인 요소로 표현하기 위해
             <br />
             "모방은 창조의 어머니다"라고 생각하며
             <br />
