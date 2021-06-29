@@ -62,28 +62,28 @@ const LeftHeader = () => {
       </Box>
 
       <Flex flexDirection='column' w='80%' mt={20}>
-        <Link to='/'>
+        <Link to='/' activeClassName='active' activeStyle={{ color: `#009297` }}>
           <Flex alignItems='center'>
             <AiTwotoneHome style={{ color: '#009297', fontSize: '25px', marginRight: '10px' }} />
             <h1 style={{ fontSize: '30px', fontWeight: 'bold' }}>홈</h1>
           </Flex>
         </Link>
 
-        <Link to='/stack'>
+        <Link to='/stack' activeClassName='active' activeStyle={{ color: `#009297` }}>
           <Flex alignItems='center'>
             <RiStackFill style={{ color: '#009297', fontSize: '25px', marginRight: '10px' }} />
             <h1 style={{ fontSize: '30px', fontWeight: 'bold' }}>기술스택</h1>
           </Flex>
         </Link>
 
-        <Link to=''>
+        <Link to='/introduce' activeClassName='active' activeStyle={{ color: `#009297` }}>
           <Flex alignItems='center'>
             <BsPeopleCircle style={{ color: '#009297', fontSize: '25px', marginRight: '10px' }} />
             <h1 style={{ fontSize: '30px', fontWeight: 'bold' }}>자기소개</h1>
           </Flex>
         </Link>
 
-        <Link to=''>
+        <Link to='' activeClassName='active' activeStyle={{ color: `#009297` }}>
           <Flex alignItems='center'>
             <HiOutlineDocumentText
               style={{ color: '#009297', fontSize: '25px', marginRight: '10px' }}

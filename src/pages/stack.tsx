@@ -1,9 +1,10 @@
+import { Badge, Button, Stack } from '@chakra-ui/react';
+import React, { useState } from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 
-import { Badge } from '@chakra-ui/react';
 import Img from 'gatsby-image';
 import LeftHeader from '@Components/Header/LeftHeader';
-import React from 'react';
+import Post from '@Components/Post';
 import styled from 'styled-components';
 
 const Front = ({ data }) => {
@@ -141,7 +142,7 @@ const ETC = ({ data }) => {
   );
 };
 
-const Stack = () => {
+const Stacks = () => {
   const data = useStaticQuery(graphql`
     query {
       Front: allFile(
@@ -216,37 +217,82 @@ const Stack = () => {
   `);
 
   const { edges } = data.Front;
-  console.log(edges);
+
   return (
     <>
       <div style={{ display: 'grid', gridTemplateColumns: `1fr 2fr` }}>
         <LeftHeader />
 
         <Container>
-          <h1>FrontEnd</h1>
-          {/* <Img
+          {/* <Stack spacing={4} direction='row' align='center'>
+            <Button
+              isActive={!option.high}
+              colorScheme={option.high ? 'blue' : 'teal'}
+              size='sm'
+              onClick={handleChange}
+            >
+              상
+            </Button>
+
+            <Button colorScheme='teal' size='sm'>
+              중
+            </Button>
+
+            <Button colorScheme='teal' size='sm'>
+              하
+            </Button>
+          </Stack> */}
+          <InnerBox>
+            <h1>FrontEnd</h1>
+            <hr />
+            {/* <Img
             fixed={queryData.allFile.edges.map.node.childImageSharp.fixed}
             alt='Gatsby Docs are awesome'
           /> */}
 
-          <Front data={data.Front} />
-          <h1>BackEnd</h1>
-          <Back data={data.Back} />
-          <h1>ETC</h1>
-          <ETC data={data.Etc} />
-          {/* <img src={queryData.allFile.edges[0].node.childImageSharp.fixed.src} /> */}
+            <Front data={data.Front} />
+            <h1>BackEnd</h1>
+            <hr />
+            <Back data={data.Back} />
+            <h1>ETC</h1>
+            <hr />
+            <ETC data={data.Etc} />
+            {/* <img src={queryData.allFile.edges[0].node.childImageSharp.fixed.src} /> */}
+          </InnerBox>
         </Container>
       </div>
     </>
   );
 };
 
-export default Stack;
+export default Stacks;
 
 export const Container = styled.div`
-  padding: 1rem 15rem;
-
+  padding: 5rem 0.5rem;
   display: flex;
+  align-items: center;
   flex-direction: column;
   justify-content: center;
+`;
+
+export const InnerBox = styled.div`
+  width: 80%;
+  padding: 2rem;
+  box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+  justify-content: center;
+  align-items: center;
+  h1 {
+    font-size: 40px;
+    font-weight: bold;
+    margin: 2rem 0;
+  }
+  hr {
+    margin-bottom: 1rem;
+  }
+  h2 {
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  padding-bottom: 6rem;
 `;
