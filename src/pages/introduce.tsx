@@ -1,11 +1,11 @@
 import { Container } from './stack';
 import LeftHeader from '@Components/Header/LeftHeader';
+import { MainLayout } from './stack';
 import React from 'react';
 import styled from 'styled-components';
-
 const Introduce = () => {
   return (
-    <div style={{ display: 'grid', gridTemplateColumns: `1fr 2fr` }}>
+    <MainLayout>
       <LeftHeader />
       <Container>
         <InnerBox>
@@ -184,7 +184,7 @@ const Introduce = () => {
           </p>
         </InnerBox>
       </Container>
-    </div>
+    </MainLayout>
   );
 };
 
@@ -216,5 +216,14 @@ const InnerBox = styled.div`
   }
   p {
     margin-bottom: 1rem;
+  }
+  @media screen and (max-width: 1235px) {
+    h1 {
+      font-size: 30px;
+    }
+    p {
+      font-size: 12px;
+    }
+    width: 90%;
   }
 `;

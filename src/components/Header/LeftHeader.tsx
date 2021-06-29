@@ -24,7 +24,7 @@ const LeftHeader = () => {
   return (
     <LeftSide>
       <Link to='https://github.com/beardfriend' target='_blank'>
-        <Flex mt={2}>
+        <Flex mt={2} justifyContent='center'>
           <Text mr={2} color='white'>
             Github
           </Text>
@@ -32,17 +32,26 @@ const LeftHeader = () => {
         </Flex>
       </Link>
 
-      <Grid w='80%' templateColumns={`1fr 3fr`}>
-        <Avatar size='2xl' name='Sehun' src={profi} />
+      <Flex w='80%'>
+        <Avatar size='xl' name='Sehun' src={profi} mr={{ sm: 2, md: 4 }} />
         <Box display='flex' alignItems='center' justifyContent='center' textAlign='center'>
-          <Text fontSize='20px' color='white' fontWeight='bold' mr={3}>
+          <Text
+            fontSize={{ base: '13px', md: '16px', xl: '18px' }}
+            color='white'
+            fontWeight='bold'
+            mr={{ sm: 2, md: 3 }}
+          >
             수염난친구
           </Text>
-          <Text fontSize='50px' color='white' fontWeight='bold'>
+          <Text
+            fontSize={{ base: '30px', xl: '35px', '2xl': '45px' }}
+            color='white'
+            fontWeight='bold'
+          >
             박세훈
           </Text>
         </Box>
-      </Grid>
+      </Flex>
       <Box>
         <Text color='white' textAlign='center'>
           취미는 명상과 요가입니다.
@@ -61,7 +70,7 @@ const LeftHeader = () => {
         </Text>
       </Box>
 
-      <Flex flexDirection='column' w='80%' mt={20}>
+      <Flex flexDirection='column' w='80%'>
         <Link to='/' activeClassName='active' activeStyle={{ color: `#009297` }}>
           <Flex alignItems='center'>
             <AiTwotoneHome style={{ color: '#009297', fontSize: '25px', marginRight: '10px' }} />
@@ -83,7 +92,7 @@ const LeftHeader = () => {
           </Flex>
         </Link>
 
-        <Link to='' activeClassName='active' activeStyle={{ color: `#009297` }}>
+        <Link to='/portfolio' activeClassName='active' activeStyle={{ color: `#009297` }}>
           <Flex alignItems='center'>
             <HiOutlineDocumentText
               style={{ color: '#009297', fontSize: '25px', marginRight: '10px' }}
@@ -99,6 +108,7 @@ const LeftHeader = () => {
 export default LeftHeader;
 const LeftSide = styled.div`
   padding: 1rem 0.5rem;
+  min-width: 500px;
   width: 100%;
   position: sticky;
   top: 00px;
@@ -106,8 +116,11 @@ const LeftSide = styled.div`
   background: black;
   display: flex;
   flex-direction: column;
-  gap: 50px;
-  align-items: center;
+  justify-content: space-around;
+  gap: 1rem;
+  div {
+    margin-left: 1em;
+  }
   color: white;
 
   a {
@@ -118,5 +131,13 @@ const LeftSide = styled.div`
         color: white !important;
       }
     }
+  }
+  @media screen and (max-width: 1235px) {
+    align-items: center;
+    margin: 0;
+    padding: 1rem 0;
+    min-width: 0;
+    position: relative;
+    top: none;
   }
 `;

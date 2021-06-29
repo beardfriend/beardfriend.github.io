@@ -101,8 +101,14 @@ export default function Earth(ref, state) {
     canvas: canvas,
     antialias: true
   });
+  console.log(sizes.width);
+  if (sizes.width < 1235) {
+    renderer.setSize(sizes.width, sizes.height);
+  } else {
+    renderer.setSize(sizes.width - ref.current.offsetWidth, ref.current.offsetHeight);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  }
 
-  renderer.setSize(sizes.width - ref.current.offsetWidth, ref.current.offsetHeight);
   const handleResize = () => {
     if (ref.current) {
       sizes.width = window.innerWidth;
@@ -110,9 +116,13 @@ export default function Earth(ref, state) {
 
       camera.aspect = sizes.width / sizes.height;
       camera.updateProjectionMatrix();
-
-      renderer.setSize(sizes.width - ref.current.offsetWidth, ref.current.offsetHeight);
-      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+      if (sizes.width < 1235) {
+        renderer.setSize(sizes.width, sizes.height);
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+      } else {
+        renderer.setSize(sizes.width - ref.current.offsetWidth, ref.current.offsetHeight);
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+      }
     }
   };
   window.addEventListener('resize', handleResize);
@@ -149,6 +159,10 @@ export default function Earth(ref, state) {
 
   function move(event) {
     if (ref.current) {
+      if (sizes.width < 1235) {
+        mouse.x = (event.clientX / sizes.width) * 2 - 1;
+        mouse.y = -(event.clientY / sizes.height) * 2 + 1;
+      }
       if (event.clientX > ref.current.getBoundingClientRect().width) {
         mouse.x = (event.clientX / sizes.width) * 2 - 1;
         mouse.y = -(event.clientY / sizes.height) * 2 + 1;

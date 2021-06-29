@@ -41,7 +41,7 @@ const Index = () => {
 
   return (
     <>
-      <div style={{ display: 'grid', gridTemplateColumns: `1fr 2fr` }}>
+      <MainLayout>
         <LeftSide ref={earthRef}>
           <Link to='https://github.com/beardfriend' target='_blank'>
             <Flex mt={2}>
@@ -52,17 +52,26 @@ const Index = () => {
             </Flex>
           </Link>
 
-          <Grid w='80%' templateColumns={`1fr 3fr`}>
-            <Avatar size='2xl' name='Sehun' src={profi} />
+          <Flex w='80%'>
+            <Avatar size='xl' name='Sehun' src={profi} mr={{ sm: 2, md: 4 }} />
             <Box display='flex' alignItems='center' justifyContent='center' textAlign='center'>
-              <Text fontSize='20px' color='white' fontWeight='bold' mr={3}>
+              <Text
+                fontSize={{ base: '13px', md: '16px', xl: '18px' }}
+                color='white'
+                fontWeight='bold'
+                mr={{ sm: 2, md: 3 }}
+              >
                 수염난친구
               </Text>
-              <Text fontSize='50px' color='white' fontWeight='bold'>
+              <Text
+                fontSize={{ base: '30px', xl: '35px', '2xl': '45px' }}
+                color='white'
+                fontWeight='bold'
+              >
                 박세훈
               </Text>
             </Box>
-          </Grid>
+          </Flex>
           <Box>
             <Text color='white' textAlign='center'>
               취미는 명상과 요가입니다.
@@ -81,7 +90,7 @@ const Index = () => {
             </Text>
           </Box>
 
-          <Flex flexDirection='column' w='80%' mt={20}>
+          <Flex flexDirection='column' w='80%'>
             <Link to='/' activeClassName='active' activeStyle={{ color: `#009297` }}>
               <Flex alignItems='center'>
                 <AiTwotoneHome
@@ -118,7 +127,7 @@ const Index = () => {
           </Flex>
         </LeftSide>
         <canvas className='webgl'></canvas>
-      </div>
+      </MainLayout>
     </>
   );
 };
@@ -126,13 +135,17 @@ const Index = () => {
 export default Index;
 const LeftSide = styled.div`
   padding: 1rem 0.5rem;
+  min-width: 500px;
   width: 100%;
   height: 100vh;
   background: black;
   display: flex;
   flex-direction: column;
-  gap: 50px;
-  align-items: center;
+  justify-content: space-around;
+  gap: 1rem;
+  div {
+    margin-left: 1em;
+  }
   color: white;
 
   a {
@@ -143,5 +156,21 @@ const LeftSide = styled.div`
         color: white !important;
       }
     }
+  }
+  @media screen and (max-width: 1235px) {
+    align-items: center;
+    margin: 0;
+    padding: 1rem 0;
+    min-width: 0;
+  }
+`;
+
+const MainLayout = styled.section`
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+
+  @media screen and (max-width: 1235px) {
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: none;
   }
 `;

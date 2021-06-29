@@ -11,7 +11,7 @@ const Front = ({ data }) => {
   const { edges } = data;
   const regExp = /[0-9.;\-#!@]/gi;
   return (
-    <div style={{ display: 'grid', gridTemplateColumns: `repeat(5,1fr) `, gap: '10px' }}>
+    <GridContainer>
       {edges.map((edge) => {
         const { name } = edge.node;
 
@@ -48,7 +48,7 @@ const Front = ({ data }) => {
           </div>
         );
       })}
-    </div>
+    </GridContainer>
   );
 };
 
@@ -56,7 +56,7 @@ const Back = ({ data }) => {
   const { edges } = data;
   const regExp = /[0-9.;\-#@!]/gi;
   return (
-    <div style={{ display: 'grid', gridTemplateColumns: `repeat(5,1fr) `, gap: '10px' }}>
+    <GridContainer>
       {edges.map((edge) => {
         const { name } = edge.node;
 
@@ -93,7 +93,7 @@ const Back = ({ data }) => {
           </div>
         );
       })}
-    </div>
+    </GridContainer>
   );
 };
 
@@ -101,7 +101,7 @@ const ETC = ({ data }) => {
   const { edges } = data;
   const regExp = /[0-9.;\-#@!]/gi;
   return (
-    <div style={{ display: 'grid', gridTemplateColumns: `repeat(5,1fr) `, gap: '10px' }}>
+    <GridContainer>
       {edges.map((edge) => {
         const { name } = edge.node;
 
@@ -138,7 +138,7 @@ const ETC = ({ data }) => {
           </div>
         );
       })}
-    </div>
+    </GridContainer>
   );
 };
 
@@ -220,7 +220,7 @@ const Stacks = () => {
 
   return (
     <>
-      <div style={{ display: 'grid', gridTemplateColumns: `1fr 2fr` }}>
+      <MainLayout>
         <LeftHeader />
 
         <Container>
@@ -260,7 +260,7 @@ const Stacks = () => {
             {/* <img src={queryData.allFile.edges[0].node.childImageSharp.fixed.src} /> */}
           </InnerBox>
         </Container>
-      </div>
+      </MainLayout>
     </>
   );
 };
@@ -295,4 +295,35 @@ export const InnerBox = styled.div`
     margin-bottom: 1rem;
   }
   padding-bottom: 6rem;
+  @media screen and (max-width: 1235px) {
+    width: 90%;
+    img {
+      max-width: 90px;
+      max-height: 90px;
+    }
+  }
+`;
+
+export const MainLayout = styled.section`
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+
+  @media screen and (max-width: 1235px) {
+    grid-template-rows: 1fr;
+    grid-template-columns: none;
+  }
+`;
+
+const GridContainer = styled.div`
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+  @media screen and (max-width: 1235px) {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+  @media screen and (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
 `;
