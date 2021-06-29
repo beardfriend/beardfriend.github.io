@@ -44,7 +44,7 @@ const Index = () => {
       <MainLayout>
         <LeftSide ref={earthRef}>
           <Link to='https://github.com/beardfriend' target='_blank'>
-            <Flex mt={2}>
+            <Flex mt={2} justifyContent='center'>
               <Text mr={2} color='white'>
                 Github
               </Text>
@@ -116,7 +116,7 @@ const Index = () => {
               </Flex>
             </Link>
 
-            <Link to='' activeClassName='active' activeStyle={{ color: `#009297` }}>
+            <Link to='/portfolio' activeClassName='active' activeStyle={{ color: `#009297` }}>
               <Flex alignItems='center'>
                 <HiOutlineDocumentText
                   style={{ color: '#009297', fontSize: '25px', marginRight: '10px' }}

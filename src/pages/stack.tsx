@@ -314,7 +314,7 @@ export const MainLayout = styled.section`
   }
 `;
 
-const GridContainer = styled.div`
+export const GridContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 10px;
