@@ -46,12 +46,14 @@ const CardBox = styled.div`
   }
   h1 {
     margin-top: 2rem;
-    font-size: 25px;
+    font-size: 18px;
     font-weight: bold;
   }
   @media screen and (max-width: 768px) {
-    width: 250px;
-    height: 350px;
+    h1 {
+      font-size: 15px;
+    }
+    width: 100%;
   }
 `;
 const Icon = styled(GiWormMouth)`
