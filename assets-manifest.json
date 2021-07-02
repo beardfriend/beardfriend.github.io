@@ -1,11 +1,13 @@
 {
   "main.js": "render-page.js",
   "render-page.js.map": "render-page.js.map",
+  "static/error.gif": "static/error-3d9ec279bbd8c4b971db3f00887cae35.gif",
   "static/first.jpg": "static/first-500173520d97103aa25042cea0e4d9a5.jpg",
   "static/globe.jpg": "static/globe-e337878b83eb262f4ed04c07ba5b9dca.jpg",
   "static/last.jpg": "static/last-5d09c2e40b27b666562e70a41a51d631.jpg",
   "static/last.mp4": "static/last-ed6ec357526565f4253c040332eea5c8.mp4",
   "static/profi.png": "static/profi-38d857ffd4e960f4cc4315e8262bbc91.png",
   "static/second.jpg": "static/second-e74c37b79b55bb0cabaf8cf7cafd534d.jpg",
+  "static/skel.gif": "static/skel-09ac5756f122681b52fbf57070bdf21e.gif",
   "static/third.jpg": "static/third-eba7ecddd018e9e32a30c0f7941b314e.jpg"
 }

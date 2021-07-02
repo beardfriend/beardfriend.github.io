@@ -1,1 +1,0 @@
-{"version":3,"sources":["webpack://gatsby-starter-default/./src/pages/portfolio/index.tsx"],"names":[],"mappings":"0JAMA,UAJc,WACZ,OAAO","file":"component---src-pages-portfolio-index-tsx-b3d443876722878547ed.js","sourcesContent":["import React from 'react';\n\nconst Index = () => {\n  return <div>hello world</div>;\n};\n\nexport default Index;\n"],"sourceRoot":""}
