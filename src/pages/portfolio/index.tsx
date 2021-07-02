@@ -68,7 +68,7 @@ const Index = () => {
             name
             childImageSharp {
               id
-              fluid(maxWidth: 10000) {
+              fluid(maxWidth: 10000, quality: 100) {
                 ...GatsbyImageSharpFluid
               }
             }
@@ -167,43 +167,43 @@ const Index = () => {
               <ContentBox>
                 <section style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
                   <div style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap' }}>
-                    <Text fontSize={{ base: '15px', xl: '25px' }} fontWeight='bold' mr='5px'>
+                    <Text fontSize={{ base: '15px', xl: '18px' }} fontWeight='bold' mr='5px'>
                       ✔ 프로젝트이름 :
                     </Text>
-                    <Text fontSize={{ base: '13px', xl: '22px' }}>철거해줘</Text>
+                    <Text fontSize={{ base: '13px', xl: '15px' }}>철거해줘</Text>
                   </div>
 
                   <div style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap' }}>
-                    <Text fontSize={{ base: '15px', xl: '25px' }} fontWeight='bold' mr='5px'>
+                    <Text fontSize={{ base: '15px', xl: '18px' }} fontWeight='bold' mr='5px'>
                       ✔ 제작기간 :
                     </Text>
-                    <Text fontSize={{ base: '13px', xl: '22px' }}>21.05.01 ~ 21.06.20</Text>
+                    <Text fontSize={{ base: '13px', xl: '15px' }}>21.05.01 ~ 21.06.20</Text>
                   </div>
 
                   <div style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap' }}>
-                    <Text fontSize={{ base: '15px', xl: '25px' }} fontWeight='bold' mr='5px'>
+                    <Text fontSize={{ base: '15px', xl: '18px' }} fontWeight='bold' mr='5px'>
                       ✔ 프로젝트 한 줄 설명 :
                     </Text>
-                    <Text fontSize={{ base: '13px', xl: '22px' }}>
+                    <Text fontSize={{ base: '13px', xl: '15px' }}>
                       코로나 시대, 길 곳곳에 임대딱지가 붙어있다. 가게 철거를 빠르고 저렴하게
                       제공하기 위해 서비스를 제작
                     </Text>
                   </div>
 
                   <div style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap' }}>
-                    <Text fontSize={{ base: '15px', xl: '25px' }} fontWeight='bold' mr='5px'>
+                    <Text fontSize={{ base: '15px', xl: '18px' }} fontWeight='bold' mr='5px'>
                       ✔ 팀구성 :
                     </Text>
-                    <Text fontSize={{ base: '13px', xl: '22px' }}>
+                    <Text fontSize={{ base: '13px', xl: '15px' }}>
                       Java백엔드(1명), 프론트엔드 (1명), 기획자(1명)
                     </Text>
                   </div>
 
                   <div style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap' }}>
-                    <Text fontSize={{ base: '15px', xl: '25px' }} fontWeight='bold' mr='5px'>
+                    <Text fontSize={{ base: '15px', xl: '18px' }} fontWeight='bold' mr='5px'>
                       ✔ 사용스택 :
                     </Text>
-                    <Text fontSize={{ base: '13px', xl: '22px' }}>
+                    <Text fontSize={{ base: '13px', xl: '15px' }}>
                       <Badge colorScheme='cyan' mr='5px'>
                         React
                       </Badge>
@@ -229,10 +229,10 @@ const Index = () => {
                   </div>
 
                   <div style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap' }}>
-                    <Text fontSize={{ base: '15px', xl: '25px' }} fontWeight='bold' mr='5px'>
+                    <Text fontSize={{ base: '15px', xl: '18px' }} fontWeight='bold' mr='5px'>
                       ✔ 저장소 링크:
                     </Text>
-                    <Text fontSize={{ base: '13px', xl: '22px' }}>
+                    <Text fontSize={{ base: '13px', xl: '15px' }}>
                       <a href='https://github.com/beardfriend/pleasehaejofront' target='_blank'>
                         https://github.com/beardfriend/pleasehaejofront
                       </a>
@@ -240,10 +240,10 @@ const Index = () => {
                   </div>
 
                   <div style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap' }}>
-                    <Text fontSize={{ base: '15px', xl: '25px' }} fontWeight='bold' mr='5px'>
+                    <Text fontSize={{ base: '15px', xl: '18px' }} fontWeight='bold' mr='5px'>
                       ✔ 사이트주소:
                     </Text>
-                    <Text fontSize={{ base: '13px', xl: '22px' }}>
+                    <Text fontSize={{ base: '13px', xl: '15px' }}>
                       백엔드 분이 바빠서 로컬에서 녹화한 영상으로 대체
                     </Text>
                   </div>
@@ -455,51 +455,54 @@ const Index = () => {
         <Modal onClose={handleClose} size='5xl' isOpen={open === '2'}>
           <ModalOverlay />
           <ModalContent>
-            <ModalHeader>Modal Title</ModalHeader>
+            <ModalHeader>두번째 프로젝트</ModalHeader>
             <ModalCloseButton />
             <ModalBody>
               <ContentBox>
                 <section style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
                   <div style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap' }}>
-                    <Text fontSize={{ base: '15px', xl: '25px' }} fontWeight='bold' mr='5px'>
+                    <Text fontSize={{ base: '15px', xl: '18px' }} fontWeight='bold' mr='5px'>
                       ✔ 프로젝트이름 :
                     </Text>
-                    <Text fontSize={{ base: '13px', xl: '22px' }}>인터렉티브 메인페이지</Text>
+                    <Text fontSize={{ base: '13px', xl: '15px' }}>인터렉티브 메인페이지</Text>
                   </div>
 
                   <div style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap' }}>
-                    <Text fontSize={{ base: '15px', xl: '25px' }} fontWeight='bold' mr='5px'>
+                    <Text fontSize={{ base: '15px', xl: '18px' }} fontWeight='bold' mr='5px'>
                       ✔ 제작기간 :
                     </Text>
-                    <Text fontSize={{ base: '13px', xl: '22px' }}>21.03.11 ~ 21.03.18</Text>
+                    <Text fontSize={{ base: '13px', xl: '15px' }}>21.03.11 ~ 21.03.18</Text>
                   </div>
 
                   <div style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap' }}>
-                    <Text fontSize={{ base: '15px', xl: '25px' }} fontWeight='bold' mr='5px'>
+                    <Text fontSize={{ base: '15px', xl: '18px' }} fontWeight='bold' mr='5px'>
                       ✔ 프로젝트 한 줄 설명 :
                     </Text>
-                    <Text fontSize={{ base: '13px', xl: '22px' }}>
+                    <Text fontSize={{ base: '13px', xl: '15px' }}>
                       인터렉티브한 웹을 구성, 시각적인 아름다움
                     </Text>
                   </div>
 
                   <div style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap' }}>
-                    <Text fontSize={{ base: '15px', xl: '25px' }} fontWeight='bold' mr='5px'>
+                    <Text fontSize={{ base: '15px', xl: '18px' }} fontWeight='bold' mr='5px'>
                       ✔ 팀구성 :
                     </Text>
-                    <Text fontSize={{ base: '13px', xl: '22px' }}>개인</Text>
+                    <Text fontSize={{ base: '13px', xl: '15px' }}>개인</Text>
                   </div>
 
                   <div style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap' }}>
-                    <Text fontSize={{ base: '15px', xl: '25px' }} fontWeight='bold' mr='5px'>
+                    <Text fontSize={{ base: '15px', xl: '18px' }} fontWeight='bold' mr='5px'>
                       ✔ 사용스택 :
                     </Text>
-                    <Text fontSize={{ base: '13px', xl: '22px' }}>
+                    <Text fontSize={{ base: '13px', xl: '15px' }}>
                       <Badge colorScheme='cyan' mr='5px'>
                         React
                       </Badge>
                       <Badge colorScheme='cyan' mr='5px'>
                         NEXTJS
+                      </Badge>
+                      <Badge colorScheme='cyan' mr='5px'>
+                        Material-ui
                       </Badge>
                       <Badge colorScheme='cyan' mr='5px'>
                         Styled_Component
@@ -511,20 +514,20 @@ const Index = () => {
                   </div>
 
                   <div style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap' }}>
-                    <Text fontSize={{ base: '15px', xl: '25px' }} fontWeight='bold' mr='5px'>
+                    <Text fontSize={{ base: '15px', xl: '18px' }} fontWeight='bold' mr='5px'>
                       ✔ 상세 업무 및 성과:
                     </Text>
-                    <Text fontSize={{ base: '13px', xl: '22px' }}>
+                    <Text fontSize={{ base: '13px', xl: '15px' }}>
                       마우스 위치에 따른, animation 실행 && 모든 디자인을 직접 만들면서 UI에 대한
                       개념 확립
                     </Text>
                   </div>
 
                   <div style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap' }}>
-                    <Text fontSize={{ base: '15px', xl: '25px' }} fontWeight='bold' mr='5px'>
+                    <Text fontSize={{ base: '15px', xl: '18px' }} fontWeight='bold' mr='5px'>
                       ✔ 저장소 링크:
                     </Text>
-                    <Text fontSize={{ base: '13px', xl: '22px' }}>
+                    <Text fontSize={{ base: '13px', xl: '15px' }}>
                       <a href='https://github.com/beardfriend/sys' target='_blank'>
                         https://github.com/beardfriend/sys
                       </a>
@@ -532,27 +535,43 @@ const Index = () => {
                   </div>
 
                   <div style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap' }}>
-                    <Text fontSize={{ base: '15px', xl: '25px' }} fontWeight='bold' mr='5px'>
+                    <Text fontSize={{ base: '15px', xl: '18px' }} fontWeight='bold' mr='5px'>
                       ✔ 사이트주소:
                     </Text>
-                    <Text fontSize={{ base: '13px', xl: '22px' }}>
+                    <Text fontSize={{ base: '13px', xl: '15px' }}>
                       <a href='https://beardfriends.vercel.app/' target='_black'>
                         https://beardfriends.vercel.app/
                       </a>
                     </Text>
                   </div>
                 </section>
-
                 <ImageBox>
-                  {data.second.edges.map((edege) => {
-                    return (
-                      <div style={{ marginTop: '10px', textAlign: 'center' }}>
-                        <h1 style={{ fontSize: '20px' }}>{edege.node.name}</h1>
-                        <Img fluid={edege.node.childImageSharp.fluid} alt='name' />
-                      </div>
-                    );
+                  {data.second.edges.map((edge) => {
+                    return <Img fluid={edge.node.childImageSharp.fluid} alt='name' />;
                   })}
                 </ImageBox>
+                <Cont>
+                  <h1>⚡ 프로젝트 개요</h1>
+                  <p>
+                    본 프로젝트를 진행하기 전에, React기초를 다졌습니다. <br />
+                    퍼블리싱은 프론트엔드 개발의 가장 기초라고 생각했습니다.
+                    <br />
+                    이미 Antd, MateriUI등 좋은 UI들이 있지만,
+                    <br />
+                    좋은 품질의 웹사이트를 위해서는 직접 만들 필요가 있다고 느꼈습니다.
+                  </p>
+
+                  <p>
+                    Interatvice한 웹을 만들기 위해, 디자인 좋은 웹사이트도 찾아보면서,
+                    <br />
+                    웹사이트를 어떻게 예쁘게 만들까에 대한 고민도 자연스럽게 하게 됐습니다.
+                    <br />
+                    Styled를 쓰면서 Css를 잘 쓰게 됐으며, Scss를 이용하여
+                    <br />
+                    모듈을 더 고도화할 수 있게 됐습니다.
+                  </p>
+                  <p>ContextAPI의 단점과 장점에 대해도 알게 되서 정말 기쁩니다.</p>
+                </Cont>
               </ContentBox>
             </ModalBody>
             <ModalFooter>
@@ -562,49 +581,49 @@ const Index = () => {
         </Modal>
 
         {/* 3 */}
-        <Modal onClose={handleClose} size='full' isOpen={open === '3'}>
+        <Modal onClose={handleClose} size='5xl' isOpen={open === '3'}>
           <ModalOverlay />
           <ModalContent>
-            <ModalHeader>Modal Title</ModalHeader>
+            <ModalHeader>세번째 프로젝트</ModalHeader>
             <ModalCloseButton />
             <ModalBody>
               <ContentBox>
                 <section style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
                   <div style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap' }}>
-                    <Text fontSize={{ base: '15px', xl: '25px' }} fontWeight='bold' mr='5px'>
+                    <Text fontSize={{ base: '15px', xl: '18px' }} fontWeight='bold' mr='5px'>
                       ✔ 프로젝트이름 :
                     </Text>
-                    <Text fontSize={{ base: '13px', xl: '22px' }}>MT주얼리</Text>
+                    <Text fontSize={{ base: '13px', xl: '15px' }}>MT주얼리</Text>
                   </div>
 
                   <div style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap' }}>
-                    <Text fontSize={{ base: '15px', xl: '25px' }} fontWeight='bold' mr='5px'>
+                    <Text fontSize={{ base: '15px', xl: '18px' }} fontWeight='bold' mr='5px'>
                       ✔ 제작기간 :
                     </Text>
-                    <Text fontSize={{ base: '13px', xl: '22px' }}>20.12. ~ 진행형</Text>
+                    <Text fontSize={{ base: '13px', xl: '15px' }}>20.12. ~ 진행형</Text>
                   </div>
 
                   <div style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap' }}>
-                    <Text fontSize={{ base: '15px', xl: '25px' }} fontWeight='bold' mr='5px'>
+                    <Text fontSize={{ base: '15px', xl: '18px' }} fontWeight='bold' mr='5px'>
                       ✔ 프로젝트 한 줄 설명 :
                     </Text>
-                    <Text fontSize={{ base: '13px', xl: '22px' }}>
+                    <Text fontSize={{ base: '13px', xl: '15px' }}>
                       친구 아시는 분 사업장 업체와 계약
                     </Text>
                   </div>
 
                   <div style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap' }}>
-                    <Text fontSize={{ base: '15px', xl: '25px' }} fontWeight='bold' mr='5px'>
+                    <Text fontSize={{ base: '15px', xl: '18px' }} fontWeight='bold' mr='5px'>
                       ✔ 팀구성 :
                     </Text>
-                    <Text fontSize={{ base: '13px', xl: '22px' }}>팀(벡엔드(1명),프론트(1명))</Text>
+                    <Text fontSize={{ base: '13px', xl: '15px' }}>팀(벡엔드(1명),프론트(1명))</Text>
                   </div>
 
                   <div style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap' }}>
-                    <Text fontSize={{ base: '15px', xl: '25px' }} fontWeight='bold' mr='5px'>
+                    <Text fontSize={{ base: '15px', xl: '18px' }} fontWeight='bold' mr='5px'>
                       ✔ 사용스택 :
                     </Text>
-                    <Text fontSize={{ base: '13px', xl: '22px' }}>
+                    <Text fontSize={{ base: '13px', xl: '15px' }}>
                       <Badge colorScheme='cyan' mr='5px'>
                         HTML
                       </Badge>
@@ -624,27 +643,27 @@ const Index = () => {
                   </div>
 
                   <div style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap' }}>
-                    <Text fontSize={{ base: '15px', xl: '25px' }} fontWeight='bold' mr='5px'>
+                    <Text fontSize={{ base: '15px', xl: '18px' }} fontWeight='bold' mr='5px'>
                       ✔ 상세 업무 및 성과:
                     </Text>
-                    <Text fontSize={{ base: '13px', xl: '22px' }}>
+                    <Text fontSize={{ base: '13px', xl: '15px' }}>
                       ▪javascript를 이용한 메인페이지 랜덤박스 및 전반적인 디자인 및 프론트기능들
                       <br />▪ async를 이용한 input박스 버튼 클릭 이후 노출
                     </Text>
                   </div>
 
                   <div style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap' }}>
-                    <Text fontSize={{ base: '15px', xl: '25px' }} fontWeight='bold' mr='5px'>
+                    <Text fontSize={{ base: '15px', xl: '18px' }} fontWeight='bold' mr='5px'>
                       ✔ 저장소 링크:
                     </Text>
-                    <Text fontSize={{ base: '13px', xl: '22px' }}>x</Text>
+                    <Text fontSize={{ base: '13px', xl: '15px' }}>x</Text>
                   </div>
 
                   <div style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap' }}>
-                    <Text fontSize={{ base: '15px', xl: '25px' }} fontWeight='bold' mr='5px'>
+                    <Text fontSize={{ base: '15px', xl: '18px' }} fontWeight='bold' mr='5px'>
                       ✔ 사이트주소:
                     </Text>
-                    <Text fontSize={{ base: '13px', xl: '22px' }}>
+                    <Text fontSize={{ base: '13px', xl: '15px' }}>
                       <a href='http://onandoncoop.godomall.com/' target='_black'>
                         http://onandoncoop.godomall.com/
                       </a>
@@ -656,12 +675,20 @@ const Index = () => {
                   {data.third.edges.map((edege) => {
                     return (
                       <div style={{ marginTop: '10px', textAlign: 'center' }}>
-                        <h1 style={{ fontSize: '20px' }}>{edege.node.name}</h1>
                         <Img fluid={edege.node.childImageSharp.fluid} alt='name' />
                       </div>
                     );
                   })}
                 </ImageBox>
+                <Cont>
+                  <h1>⚡프로젝트 상세</h1>
+                  <p>
+                    프로젝트를 진행하면서, 가장 기억에 남는 점은, createElement를 사용하고
+                    innerHTML로 네비게이션을 만든 것입니다.
+                  </p>
+                  <p>고도몰 프로젝트 덕분에 리액트의 동작 원리에 대해 더 관심을 갖게 됐고, </p>
+                  <p>지금도 리액트에 대해 꾸준하게 공부하는 중입니다.</p>
+                </Cont>
               </ContentBox>
             </ModalBody>
             <ModalFooter>
@@ -671,49 +698,49 @@ const Index = () => {
         </Modal>
 
         {/* 4 */}
-        <Modal onClose={handleClose} size='full' isOpen={open === '4'}>
+        <Modal onClose={handleClose} size='5xl' isOpen={open === '4'}>
           <ModalOverlay />
           <ModalContent>
-            <ModalHeader>Modal Title</ModalHeader>
+            <ModalHeader>네번째프로젝트</ModalHeader>
             <ModalCloseButton />
             <ModalBody>
               <ContentBox>
                 <section style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
                   <div style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap' }}>
-                    <Text fontSize={{ base: '15px', xl: '25px' }} fontWeight='bold' mr='5px'>
+                    <Text fontSize={{ base: '15px', xl: '18px' }} fontWeight='bold' mr='5px'>
                       ✔ 프로젝트이름 :
                     </Text>
-                    <Text fontSize={{ base: '13px', xl: '22px' }}>설문지</Text>
+                    <Text fontSize={{ base: '13px', xl: '15px' }}>설문지</Text>
                   </div>
 
                   <div style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap' }}>
-                    <Text fontSize={{ base: '15px', xl: '25px' }} fontWeight='bold' mr='5px'>
+                    <Text fontSize={{ base: '15px', xl: '18px' }} fontWeight='bold' mr='5px'>
                       ✔ 제작기간 :
                     </Text>
-                    <Text fontSize={{ base: '13px', xl: '22px' }}>21.3.30 ~ 21.03.31</Text>
+                    <Text fontSize={{ base: '13px', xl: '15px' }}>21.3.30 ~ 21.03.31</Text>
                   </div>
 
                   <div style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap' }}>
-                    <Text fontSize={{ base: '15px', xl: '25px' }} fontWeight='bold' mr='5px'>
+                    <Text fontSize={{ base: '15px', xl: '18px' }} fontWeight='bold' mr='5px'>
                       ✔ 프로젝트 한 줄 설명 :
                     </Text>
-                    <Text fontSize={{ base: '13px', xl: '22px' }}>
+                    <Text fontSize={{ base: '13px', xl: '15px' }}>
                       단계적으로 넘어가는 설문. JSON형태로 프론트에 데이터 저장
                     </Text>
                   </div>
 
                   <div style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap' }}>
-                    <Text fontSize={{ base: '15px', xl: '25px' }} fontWeight='bold' mr='5px'>
+                    <Text fontSize={{ base: '15px', xl: '18px' }} fontWeight='bold' mr='5px'>
                       ✔ 팀구성 :
                     </Text>
-                    <Text fontSize={{ base: '13px', xl: '22px' }}>개인</Text>
+                    <Text fontSize={{ base: '13px', xl: '15px' }}>개인</Text>
                   </div>
 
                   <div style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap' }}>
-                    <Text fontSize={{ base: '15px', xl: '25px' }} fontWeight='bold' mr='5px'>
+                    <Text fontSize={{ base: '15px', xl: '18px' }} fontWeight='bold' mr='5px'>
                       ✔ 사용스택 :
                     </Text>
-                    <Text fontSize={{ base: '13px', xl: '22px' }}>
+                    <Text fontSize={{ base: '13px', xl: '15px' }}>
                       <Badge colorScheme='cyan' mr='5px'>
                         React
                       </Badge>
@@ -730,19 +757,19 @@ const Index = () => {
                   </div>
 
                   <div style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap' }}>
-                    <Text fontSize={{ base: '15px', xl: '25px' }} fontWeight='bold' mr='5px'>
+                    <Text fontSize={{ base: '15px', xl: '18px' }} fontWeight='bold' mr='5px'>
                       ✔ 상세 업무 및 성과:
                     </Text>
-                    <Text fontSize={{ base: '13px', xl: '22px' }}>
-                      리액트에 대한 이해 및 공부 ▪ContextAPI의 단점 채득 ▪ chart.js 경험
+                    <Text fontSize={{ base: '13px', xl: '15px' }}>
+                      리액트에 대한 이해 및 공부 ▪ chart.js 경험, contextAPI
                     </Text>
                   </div>
 
                   <div style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap' }}>
-                    <Text fontSize={{ base: '15px', xl: '25px' }} fontWeight='bold' mr='5px'>
+                    <Text fontSize={{ base: '15px', xl: '18px' }} fontWeight='bold' mr='5px'>
                       ✔ 저장소 링크:
                     </Text>
-                    <Text fontSize={{ base: '13px', xl: '22px' }}>
+                    <Text fontSize={{ base: '13px', xl: '15px' }}>
                       <a href='https://github.com/beardfriend/survey' target='_blank'>
                         https://github.com/beardfriend/survey
                       </a>
@@ -750,10 +777,10 @@ const Index = () => {
                   </div>
 
                   <div style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap' }}>
-                    <Text fontSize={{ base: '15px', xl: '25px' }} fontWeight='bold' mr='5px'>
+                    <Text fontSize={{ base: '15px', xl: '18px' }} fontWeight='bold' mr='5px'>
                       ✔ 사이트주소:
                     </Text>
-                    <Text fontSize={{ base: '13px', xl: '22px' }}>
+                    <Text fontSize={{ base: '13px', xl: '15px' }}>
                       <a href='https://survey-hun95.vercel.app/' target='_black'>
                         https://survey-hun95.vercel.app/
                       </a>
@@ -765,12 +792,21 @@ const Index = () => {
                   {data.fourth.edges.map((edege) => {
                     return (
                       <div style={{ marginTop: '10px', textAlign: 'center' }}>
-                        <h1 style={{ fontSize: '20px' }}>{edege.node.name}</h1>
                         <Img fluid={edege.node.childImageSharp.fluid} alt='name' />
                       </div>
                     );
                   })}
                 </ImageBox>
+                <Cont>
+                  <h1>⚡ 프로젝트 </h1>
+                  <p>각 항목별로 점수를 1점에서 5점까지 획득할 수 있고</p>
+                  <p>누적된 값이 xx점 이상이면 -> result :x , ....</p>
+                  <p>아주 간단한 작업이지만, 리액트 기초를 쌓는 과정에서</p>
+                  <p>당시에는 굉장히 뿌듯함을 느꼈던 프로젝트입니다.</p>
+                  <p>클론코딩을 하면서 redux동작원리나 데이터 연결에 더 신경을 쓸 수도 있었겠지만,</p>
+                  <p>위와같은 과정을 거치면서 기초를 단단히 쌓았다고 생각합니다.</p>
+                  <p>순수 리액트만으로 만든 프로젝트이니 더욱더 의미가 깊습니다.</p>
+                </Cont>
               </ContentBox>
             </ModalBody>
             <ModalFooter>
@@ -830,7 +866,7 @@ const Cont = styled.div`
     margin: 1rem 0;
   }
   p {
-    font-size: 20px;
+    font-size: 15px;
     margin: 0.7rem;
   }
   h4 {
@@ -843,16 +879,19 @@ const Cont = styled.div`
     margin: 1rem 0;
     height: 100%;
   }
+  @media screen and (max-width: 1235px) {
+    p {
+      font-size: 13px;
+    }
+  }
 `;
 
 const ImageBox = styled.div`
   width: 50%;
   height: 100%;
-  div {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+
+  align-items: center;
+
   @media screen and (max-width: 768px) {
     width: 100%;
   }
