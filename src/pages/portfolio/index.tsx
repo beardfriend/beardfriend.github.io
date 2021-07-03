@@ -272,7 +272,7 @@ const Index = () => {
                   <ImageBox>
                     <Img fluid={data.first.edges[1].node.childImageSharp.fluid} />
                   </ImageBox>
-                  <p>▪ Global : 공통적으로 자주 사용하는 css in js 가 존재합니다.</p>
+                  <p>▪ Global : 자주 사용하는 css in js 가 존재합니다.</p>
                   <ImageBox>
                     <Img fluid={data.first.edges[2].node.childImageSharp.fluid} />
                   </ImageBox>{' '}
@@ -281,45 +281,41 @@ const Index = () => {
                     <Img fluid={data.first.edges[3].node.childImageSharp.fluid} />
                   </ImageBox>{' '}
                   <p>
-                    REDUX TOOLKIT을 선택한 이유는 actions, constants, reducer을 한 폴더 안에
-                    통합해도 깔끔하기 때문입니다. 또한 비즈니스 로직 수정 추가할 때 폴더를 오가는
-                    번거로움이 없고, 리덕스 공식홈페이지에서 추천하는 방법이기 때문에, 위 방법을
-                    선택했습니다
+                    REDUX TOOLKIT을 선택한 이유<br/> 첫 번째는 actions, constants, reducer을 Features 하나에 담는다는 점.
+                    <br/> 그로인해 설계,유지보수 면에서 더 수월할 거라 판단했습니다.
+                    <br/> 두 번째는 리덕스 공식홈페이지에서 적극적으로 권하고 있기 때문입니다.
+                    
+                  
                   </p>
                   <h1>⚡ 퍼블리싱</h1>
                   <p>
-                    기획자 분께서 Wire Frame을 작성한 것을 토대로 화면을 구성했고, PC 기준으로만
-                    퍼블리싱을 완료한 상태이며, 퍼블리싱에 대한 부분은 다른 포트폴리오에
-                    마련해놨습니다.
+                    기획자 분께서 Wire Frame을 제공해줬고, 문서를 토대로 화면을 구성했습니다.<br/> 
+                    모바일 기획이 없었기 때문에, 반응형은 제공하지 않습니다.
+                    
+       
                   </p>
-                  <p>
-                    본프로젝트는 퍼블리싱보다는 백엔드와 프론트앤드 연결하는 것에 우선순위를
-                    뒀습니다.
-                  </p>
+            
                   <ImageBox>
                     <Img fluid={data.first.edges[4].node.childImageSharp.fluid} />
                   </ImageBox>
                   <ImageBox>
                     <Img fluid={data.first.edges[5].node.childImageSharp.fluid} />
                   </ImageBox>
-                  <p>react-page-scroller을 사용하여 스크롤 시 한 페이지씩 넘어가게 구현했습니다.</p>
+                  <p>react-page-scroller을 사용하여 스크롤 시 한 페이지씩 넘어가도록 만들었습니다.</p>
                   <h2>레이아웃</h2>
                   <p>
-                    STYLED COMPONET를 사용하여 공통으로 레이아웃을 사용하되, 배경색, 중앙배치인지
-                    아닌지 등을 props에 담았기 때문에, 한개의 컴포넌트를 사용하되, 필요에 따라 위치,
-                    색을 바꿀 수 있게 구현했습니다. 레이아웃이 여러개가 아닌, 한 개이기 때문에,
-                    수정에 용이합니다.
+                    STYLED_COMPONET를 사용하여 레이아웃을 만들었습니다.
+                    <br/>props를 전달하여, 페이지별로 ChildComponet의 배치, 배경색 등을 바꿀 수 있도록
+                    <br/>CSS를 작성했습니다. 
+                    <br/>레이아웃을 여러 개 만드는 것보다는,유지보수 면에서 수월할 거라 판단했습니다.
                   </p>
                   <h2>INPUT</h2>
                   <p>
-                    견적서작성, 로그인, 회원가입 등 이번 프로젝트에서 Input이 가장 많이
-                    사용됐습니다.
+                    이번 프로젝트에서 Input을 많이 사용됐습니다.
+                    재사용성을 높히기 위해, <br/>
+                    에러메세지 노출, 필수항목여부 등을 하나의 컴포넌트로 제작했습니다.
                   </p>
-                  <p>
-                    폼 입력시 필수항목인지, 데이터를 불러올 때 스켈레톤, 입력완료됐을 때 체크아이콘,
-                    경고메세지 등을 하나로 통합해 Containers에서 공통으로 사용할 수 있게
-                    구현했습니다.{' '}
-                  </p>
+                
                   <ImageBox>
                     <Img fluid={data.first.edges[6].node.childImageSharp.fluid} />
                   </ImageBox>
@@ -327,7 +323,7 @@ const Index = () => {
                   <ImageBox>
                     <Img fluid={data.first.edges[7].node.childImageSharp.fluid} />
                   </ImageBox>
-                  <p>덕분에 Containers에서 간결함을 얻을 수 있었습니다.</p>
+                  <p>위의 작업 덕분에 코드의 가독성이 높아졌습니다.</p>
                   <ImageBox>
                     <Img fluid={data.first.edges[8].node.childImageSharp.fluid} />
                   </ImageBox>
@@ -344,17 +340,17 @@ const Index = () => {
                     <Img fluid={data.first.edges[10].node.childImageSharp.fluid} />
                   </ImageBox>
                   <p>
-                    공통으로 사용되는 것들을 묶어 CustomHooks화 하여 코드의 간결함과 직관성을
-                    얻었습니다. 수정사항이 있을 때, Hooks 폴더에서 수정하면, 모든 곳에 적용된 로직이
-                    바뀌므로 필수적인 작업입니다.
+                    수정사항이 있을 때, Hooks 폴더에서 수정하면, 모든 곳에 적용된 로직이
+                    바뀌므로 필수적인 작업입니다.<br/>
+                    위 두 개의 사진은 Containers에 로직을 담았을 때와 HOOKS에 분리했을 때의 차이입니다.
                   </p>
                   <h2>버튼 Disable</h2>
                   <ImageBox>
                     <Img fluid={data.first.edges[11].node.childImageSharp.fluid} />
                   </ImageBox>
                   <p>
-                    위 요청서를 보시면, 필수입력사항과 그렇지 않은 칸이 섞여있습니다. 필수입력사항을
-                    전부 입력했을 때 버튼이 열려야 하는 기능을 구현했습니다.
+                    위 요청서를 보시면, 필수로 입력해야 하는 칸과 그렇지 않은 칸이 존재합니다.<br/>
+                     필수입력사항을 전부 입력했을 때 버튼이 열려야 하는 기능을 구현했습니다.
                   </p>
                   <p>
                     필수입력란의 첫 state값을 undefined로 지정하고 state의 undefined값을 모두
@@ -384,7 +380,7 @@ const Index = () => {
                   </ImageBox>
                   <h2>원하는 데이터만 받기</h2>
                   <p>
-                    Backend로부터 데이터가 한 번에 넘어와도, 필요하지 않은 데이터가 분명 존재한다.
+                    Backend로부터 데이터가 한 번에 넘어와도, State에 담을 필요가 없는 데이터가 분명 존재합니다.
                   </p>
                   <ImageBox>
                     <Img fluid={data.first.edges[15].node.childImageSharp.fluid} />
@@ -392,40 +388,44 @@ const Index = () => {
                   <ImageBox>
                     <Img fluid={data.first.edges[16].node.childImageSharp.fluid} />
                   </ImageBox>
-                  <p>initialState에 정의해놓은 state에만 데이터가 들어오고 나머지는 버려진다</p>
+                  <p>initialState에 정의해놓은 state에만 데이터가 들어오고 나머지는 버려지도록
+                    <br/> 코드를 작성했습니다.
+                  </p>
                   <h2>로그인 ,회원가입, 유저타입선택</h2>
                   <ImageBox>
                     <Img fluid={data.first.edges[17].node.childImageSharp.fluid} />
                   </ImageBox>
                   <p>
-                    회원가입 이후
-                    <br /> 유저타입을 선택하지 않은 경우,
-                    <br /> 재로그인 시, 유저타입을 선택하는 창으로 넘겨주는 것 외에는
-                    <br />
-                    로그인,회원가입에서 대부분의 홈페이지와 동일한 알고리즘을 적용했으며
-                    <br />
-                    알고리즘을 짤 때, 다른 사람들의 코드를 참조하지 않고 직접 생각하고 짰다는 사실에
-                    의미를 두고 있습니다.
+                   로그인, 회원가입, 유저선택에 대한 순서도를 작성함으로써,
+                   <br/>흐름에 문제가 있는지 이해를 빠르게 돕기 위해  시각적으로 제작했습니다.
+                   <br/>순서도는 협업할 때, 소통을 더 원할하게 할 수 있도록 도와줍니다.
                   </p>
                   <h2>글 리스트 불러오기 && 상세보기</h2>
-                  <p>글목록 전체 보는 api와, 상세하게 보는 api 두 개가 따로 존재합니다. </p>
-                  <p>
-                    API를 사용하여 id값을 직접 넣어주는 방법과, 불러온 전체 글 리스트에서 filter를
-                    통해 id값과 일치한 문서를 프론트 단에서 처리해서 넘겨주는 두 가지 방식으로
-                    코드를 짜봤습니다.
+                  <p>전체 리스트 최초 진입 시, State에 리스트 항목들을 저장합니다.
+                    <br/>이번 프로젝트에서는 리스트에 보여줄 항목 뿐만아니라, 세부 데이터까지 
+                    <br/>모두 넘어왔습니다.
                   </p>
+<p>따라서, 리스트의 항목을 클릭했을 때, 상세 정보를 불러오는 API가 존재하지만,
+  <br/> 전체 리스트에서 id값을 찾아서 상세페이지를 보여주면 어떨까 하는 생각에, 
+  <br/>상세페이지는 두 가지 방법으로 만들었습니다. <br/> 첫 번째는 전체리스트에서 API호출 -> 상세페이지에서 API호출 <br/>두 번째 방법은 전체리스트 API호출 -> Filter를 이용해 상세페이지 구성 
+  <p>두 가지 방법 중 어떤 방법이 안정적이고 속도나 가격 면에서 효율적인지는 잘 모르겠지만
+    <br/>주어진 API를 응용했다는 점에 의미를 두고 싶습니다.
+  </p>
+</p>
+              
                   <h2>CRUD</h2>
                   <p>
-                    곳곳에 CRUD 기초가 되는 로직들이 존재합니다. 하지만, 100%완성된 프로젝트가
-                    아니기 때문에, 요청서 수정 등 몇 가지 빠진 기능들이 존재합니다.
+                    곳곳에 CRUD 기초가 되는 로직들이 존재합니다.<br/> 하지만, 단기간에 끝내야 하는 프로젝트기 떄문에
+                    때문에,<br/> 요청서 수정 등 몇 가지를 제외한 기능이 존재합니다.
                   </p>
                   <h2>에러</h2>
                   <img src={error} />
                   <p>
+
                     최초 랜딩페이지에서, user정보를 받아오는데, 로그인 되어있지 않았을 때, user정보
-                    error가 넘어와야 하는데, 백엔드 단에서 처리를 차후로 미뤘습니다. 로그인 되어
+                    error가 넘어와야 하는데, 백엔드 단에서 error.message 전달해주는 것을 미뤘습니다. 로그인 되어
                     있지 않았을 때, get이 pending 상태에서 머물러있습니다. setTimeout으로 해결할 수
-                    있지만, 백엔드 단에서 정보가 넘어오는 걸 기다리고 있습니다
+                    있지만, 백엔드 단에서 정보가 넘어오면 해결되는 문제기 때문에 에러를 냅뒀습니다.
                   </p>
                   <h1>⚡ 마무리</h1>
                   <p>
