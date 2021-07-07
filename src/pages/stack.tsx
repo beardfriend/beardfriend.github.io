@@ -1,10 +1,9 @@
-import { Badge, Button, Stack } from '@chakra-ui/react';
-import React, { useState } from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 
+import { Badge } from '@chakra-ui/react';
 import Img from 'gatsby-image';
 import LeftHeader from '@Components/Header/LeftHeader';
-import Post from '@Components/Post';
+import React from 'react';
 import styled from 'styled-components';
 
 const Front = ({ data }) => {
@@ -224,31 +223,9 @@ const Stacks = () => {
         <LeftHeader />
 
         <Container>
-          {/* <Stack spacing={4} direction='row' align='center'>
-            <Button
-              isActive={!option.high}
-              colorScheme={option.high ? 'blue' : 'teal'}
-              size='sm'
-              onClick={handleChange}
-            >
-              상
-            </Button>
-
-            <Button colorScheme='teal' size='sm'>
-              중
-            </Button>
-
-            <Button colorScheme='teal' size='sm'>
-              하
-            </Button>
-          </Stack> */}
           <InnerBox>
             <h1>FrontEnd</h1>
             <hr />
-            {/* <Img
-            fixed={queryData.allFile.edges.map.node.childImageSharp.fixed}
-            alt='Gatsby Docs are awesome'
-          /> */}
 
             <Front data={data.Front} />
             <h1>BackEnd</h1>
@@ -257,7 +234,6 @@ const Stacks = () => {
             <h1>ETC</h1>
             <hr />
             <ETC data={data.Etc} />
-            {/* <img src={queryData.allFile.edges[0].node.childImageSharp.fixed.src} /> */}
           </InnerBox>
         </Container>
       </MainLayout>
