@@ -72,6 +72,8 @@ export default Index;
 
 const NavContainer = styled.nav`
   display: flex;
+  position: fixed;
+  z-index: 99;
   width: 100%;
   height: 60px;
 
@@ -96,6 +98,8 @@ const NavContainer = styled.nav`
 const MobileContainer = styled.nav`
   width: 100%;
   align-items: center;
+  position: fixed;
+  z-index: 99;
   height: 60px;
   background: black;
   color: white;

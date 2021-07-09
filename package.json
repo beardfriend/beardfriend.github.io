@@ -24,6 +24,7 @@
     "gatsby-plugin-sharp": "^3.1.2",
     "gatsby-plugin-styled-components": "^4.2.0",
     "gatsby-plugin-typescript": "^3.2.0",
+    "gatsby-remark-vscode": "^3.3.0",
     "gatsby-source-filesystem": "^3.1.0",
     "gatsby-transformer-remark": "^3.2.0",
     "gatsby-transformer-sharp": "^3.1.0",
