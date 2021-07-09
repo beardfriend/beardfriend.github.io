@@ -3,6 +3,7 @@ import MainLayout from '@Components/Layout/MainLayout';
 import React from 'react';
 import { graphql } from 'gatsby';
 import styled from 'styled-components';
+
 export default function Template({
   data // this prop will be injected by the GraphQL query below.
 }: any) {
@@ -11,12 +12,12 @@ export default function Template({
   let Image = frontmatter?.featuredImage?.childImageSharp?.fluid;
   return (
     <MainLayout>
-      <div className='blog-post'>
+      <BlogLayout>
         <h1>{frontmatter.title}</h1>
         <h2>{frontmatter.date}</h2>
         {Image !== null && <Img fluid={Image} />}
         <div dangerouslySetInnerHTML={{ __html: html }} />
-      </div>
+      </BlogLayout>
     </MainLayout>
   );
 }
@@ -25,7 +26,6 @@ export const pageQuery = graphql`
   query($slug: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
       html
-
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
 
@@ -39,5 +39,26 @@ export const pageQuery = graphql`
         }
       }
     }
+  }
+`;
+
+const BlogLayout = styled.div`
+  pre {
+    font-size: 13px;
+  }
+  p {
+    font-size: 15px;
+  }
+  h1 {
+    font-size: 30px;
+    font-weight: 700;
+  }
+  h2 {
+    font-size: 26px;
+    font-weight: 700;
+  }
+  h3 {
+    font-size: 23px;
+    font-weight: 700;
   }
 `;

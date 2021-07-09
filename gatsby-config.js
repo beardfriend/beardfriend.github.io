@@ -59,6 +59,23 @@ module.exports = {
       }
     },
 
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: `gatsby-remark-vscode`,
+            options: {
+              theme: 'Dark (Visual Studio)', // Or install your favorite theme from GitHub
+              inlineCode: {
+                marker: '•'
+              }
+            }
+          }
+        ]
+      }
+    },
+
     `gatsby-plugin-gatsby-cloud`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline

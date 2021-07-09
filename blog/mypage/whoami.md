@@ -24,6 +24,27 @@ code highlight
 
 ![fet]('../../src/images/port/second/1.jpg')
 
-```javascript
-const hello = document.getElementById('test');
+```js
+function constant(value) {
+  return () => value; // highlight-line
+}
+
+// highlight-next-line
+const alwaysFour = constant(4);
+
+// highlight-start
+const zero = [0, 1, 2, 3, 4, 5].map(alwaysFour).filter((x) => x !== 4).length;
+// highlight-end
 ```
+
+```js {numberLines}
+import * as React from 'react';
+
+React.createElement('span', {});
+```
+
+```js {numberLines: 21}
+return 'blah';
+```
+
+Now you can highlight inline code: `js•Array.prototype.concat.apply([], array)`.
