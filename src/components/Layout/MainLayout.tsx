@@ -22,8 +22,6 @@ const Flex_Col = styled.section`
 const Main = styled.div`
   flex: 1;
   top: 60px;
-  padding: 2rem 0;
+  padding: 2rem 15rem;
   position: relative;
-  width: 80%;
-  margin: 0 auto;
 `;

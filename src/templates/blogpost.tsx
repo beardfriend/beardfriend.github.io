@@ -43,6 +43,7 @@ export const pageQuery = graphql`
 `;
 
 const BlogLayout = styled.div`
+  width: 100%;
   pre {
     font-size: 13px;
   }
