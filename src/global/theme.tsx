@@ -1,39 +1,58 @@
-import { css } from 'styled-components';
+import { CSSObject, FlattenSimpleInterpolation, SimpleInterpolation, css } from 'styled-components';
 
-export const setContent = {
-  center: 'center',
-  space: 'space-between'
+type Breakpoints = {
+  xs: number;
+  sm: number;
+  md: number;
+  lg: number;
+  xl: number;
+  xxl: number;
 };
 
-export const setFont = {
-  fontSm: '0.875rem', //14px
-  fontMed: '1.125rem' //18px
+const sizes: Breakpoints = {
+  xs: 480,
+  sm: 576,
+  md: 768,
+  lg: 992,
+  xl: 1200,
+  xxl: 1600
 };
 
-export const sizes: any = {
-  desktop: 1400,
-  tablet: 1024,
-  phone: 790,
-  smart: 400
+const initAcc: Interpolation<Breakpoints> = {
+  xs: () => '',
+  sm: () => '',
+  md: () => '',
+  lg: () => '',
+  xl: () => '',
+  xxl: () => ''
 };
 
-// Iterate through the sizes and create a media template
-export const breakUp = Object.keys(sizes).reduce((acc, label) => {
-  acc[label] = (args: any) => css`
-    @media (min-width: ${sizes[label] / 16}em) {
-      ${css(args)}
-    }
-  `;
+type BreakpointEntry = [keyof Breakpoints, Breakpoints[keyof Breakpoints]];
+type Interpolation<T> = {
+  [key in keyof T]:
+    | ((
+        first: CSSObject | TemplateStringsArray,
+        ...interpolations: SimpleInterpolation[]
+      ) => FlattenSimpleInterpolation)
+    | (() => string);
+};
 
-  return acc;
-}, {});
+interface CustomObject extends ObjectConstructor {
+  entries<K extends keyof Breakpoints, T>(o: { [s in K]: T } | ArrayLike<T>): [K, T][];
+}
 
-export const breakDown = Object.keys(sizes).reduce((acc, label) => {
-  acc[label] = (...args: any) => css`
-    @media (max-width: ${(sizes[label] - 1) / 16}em) {
-      ${css(new Array().push(args))}
-    }
-  `;
+const object: CustomObject = Object;
 
-  return acc;
-}, {});
+export const media = object
+  .entries(sizes)
+  .reduce<Interpolation<Breakpoints>>((acc, cur: BreakpointEntry) => {
+    const [key, value] = cur;
+    acc[key] = (first, ...interpolations) =>
+      css`
+        @media (max-width: ${value}px) {
+          ${css(first, ...interpolations)}
+        }
+      `;
+
+    return acc;
+  }, initAcc);

@@ -4,7 +4,7 @@
     "paths": {
       "@Components/*": ["./src/components/*"],
       "@Containers/*": ["./src/containers/*"],
-      "@Glboal/*": ["./src/global/*"]
+      "@Globals/*": ["./src/global/*"]
     },
     "target": "es6",
     "jsx": "react-jsx",

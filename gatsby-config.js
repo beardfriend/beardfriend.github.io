@@ -70,7 +70,7 @@ module.exports = {
         alias: {
           '@Components': path.resolve(__dirname, 'src/components'),
           '@Containers': path.resolve(__dirname, 'src/containers'),
-          '@Global': path.resolve(__dirname, 'src/global')
+          '@Globals': path.resolve(__dirname, 'src/global')
         },
 
         extensions: ['tsx', 'js', 'ts']

@@ -220,8 +220,6 @@ const Stacks = () => {
   return (
     <>
       <MainLayout>
-        <LeftHeader />
-
         <Container>
           <InnerBox>
             <h1>FrontEnd</h1>
