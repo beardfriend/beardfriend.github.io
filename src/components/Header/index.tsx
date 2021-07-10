@@ -7,20 +7,7 @@ import { TiUser } from 'react-icons/ti';
 import { media } from '@Globals/theme';
 import styled from 'styled-components';
 
-const Index = () => {
-  const [state, setState] = useState(false);
-  useEffect(() => {
-    const add = () => {
-      if (window.innerWidth < 768) {
-        setState(true);
-      } else {
-        setState(false);
-      }
-    };
-    window.addEventListener('resize', add);
-
-    return () => window.removeEventListener('resize', add);
-  }, []);
+const Index = ({ state }) => {
   if (state) {
     return (
       <MobileContainer>
@@ -80,9 +67,12 @@ const NavContainer = styled.nav`
   justify-content: space-between;
   align-items: center;
   background: #0a0b0c;
-  padding: 0 12rem;
+  padding: 0 20rem;
+  ${media.xxl({
+    padding: `0 12rem`
+  })}
   ${media.xl({
-    padding: `0 9rem`
+    padding: `0 7rem`
   })}
   ${media.lg({
     padding: `0 6rem`

@@ -3,6 +3,7 @@ import { Link, graphql, useStaticQuery } from 'gatsby';
 import { Button } from '@chakra-ui/react';
 import Img from 'gatsby-image';
 import React from 'react';
+import { media } from '@Globals/theme';
 import styled from 'styled-components';
 
 const index = () => {
@@ -14,7 +15,7 @@ const index = () => {
             id
             featuredImg {
               childImageSharp {
-                fixed(width: 460) {
+                fixed(width: 400) {
                   ...GatsbyImageSharpFixed
                 }
               }
@@ -39,8 +40,6 @@ const index = () => {
     <>
       {blogPost.map((nodes: any) => {
         const { node } = nodes;
-        console.log(node.frontmatter.tags);
-        console.log(node.featuredImg.childImageSharp.fixed);
         return (
           <Layout>
             <Link to={node.fields.slug}>
@@ -57,7 +56,7 @@ const index = () => {
               {node.frontmatter.tags.map((tag) => {
                 return (
                   <>
-                    <Button mr={1} mt={3}>
+                    <Button w='20px' h='30px' fontSize='10px' mr={1} mt={3}>
                       {tag}
                     </Button>
                   </>
@@ -75,16 +74,24 @@ const index = () => {
 export default index;
 
 const Layout = styled.div`
-  width: 500px;
-  height: 500px;
-  padding: 1rem;
+  ${media.md({
+    width: '300px',
+    height: '340px',
+    padding: 0
+  })}
+  width: 400px;
+  height: 400px;
+
   border-bottom: 1px solid #dddddd;
-  margin: 0 auto;
+
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   h1 {
     cursor: pointer;
-    font-size: 25px;
+    font-size: 22px;
     font-weight: bold;
+    ${media.md({
+      fontSize: '15px'
+    })}
   }
 
   a {
@@ -100,10 +107,21 @@ const Layout = styled.div`
 const ImageBox = styled.div`
   display: flex;
   justify-content: center;
+
+  ${media.md({
+    width: '300px'
+  })}
 `;
 
 const TextBox = styled.div`
   margin-top: 10px;
   position: relative;
-  height: 200px;
+  height: 150px;
+  padding: 1rem;
+  font-size: 12px;
+  ${media.md({
+    height: '90px',
+    fontSize: '8px',
+    padding: '0 1rem'
+  })};
 `;
