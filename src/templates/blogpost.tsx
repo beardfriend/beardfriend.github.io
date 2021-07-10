@@ -9,13 +9,13 @@ export default function Template({
 }: any) {
   const { markdownRemark } = data; // data.markdownRemark holds your post data
   const { frontmatter, html } = markdownRemark;
-  let Image = frontmatter?.featuredImage?.childImageSharp?.fluid;
+  let Image = markdownRemark?.featuredImg?.childImageSharp?.fixed;
   return (
     <MainLayout>
       <BlogLayout>
         <h1>{frontmatter.title}</h1>
         <h2>{frontmatter.date}</h2>
-        {Image !== null && <Img fluid={Image} />}
+        {Image !== null && <Img fixed={Image} />}
         <div dangerouslySetInnerHTML={{ __html: html }} />
       </BlogLayout>
     </MainLayout>
@@ -26,17 +26,17 @@ export const pageQuery = graphql`
   query($slug: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
       html
+      featuredImg {
+        childImageSharp {
+          fixed(width: 400) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
 
         title
-        featuredImage {
-          childImageSharp {
-            fluid(maxWidth: 800) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
       }
     }
   }
