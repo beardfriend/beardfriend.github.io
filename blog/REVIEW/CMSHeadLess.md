@@ -22,6 +22,7 @@ CMS는 콘텐츠(글,사진,동영상 등)를 관리해주는 서비스(?) 정�
 CMS Headless를 이용한다면, 글 작성, 수정, 삭제는 CMS Headless를 통해 하고, 컨텐츠는 자기가 원하는 곳 어디에서나 보여줄 수 있다.
 
 ![1.png](https://i.postimg.cc/x80nKVjD/1.png)
+
 1번 플랫폼 =CMS에서는 VIEW가 1번에서만 가능했지만,
 
 CMS Headless를 이용한다면, VIEW를 어디서든 가능하게 할 수 있다.
@@ -79,11 +80,15 @@ SSG의 단점을 보완하기 위해 CMS Headless가 나왔다고 했다.
 ### Netlify CMS HEADLESS
 
 ![](https://images.velog.io/images/beardfriend/post/82b0fd91-871e-4767-a83b-8f860e988fbf/image.png)
+
 기본 형태의 가장 대표적인 예로, netlify가 있다.
+
 ![](https://images.velog.io/images/beardfriend/post/a6ab0883-6425-4be1-a783-59b5f2c11eb4/image.png)
+
 다양한 SSG를 지원한다. 그 중에서 가장 맘에 드는 녀석은 Gatsby, React 프래임워크다. Netlify의 장점은 귀찮은 세팅을 얘는 다 해준다.
 
 ![](https://images.velog.io/images/beardfriend/post/305e67c3-7202-4b73-8f4a-b75ad7561aa1/image.png)
+
 글을 쓰는 걸 관찰하는 WEBHOOK을 세팅해야 하며,
 람다 or action 등 자동 빌드를 해주는 녀석이
 수정사항이 생겼을 때
@@ -99,6 +104,7 @@ SSG의 단점을 보완하기 위해 CMS Headless가 나왔다고 했다.
 ### Ghost
 
 ![](https://images.velog.io/images/beardfriend/post/c3851ea1-919d-4849-9b8b-4220a50f724c/image.png)
+
 가장 인기가 많은 Ghost다.
 UI가 예쁘고, 에디터가 너무 좋다.
 
