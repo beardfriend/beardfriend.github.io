@@ -1,5 +1,6 @@
 import { Link, graphql, useStaticQuery } from 'gatsby';
 
+import { Button } from '@chakra-ui/react';
 import Img from 'gatsby-image';
 import React from 'react';
 import styled from 'styled-components';
@@ -34,23 +35,36 @@ const index = () => {
   `);
   const blogPost = data.allMarkdownRemark.edges;
 
-  let Image = blogPost?.node?.frontmatter?.featuredImg?.childImageSharp?.fluid;
   return (
     <>
       {blogPost.map((nodes: any) => {
         const { node } = nodes;
+        console.log(node.frontmatter.tags);
+        console.log(node.featuredImg.childImageSharp.fixed);
         return (
           <Layout>
             <Link to={node.fields.slug}>
               <ImageBox>
-                {Image !== null && (
-                  <Img className='img' fixed={node?.featuredImg?.childImageSharp?.fixed} />
+                {node.featuredImg.childImageSharp.fixed !== null && (
+                  <Img className='img' fixed={node.featuredImg.childImageSharp.fixed} />
                 )}
               </ImageBox>
-              <h1>{node.frontmatter.title}</h1>
-
-              <p>{node.frontmatter.date}</p>
             </Link>
+            <TextBox>
+              <Link to={node.fields.slug}>
+                <h1>{node.frontmatter.title}</h1>
+              </Link>
+              {node.frontmatter.tags.map((tag) => {
+                return (
+                  <>
+                    <Button mr={1} mt={3}>
+                      {tag}
+                    </Button>
+                  </>
+                );
+              })}
+              <p style={{ position: 'absolute', bottom: 0 }}>{node.frontmatter.date}</p>
+            </TextBox>
           </Layout>
         );
       })}
@@ -62,8 +76,8 @@ export default index;
 
 const Layout = styled.div`
   width: 500px;
-  height: 400px;
-
+  height: 500px;
+  padding: 1rem;
   border-bottom: 1px solid #dddddd;
   margin: 0 auto;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -86,5 +100,10 @@ const Layout = styled.div`
 const ImageBox = styled.div`
   display: flex;
   justify-content: center;
-  padding: 1rem;
+`;
+
+const TextBox = styled.div`
+  margin-top: 10px;
+  position: relative;
+  height: 200px;
 `;
