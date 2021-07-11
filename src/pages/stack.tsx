@@ -2,7 +2,7 @@ import { graphql, useStaticQuery } from 'gatsby';
 
 import { Badge } from '@chakra-ui/react';
 import Img from 'gatsby-image';
-import LeftHeader from '@Components/Header/LeftHeader';
+import MainLayout from '@Components/Layout/MainLayout';
 import React from 'react';
 import styled from 'styled-components';
 
@@ -144,13 +144,7 @@ const ETC = ({ data }) => {
 const Stacks = () => {
   const data = useStaticQuery(graphql`
     query {
-      Front: allFile(
-        sort: { fields: name, order: ASC }
-        filter: {
-          sourceInstanceName: { eq: "images" }
-          dir: { eq: "/var/www/personal/beardfriend.github.io/src/images/logo/Front" }
-        }
-      ) {
+      Front: allFile(sort: { fields: name, order: ASC }, filter: { relativeDirectory: { eq: "logo/front" } }) {
         edges {
           node {
             extension
@@ -167,13 +161,7 @@ const Stacks = () => {
         }
       }
 
-      Back: allFile(
-        sort: { fields: name, order: ASC }
-        filter: {
-          sourceInstanceName: { eq: "images" }
-          dir: { eq: "/var/www/personal/beardfriend.github.io/src/images/logo/Back" }
-        }
-      ) {
+      Back: allFile(sort: { fields: name, order: ASC }, filter: { relativeDirectory: { eq: "logo/Back" } }) {
         edges {
           node {
             extension
@@ -190,13 +178,7 @@ const Stacks = () => {
         }
       }
 
-      Etc: allFile(
-        sort: { fields: name, order: ASC }
-        filter: {
-          sourceInstanceName: { eq: "images" }
-          dir: { eq: "/var/www/personal/beardfriend.github.io/src/images/logo/Etc" }
-        }
-      ) {
+      Etc: allFile(sort: { fields: name, order: ASC }, filter: { relativeDirectory: { eq: "logo/Etc" } }) {
         edges {
           node {
             extension
@@ -214,8 +196,6 @@ const Stacks = () => {
       }
     }
   `);
-
-  const { edges } = data.Front;
 
   return (
     <>
@@ -250,7 +230,7 @@ export const Container = styled.div`
 `;
 
 export const InnerBox = styled.div`
-  width: 80%;
+  width: 10 0%;
   padding: 2rem;
   box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
   justify-content: center;
@@ -278,15 +258,15 @@ export const InnerBox = styled.div`
   }
 `;
 
-export const MainLayout = styled.section`
-  display: grid;
-  grid-template-columns: 1fr 2fr;
+// export const MainLayout = styled.section`
+//   display: grid;
+//   grid-template-columns: 1fr 2fr;
 
-  @media screen and (max-width: 1235px) {
-    grid-template-rows: 1fr;
-    grid-template-columns: none;
-  }
-`;
+//   @media screen and (max-width: 1235px) {
+//     grid-template-rows: 1fr;
+//     grid-template-columns: none;
+//   }
+// `;
 
 export const GridContainer = styled.div`
   display: grid;
