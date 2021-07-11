@@ -161,7 +161,7 @@ const Stacks = () => {
         }
       }
 
-      Back: allFile(sort: { fields: name, order: ASC }, filter: { relativeDirectory: { eq: "logo/Back" } }) {
+      Back: allFile(sort: { fields: name, order: ASC }, filter: { relativeDirectory: { eq: "logo/back" } }) {
         edges {
           node {
             extension
@@ -178,7 +178,7 @@ const Stacks = () => {
         }
       }
 
-      Etc: allFile(sort: { fields: name, order: ASC }, filter: { relativeDirectory: { eq: "logo/Etc" } }) {
+      Etc: allFile(sort: { fields: name, order: ASC }, filter: { relativeDirectory: { eq: "logo/etc" } }) {
         edges {
           node {
             extension

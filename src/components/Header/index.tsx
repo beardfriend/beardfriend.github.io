@@ -24,7 +24,9 @@ const Index = ({ state }) => {
           <a href='https://github.com/beardfriend' target='_blank'>
             <AiFillGithub className='git' />
           </a>
-          <TiUser className='git' />
+          <Link to='/introduce'>
+            <TiUser className='git' />
+          </Link>
         </div>
       </MobileContainer>
     );
