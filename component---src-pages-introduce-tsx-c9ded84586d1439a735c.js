@@ -1,2 +1,0 @@
-(self.webpackChunkgatsby_starter_default=self.webpackChunkgatsby_starter_default||[]).push([[652],{1737:function(e,t,a){"use strict";a.r(t);var n=a(5444),r=a(9790),u=a(7294);t.default=function(){return u.createElement(r.Z,null,u.createElement(n.Link,{to:"/stack"},"기술스택"),"\\",u.createElement(n.Link,{to:"/"},"프로젝트"))}}}]);
-//# sourceMappingURL=component---src-pages-introduce-tsx-c9ded84586d1439a735c.js.map
