@@ -41,7 +41,7 @@ const index = () => {
       {blogPost.map((nodes: any) => {
         const { node } = nodes;
         return (
-          <Layout>
+          <Layout key={node.id}>
             <Link to={node.fields.slug}>
               <ImageBox>
                 {node.featuredImg.childImageSharp.fixed !== null && (

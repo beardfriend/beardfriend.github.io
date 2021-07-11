@@ -7,31 +7,35 @@ import { TiUser } from 'react-icons/ti';
 import { media } from '@Globals/theme';
 import styled from 'styled-components';
 
-const Index = ({ state }) => {
-  if (state) {
+const Index = ({ isMobile }) => {
+  if (isMobile) {
     return (
-      <MobileContainer>
-        <Link to='/' className='title'>
-          수염난친구 블로그
-        </Link>
-        <div className='right'>
-          <Link to='/' className='menu'>
-            전체글
+      <>
+        <MobileContainer>
+          <Link to='/' className='title'>
+            수염난친구 블로그
           </Link>
-          <Link to='/' className='menu'>
-            태그
-          </Link>
-          <a href='https://github.com/beardfriend' target='_blank'>
-            <AiFillGithub className='git' />
-          </a>
-          <Link to='/introduce'>
-            <TiUser className='git' />
-          </Link>
-        </div>
-      </MobileContainer>
+          <div className='right'>
+            <Link to='/' className='menu'>
+              전체글
+            </Link>
+            <Link to='/' className='menu'>
+              태그
+            </Link>
+            <a href='https://github.com/beardfriend' target='_blank'>
+              <AiFillGithub className='git' />
+            </a>
+            <Link to='/introduce'>
+              <TiUser className='git' />
+            </Link>
+            <Link to='/stack'>
+              <TiUser className='git' />
+            </Link>
+          </div>
+        </MobileContainer>
+      </>
     );
   }
-
   return (
     <NavContainer>
       <Left>

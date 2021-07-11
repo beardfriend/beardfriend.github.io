@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useLayoutEffect, useState } from 'react';
 
 import Header from '@Components/Header';
 import { Link } from 'gatsby';
@@ -7,15 +7,10 @@ import styled from 'styled-components';
 
 const MainLayout = ({ children }) => {
   const [state, setState] = useState(false);
-
-  useEffect(() => {
-    console.log('hi');
+  useLayoutEffect(() => {
     if (window.innerWidth < 768) {
       setState(true);
-    } else {
-      setState(false);
     }
-
     const add = () => {
       if (window.innerWidth < 768) {
         setState(true);
@@ -24,15 +19,13 @@ const MainLayout = ({ children }) => {
       }
     };
     window.addEventListener('resize', add);
-
     return () => {
       window.removeEventListener('resize', add);
     };
   }, []);
-
   return (
     <Flex_Col>
-      <Header state={state} />
+      <Header isMobile={state} />
       <Main>{children}</Main>
     </Flex_Col>
   );
