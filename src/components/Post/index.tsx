@@ -26,7 +26,7 @@ const index = () => {
             frontmatter {
               tags
               title
-              date(fromNow: true)
+              date(formatString: "YYYY.MM.DD")
               subtitle
             }
           }

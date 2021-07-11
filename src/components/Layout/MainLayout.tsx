@@ -46,9 +46,8 @@ const Flex_Col = styled.section`
 const Main = styled.div`
   flex: 1;
   top: 60px;
-
   margin: 0 auto;
   padding: 2rem 0;
   position: relative;
-  width: 100%;
+  max-width: 1000px;
 `;
