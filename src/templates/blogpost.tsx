@@ -15,6 +15,7 @@ export default function Template({
       <BlogLayout>
         <Title>
           <h1>{frontmatter.title}</h1>
+          <h3 style={{ fontStyle: 'italic' }}>{frontmatter.date}</h3>
           {Image !== null && <Img fluid={Image} />}
           <hr />
         </Title>
