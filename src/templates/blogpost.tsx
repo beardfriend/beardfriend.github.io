@@ -10,6 +10,7 @@ export default function Template({
   const { markdownRemark } = data; // data.markdownRemark holds your post data
   const { frontmatter, html } = markdownRemark;
   let Image = markdownRemark?.featuredImg?.childImageSharp?.fluid;
+
   return (
     <MainLayout>
       <BlogLayout>
@@ -49,6 +50,7 @@ export const pageQuery = graphql`
 const BlogLayout = styled.div`
   width: 800px;
   margin: 0 auto;
+
   ${media.lg({
     width: '600px'
   })}
@@ -67,21 +69,28 @@ const BlogLayout = styled.div`
       width: '100%'
     })}
     margin: 0 auto;
-    p,
-    h1,
-    h2,
-    h3 {
+    p {
       ${media.sm({
         padding: `0.5rem`
       })}
       padding: 0.5rem 0;
     }
+    hr,
+    h1,
+    h2,
+    h3 {
+      margin: 1.2rem 0;
+    }
+
     ol {
       ${media.sm({
         padding: `0.5rem`,
         marginLeft: '1rem'
       })}
       padding: 0.5rem 1rem;
+    }
+    li {
+      padding: 0.5rem 0;
     }
   }
   pre {
@@ -124,6 +133,10 @@ const BlogLayout = styled.div`
     font-size: 13px;
     font-weight: bold;
   }
+  img,
+  video {
+    margin: 0 auto;
+  }
 `;
 
 const ImageBox = styled.div`
@@ -147,6 +160,8 @@ const ImageBox = styled.div`
 
 const Title = styled.div`
   display: flex;
+  flex-wrap: nowrap;
+
   flex-direction: column;
   gap: 20px;
   justify-content: center;

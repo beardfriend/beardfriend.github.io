@@ -9,13 +9,13 @@ import styled from 'styled-components';
 const index = () => {
   const data = useStaticQuery(graphql`
     query {
-      allMarkdownRemark {
+      allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
         edges {
           node {
             id
             featuredImg {
               childImageSharp {
-                fixed(width: 400) {
+                fixed(width: 400, height: 200) {
                   ...GatsbyImageSharpFixed
                 }
               }

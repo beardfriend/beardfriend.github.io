@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 import Header from '@Components/Header';
+import { Link } from 'gatsby';
 import { media } from '@Globals/theme';
 import styled from 'styled-components';
 
@@ -8,6 +9,13 @@ const MainLayout = ({ children }) => {
   const [state, setState] = useState(false);
 
   useEffect(() => {
+    console.log('hi');
+    if (window.innerWidth < 768) {
+      setState(true);
+    } else {
+      setState(false);
+    }
+
     const add = () => {
       if (window.innerWidth < 768) {
         setState(true);
@@ -17,11 +25,6 @@ const MainLayout = ({ children }) => {
     };
     window.addEventListener('resize', add);
 
-    if (window.innerWidth < 768) {
-      setState(true);
-    } else {
-      setState(false);
-    }
     return () => {
       window.removeEventListener('resize', add);
     };
@@ -47,6 +50,9 @@ const Main = styled.div`
   flex: 1;
   top: 60px;
   margin: 0 auto;
+  ${media.md({
+    margin: 0
+  })}
   padding: 2rem 0;
   position: relative;
   max-width: 1000px;
