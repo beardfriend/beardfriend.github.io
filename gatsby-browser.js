@@ -13,10 +13,13 @@ const breakpoints = createBreakpoints({
   xl: '80em',
   '2xl': '96em'
 });
+
+//tst
 const themes = extendTheme({ breakpoints });
 export const wrapRootElement = ({ element, props }) => {
   return (
     <ChakraProvider {...props} theme={themes}>
+    
       <ColorModeScript initialColorMode={theme.config.initialColorMode} />
       {element}
     </ChakraProvider>
