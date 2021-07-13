@@ -14,7 +14,7 @@ const breakpoints = createBreakpoints({
   '2xl': '96em'
 });
 
-//tst
+
 const themes = extendTheme({ breakpoints });
 export const wrapRootElement = ({ element, props }) => {
   return (
