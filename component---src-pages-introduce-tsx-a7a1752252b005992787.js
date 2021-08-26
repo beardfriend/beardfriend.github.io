@@ -1,0 +1,2 @@
+(self.webpackChunkgatsby_starter_default=self.webpackChunkgatsby_starter_default||[]).push([[652],{1737:function(e,t,l){"use strict";l.r(t);var a=l(3602),n=l(5444),r=l(9790),c=l(7294);t.default=function(){return c.createElement(r.Z,null,c.createElement("h1",null,"요가하는 프론트엔드 엔지니어 박세훈"),c.createElement("br",null),c.createElement(n.Link,{to:"/stack"},c.createElement(a.z,{colorScheme:"teal"},"기술스택")))}}}]);
+//# sourceMappingURL=component---src-pages-introduce-tsx-a7a1752252b005992787.js.map
