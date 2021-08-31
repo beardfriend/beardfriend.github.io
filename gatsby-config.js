@@ -99,6 +99,8 @@ module.exports = {
           '@Components': path.resolve(__dirname, 'src/components'),
           '@Containers': path.resolve(__dirname, 'src/containers'),
           '@Globals': path.resolve(__dirname, 'src/global'),
+          '@Pages': path.resolve(__dirname, 'src/pages'),
+          '@Assets': path.resolve(__dirname, 'src/assets'),
         },
         extensions: ['tsx', 'js', 'ts'],
       },

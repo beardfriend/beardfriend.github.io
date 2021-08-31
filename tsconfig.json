@@ -27,7 +27,9 @@
     "paths": {
       "@Components/*": ["src/components/*"],
       "@Containers/*": ["./src/containers/*"],
-      "@Globals/*": ["src/global/*"]
+      "@Globals/*": ["src/global/*"],
+      "@Assets/*": ["src/assets/*"],
+      "@Pages/*": ["src/pages/*"]
     }
   },
   "typedocOptions": {

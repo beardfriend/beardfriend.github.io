@@ -1,7 +1,7 @@
+import { AiFillGithub } from 'react-icons/ai';
 import { Layout } from '@Globals/basic';
 import { Link } from 'gatsby';
 import React from 'react';
-import { AiFillGithub } from 'react-icons/ai';
 import { TiUser } from 'react-icons/ti';
 import styled from 'styled-components';
 
