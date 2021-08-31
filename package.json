@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "beardfriend-blog",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
-  "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "description": "beardfriend-blog",
+  "version": "1.0.0",
+  "author": "beardfriend",
   "dependencies": {
     "@chakra-ui/gatsby-plugin": "^2.0.1",
     "@chakra-ui/react": "^1.6.4",
@@ -24,6 +24,8 @@
     "gatsby-plugin-sharp": "^3.1.2",
     "gatsby-plugin-styled-components": "^4.2.0",
     "gatsby-plugin-typescript": "^3.2.0",
+    "gatsby-remark-autolink-headers": "^4.9.0",
+    "gatsby-remark-prismjs": "^5.9.0",
     "gatsby-remark-vscode": "^3.3.0",
     "gatsby-source-filesystem": "^3.1.0",
     "gatsby-transformer-remark": "^3.2.0",

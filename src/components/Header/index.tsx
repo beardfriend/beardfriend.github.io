@@ -1,10 +1,8 @@
-import React, { useEffect, useState } from 'react';
-
-import { AiFillGithub } from 'react-icons/ai';
-import Hamburger from './Hamburger';
+import { Layout } from '@Globals/basic';
 import { Link } from 'gatsby';
+import React from 'react';
+import { AiFillGithub } from 'react-icons/ai';
 import { TiUser } from 'react-icons/ti';
-import { media } from '@Globals/theme';
 import styled from 'styled-components';
 
 const Index = ({ isMobile }) => {
@@ -26,9 +24,6 @@ const Index = ({ isMobile }) => {
               <AiFillGithub className='git' />
             </a>
             <Link to='/introduce'>
-              <TiUser className='git' />
-            </Link>
-            <Link to='/stack'>
               <TiUser className='git' />
             </Link>
           </div>
@@ -67,46 +62,46 @@ export default Index;
 
 const NavContainer = styled.nav`
   display: flex;
+  justify-content: space-between;
+  align-items: center;
   position: fixed;
   z-index: 99;
   width: 100%;
   height: 60px;
-
-  justify-content: space-between;
-  align-items: center;
+  ${Layout}
   background: #0a0b0c;
-  padding: 0 20rem;
-  ${media.xxl({
-    padding: `0 12rem`
+  /* ${media.xxl({
+    padding: `0 12rem`,
   })}
   ${media.xl({
-    padding: `0 7rem`
+    padding: `0 7rem`,
   })}
   ${media.lg({
-    padding: `0 6rem`
+    padding: `0 6rem`,
   })}
   ${media.md({
-    padding: `0 4rem`
+    padding: `0 4rem`,
   })}
   ${media.sm({
-    padding: `0 1rem`
-  })}
+    padding: `0 1rem`,
+  })} */
 `;
 
 const MobileContainer = styled.nav`
-  width: 100%;
+  display: flex;
   align-items: center;
+  gap: 50px;
   position: fixed;
   z-index: 99;
+  width: 100%;
   height: 60px;
-  background: black;
-  color: white;
-  display: flex;
-  gap: 50px;
+  padding: 0 1rem;
   overflow-x: auto;
   overflow-y: hidden;
   white-space: nowrap;
-  padding: 0 1rem;
+  background: black;
+  color: white;
+
   .right {
     display: flex;
     gap: 25px;

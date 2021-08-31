@@ -1,5 +1,4 @@
 import React from 'react';
-import { media } from '@Globals/theme';
 import styled from 'styled-components';
 
 const Grid = ({ children }) => {
@@ -11,7 +10,6 @@ export default Grid;
 const GridContainer = styled.div`
   display: grid;
   gap: 20px;
-
   justify-content: center;
   display: flex;
   flex-wrap: wrap;

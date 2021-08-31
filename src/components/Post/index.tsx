@@ -3,7 +3,7 @@ import { Link, graphql, useStaticQuery } from 'gatsby';
 import { Button } from '@chakra-ui/react';
 import Img from 'gatsby-image';
 import React from 'react';
-import { media } from '@Globals/theme';
+import { sizes } from '@Globals/theme';
 import styled from 'styled-components';
 
 const index = () => {
@@ -74,11 +74,11 @@ const index = () => {
 export default index;
 
 const Layout = styled.div`
-  ${media.md({
-    width: '300px',
-    height: '340px',
-    padding: 0
-  })}
+  padding: 0 2rem;
+  @media screen and (min-width: ${sizes.md}) {
+    color: red;
+  }
+
   width: 400px;
   height: 400px;
 
@@ -89,9 +89,6 @@ const Layout = styled.div`
     cursor: pointer;
     font-size: 22px;
     font-weight: bold;
-    ${media.md({
-      fontSize: '15px'
-    })}
   }
 
   a {
@@ -107,10 +104,6 @@ const Layout = styled.div`
 const ImageBox = styled.div`
   display: flex;
   justify-content: center;
-
-  ${media.md({
-    width: '300px'
-  })}
 `;
 
 const TextBox = styled.div`
@@ -119,9 +112,4 @@ const TextBox = styled.div`
   height: 150px;
   padding: 1rem;
   font-size: 12px;
-  ${media.md({
-    height: '90px',
-    fontSize: '8px',
-    padding: '0 1rem'
-  })};
 `;

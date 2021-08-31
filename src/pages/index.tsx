@@ -6,10 +6,6 @@ import MainLayout from '@Components/Layout/MainLayout';
 import Post from '@Components/Post/index';
 
 const Index = () => {
-  const [count, setCount] = useState(0);
-  const [text, setText] = useState('');
-  const ref = useRef(0);
-
   return (
     <MainLayout>
       <Grid>

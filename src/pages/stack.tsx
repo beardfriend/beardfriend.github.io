@@ -21,7 +21,7 @@ const Front = ({ data }) => {
               flexDirection: 'column',
               gap: '10px',
               justifyContent: 'center',
-              alignItems: 'center'
+              alignItems: 'center',
             }}
           >
             <Img fixed={edge.node.childImageSharp.fixed} alt='name' />
@@ -66,7 +66,7 @@ const Back = ({ data }) => {
               flexDirection: 'column',
               gap: '10px',
               justifyContent: 'center',
-              alignItems: 'center'
+              alignItems: 'center',
             }}
           >
             <Img fixed={edge.node.childImageSharp.fixed} alt='name' />
@@ -111,7 +111,7 @@ const ETC = ({ data }) => {
               flexDirection: 'column',
               gap: '10px',
               justifyContent: 'center',
-              alignItems: 'center'
+              alignItems: 'center',
             }}
           >
             <Img fixed={edge.node.childImageSharp.fixed} alt='name' />
