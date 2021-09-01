@@ -8,10 +8,10 @@ type Breakpoints = {
 };
 
 export const sizes: Breakpoints = {
-  xs: '480rem',
-  sm: '576rem',
-  md: '768rem',
-  lg: '992rem',
-  xl: '1200rem',
-  xxl: '1600rem',
+  xs: '48rem',
+  sm: '57.6rem',
+  md: '76.8rem',
+  lg: '99.2rem',
+  xl: '120rem',
+  xxl: '160rem',
 };

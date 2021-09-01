@@ -5,7 +5,7 @@ import { Link } from 'gatsby';
 import styled from 'styled-components';
 
 const MainLayout = ({ children }) => {
-  const [state, setState] = useState(false);
+  const [state, setState] = useState<boolean>(false);
   useLayoutEffect(() => {
     if (window.innerWidth < 768) {
       setState(true);
@@ -32,14 +32,13 @@ const MainLayout = ({ children }) => {
 
 export default MainLayout;
 
-const Flex_Col = styled.section`
+const Flex_Col = styled.div`
   display: flex;
   flex-direction: column;
-
   min-height: 100vh;
 `;
 
-const Main = styled.div`
+const Main = styled.main`
   flex: 1;
   top: 60px;
   padding: 2rem 20rem;
