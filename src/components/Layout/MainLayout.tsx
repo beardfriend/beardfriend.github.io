@@ -1,47 +1,47 @@
-import React, { useLayoutEffect, useState } from 'react';
-
 import Header from '@Components/Header';
-import { Link } from 'gatsby';
+import { Layout } from '@Globals/basic';
+import { sizes } from '@Globals/theme';
+import React from 'react';
 import styled from 'styled-components';
+import useMobile from '../../hooks/useMobile';
 
 const MainLayout = ({ children }) => {
-  const [state, setState] = useState<boolean>(false);
-  useLayoutEffect(() => {
-    if (window.innerWidth < 768) {
-      setState(true);
-    }
-    const add = () => {
-      if (window.innerWidth < 768) {
-        setState(true);
-      } else {
-        setState(false);
-      }
-    };
-    window.addEventListener('resize', add);
-    return () => {
-      window.removeEventListener('resize', add);
-    };
-  }, []);
+  const { isMobile } = useMobile();
   return (
-    <Flex_Col>
-      <Header isMobile={state} />
+    <MainContainer>
+      <Header isMobile={isMobile} />
       <Main>{children}</Main>
-    </Flex_Col>
+    </MainContainer>
   );
 };
 
 export default MainLayout;
 
-const Flex_Col = styled.div`
+const MainContainer = styled.div`
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 `;
+const { xxl, xl, lg, md, sm } = sizes;
 
 const Main = styled.main`
   flex: 1;
-  top: 60px;
-  padding: 2rem 20rem;
-
   position: relative;
+  top: 6rem;
+  padding: 2rem ${Layout.default};
+  @media screen and (max-width: ${xxl}) {
+    padding: 2rem ${Layout.xxl};
+  }
+  @media screen and (max-width: ${xl}) {
+    padding: 2rem ${Layout.xl};
+  }
+  @media screen and (max-width: ${lg}) {
+    padding: 2rem ${Layout.lg};
+  }
+  @media screen and (max-width: ${md}) {
+    padding: 2rem ${Layout.md};
+  }
+  @media screen and (max-width: ${sm}) {
+    padding: 2rem ${Layout.sm};
+  }
 `;

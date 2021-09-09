@@ -1,9 +1,9 @@
-import { AiFillGithub } from 'react-icons/ai';
 import { Layout } from '@Globals/basic';
+import { sizes } from '@Globals/theme';
 import { Link } from 'gatsby';
 import React from 'react';
+import { AiFillGithub } from 'react-icons/ai';
 import { TiUser } from 'react-icons/ti';
-import { sizes } from '@Globals/theme';
 import styled from 'styled-components';
 
 interface HeaderType {
@@ -60,6 +60,7 @@ const Index = ({ isMobile }: HeaderType) => {
 
 export default Index;
 const { xxl, xl, lg, md, sm } = sizes;
+
 const HeaderContainer = styled.header`
   display: flex;
   align-items: center;

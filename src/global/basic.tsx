@@ -1,7 +1,5 @@
 import styled, { css } from 'styled-components';
 
-import { sizes } from '@Globals/theme';
-
 export const Flex_SA = css`
   display: flex;
   justify-content: space-around;
@@ -9,11 +7,11 @@ export const Flex_SA = css`
 
 export const Layout = {
   default: '20rem',
-  xxl: '12rem',
-  xl: '7rem',
-  lg: '6rem',
-  md: '4rem',
-  sm: '1rem',
+  xxl: '18rem',
+  xl: '16rem',
+  lg: '12rem',
+  md: '6rem',
+  sm: '2rem',
 };
 
 export const tableOfContentsCss = css``;

@@ -2,71 +2,33 @@ import { Link, graphql, useStaticQuery } from 'gatsby';
 
 import { Button } from '@chakra-ui/react';
 import Img from 'gatsby-image';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { sizes } from '@Globals/theme';
 import styled from 'styled-components';
 
-const index = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
-        edges {
-          node {
-            id
-            featuredImg {
-              childImageSharp {
-                fixed(width: 400, height: 200) {
-                  ...GatsbyImageSharpFixed
-                }
-              }
-            }
-            fields {
-              slug
-            }
-            frontmatter {
-              tags
-              title
-              date(formatString: "YYYY.MM.DD")
-              subtitle
-            }
-          }
-        }
-      }
-    }
-  `);
-  const blogPost = data.allMarkdownRemark.edges;
-
+const index = ({ data, state }) => {
+  const tagPost = data.allMarkdownRemark.group;
+  const cateogryPost = data.allMarkdownRemark.edges;
   return (
     <>
-      {blogPost.map((nodes: any) => {
-        const { node } = nodes;
-        return (
-          <Layout key={node.id}>
-            <Link to={node.fields.slug}>
-              <ImageBox>
-                {node.featuredImg.childImageSharp.fixed !== null && (
-                  <Img className='img' fixed={node.featuredImg.childImageSharp.fixed} />
-                )}
-              </ImageBox>
-            </Link>
-            <TextBox>
-              <Link to={node.fields.slug}>
-                <h1>{node.frontmatter.title}</h1>
-              </Link>
-              {node.frontmatter.tags.map((tag) => {
+      {tagPost
+        .filter((node) => node.fieldValue === state)
+        .map((data) => {
+          const { nodes } = data;
+          return (
+            <>
+              {nodes.map((data) => {
+                const { frontmatter } = data;
+                console.log(frontmatter);
                 return (
-                  <>
-                    <Button w='20px' h='30px' fontSize='10px' mr={1} mt={3}>
-                      {tag}
-                    </Button>
-                  </>
+                  <Layout>
+                    <h1>{frontmatter.title}</h1>
+                  </Layout>
                 );
               })}
-              <p style={{ position: 'absolute', bottom: 0 }}>{node.frontmatter.date}</p>
-            </TextBox>
-          </Layout>
-        );
-      })}
+            </>
+          );
+        })}
     </>
   );
 };
@@ -74,11 +36,6 @@ const index = () => {
 export default index;
 
 const Layout = styled.div`
-  padding: 0 2rem;
-  @media screen and (min-width: ${sizes.md}) {
-    color: red;
-  }
-
   width: 400px;
   height: 400px;
 
