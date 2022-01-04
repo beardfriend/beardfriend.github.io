@@ -27,6 +27,6 @@
 
 ## 2.1. 사용 스택
 
-Language : Typescript
-FrameWork : Gatsby
+Language : Typescript  
+FrameWork : Gatsby  
 Other : Styled-Components
