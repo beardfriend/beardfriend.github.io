@@ -2,14 +2,15 @@ import Img from 'gatsby-image';
 import MainLayout from '@Components/Layout/MainLayout';
 import React from 'react';
 import { graphql } from 'gatsby';
-import { media } from '@Globals/theme';
+import media from '@Globals/theme';
 import styled from 'styled-components';
+
 export default function Template({
   data // this prop will be injected by the GraphQL query below.
 }: any) {
   const { markdownRemark } = data; // data.markdownRemark holds your post data
   const { frontmatter, html } = markdownRemark;
-  let Image = markdownRemark?.featuredImg?.childImageSharp?.fluid;
+  const Image = markdownRemark?.featuredImg?.childImageSharp?.fluid;
 
   return (
     <MainLayout>
@@ -137,25 +138,6 @@ const BlogLayout = styled.div`
   video {
     margin: 0 auto;
   }
-`;
-
-const ImageBox = styled.div`
-  /* width: 800px;
-  display: flex;
-  justify-content: center;
-  ${media.lg({
-    width: '600px'
-  })}
-  ${media.md({
-    width: '560px'
-  })}
-  ${media.sm({
-    width: '450px'
-  })}
-  ${media.sm({
-    width: '300px',
-    height: '200px'
-  })} */
 `;
 
 const Title = styled.div`

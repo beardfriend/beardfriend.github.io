@@ -1,40 +1,38 @@
-import React, { useEffect, useState } from 'react';
-
-import { AiFillGithub } from 'react-icons/ai';
-
+import media from '@Globals/theme';
 import { Link } from 'gatsby';
+import React from 'react';
+import { AiFillGithub } from 'react-icons/ai';
 import { TiUser } from 'react-icons/ti';
-import { media } from '@Globals/theme';
 import styled from 'styled-components';
 
-const Index = ({ isMobile }) => {
+interface IndexType {
+  isMobile: boolean;
+}
+
+function Index({ isMobile }: IndexType): React.ReactElement {
   if (isMobile) {
-    return (
-      <>
-        <MobileContainer>
-          <Link to='/' className='title'>
-            수염난친구 블로그
-          </Link>
-          <div className='right'>
-            <Link to='/' className='menu'>
-              전체글
-            </Link>
-            <Link to='/' className='menu'>
-              태그
-            </Link>
-            <a href='https://github.com/beardfriend' target='_blank'>
-              <AiFillGithub className='git' />
-            </a>
-            <Link to='/introduce'>
-              <TiUser className='git' />
-            </Link>
-            <Link to='/stack'>
-              <TiUser className='git' />
-            </Link>
-          </div>
-        </MobileContainer>
-      </>
-    );
+    <MobileContainer>
+      <Link to='/' className='title'>
+        수염난친구 블로그
+      </Link>
+      <div className='right'>
+        <Link to='/' className='menu'>
+          전체글
+        </Link>
+        <Link to='/' className='menu'>
+          태그
+        </Link>
+        <a href='https://github.com/beardfriend' target='_blank' rel='noreferrer'>
+          <AiFillGithub className='git' />
+        </a>
+        <Link to='/introduce'>
+          <TiUser className='git' />
+        </Link>
+        <Link to='/stack'>
+          <TiUser className='git' />
+        </Link>
+      </div>
+    </MobileContainer>;
   }
   return (
     <NavContainer>
@@ -52,7 +50,7 @@ const Index = ({ isMobile }) => {
         </div>
       </Left>
       <Right>
-        <a href='https://github.com/beardfriend' target='_blank'>
+        <a href='https://github.com/beardfriend' target='_blank' rel='noreferrer'>
           <AiFillGithub className='git' />
         </a>
         <Link to='/introduce'>
@@ -61,7 +59,7 @@ const Index = ({ isMobile }) => {
       </Right>
     </NavContainer>
   );
-};
+}
 
 export default Index;
 

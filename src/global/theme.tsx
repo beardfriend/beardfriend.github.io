@@ -43,7 +43,7 @@ interface CustomObject extends ObjectConstructor {
 
 const object: CustomObject = Object;
 
-export const media = object.entries(sizes).reduce<Interpolation<Breakpoints>>((acc, cur: BreakpointEntry) => {
+const media = object.entries(sizes).reduce<Interpolation<Breakpoints>>((acc, cur: BreakpointEntry) => {
   const [key, value] = cur;
   acc[key] = (first, ...interpolations) =>
     css`
@@ -54,3 +54,5 @@ export const media = object.entries(sizes).reduce<Interpolation<Breakpoints>>((a
 
   return acc;
 }, initAcc);
+
+export default media;

@@ -1,11 +1,9 @@
-import React, { useLayoutEffect, useState } from 'react';
-
 import Header from '@Components/Header';
-import { Link } from 'gatsby';
-import { media } from '@Globals/theme';
+import media from '@Globals/theme';
+import React, { useLayoutEffect, useState } from 'react';
 import styled from 'styled-components';
 
-const MainLayout = ({ children }) => {
+const MainLayout: React.FC = function _({ children }) {
   const [state, setState] = useState(false);
   useLayoutEffect(() => {
     if (window.innerWidth < 768) {
@@ -24,29 +22,41 @@ const MainLayout = ({ children }) => {
     };
   }, []);
   return (
-    <Flex_Col>
+    <FlexCol>
       <Header isMobile={state} />
       <Main>{children}</Main>
-    </Flex_Col>
+    </FlexCol>
   );
 };
 
 export default MainLayout;
 
-const Flex_Col = styled.section`
+const FlexCol = styled.section`
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 `;
 
 const Main = styled.div`
-  flex: 1;
+  width: 100%;
   top: 60px;
-  margin: 0 auto;
-  ${media.md({
-    margin: 0
+  padding: 0 20rem;
+  padding-top: 2rem;
+  ${media.xxl({
+    padding: `0 12rem`
   })}
-  padding: 2rem 0;
+  ${media.xl({
+    padding: `0 7rem`
+  })}
+  ${media.lg({
+    padding: `0 6rem`
+  })}
+  ${media.md({
+    padding: `0 4rem`
+  })}
+  ${media.sm({
+    padding: `0 1rem`
+  })}
+
   position: relative;
-  max-width: 1000px;
 `;
