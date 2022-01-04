@@ -1,37 +1,26 @@
 {
   "compilerOptions": {
-    "baseUrl": "./",
-    "paths": {
-      "@Components/*": ["./src/components/*"],
-      "@Containers/*": ["./src/containers/*"],
-      "@Globals/*": ["src/common/*"]
-    },
-    "target": "es6",
-    "jsx": "react-jsx",
-    "module": "esnext",
-    "moduleResolution": "node",
-    "noUnusedLocals": false,
-    "noImplicitAny": false,
-    "pretty": true,
-    "sourceMap": true,
-    "resolveJsonModule": true,
-    "noLib": false,
-    "allowSyntheticDefaultImports": true,
-    "downlevelIteration": true,
-    "lib": ["es2018", "dom", "es2019"],
+    "target": "esnext",
+    "jsx": "preserve",
+    "module": "commonjs",
     "allowJs": true,
-    "skipLibCheck": true,
-    "esModuleInterop": true,
-    "strict": true,
-    "noUnusedParameters": false,
-    "forceConsistentCasingInFileNames": true,
+    //엄격 타입 설정
+    "noImplicitAny": true, // any타입 허용 안함
+    "strictNullChecks": true, // null 체크 까다롭게
+    "strictFunctionTypes": true, // 함수 타입 까다롭게 체크
+    "noUnusedLocals": true, //
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
-    "isolatedModules": true,
-    "noEmit": true
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true, // commonjs를 사용하기 위해 꼭 필요함.
+    "baseUrl": "./src",
+    "paths": {
+      "@Components/*": ["./components/*"],
+      "@Containers/*": ["./containers/*"],
+      "@Globals/*": ["./global/*"]
+    }
   },
-  "typedocOptions": {
-    "mode": "modules",
-    "out": "docs"
-  },
+  "exclude": ["node_modules"],
   "include": ["src"]
 }
