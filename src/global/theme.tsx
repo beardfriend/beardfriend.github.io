@@ -18,15 +18,6 @@ const sizes: Breakpoints = {
   xxl: 1600
 };
 
-const initAcc: Interpolation<Breakpoints> = {
-  xs: () => '',
-  sm: () => '',
-  md: () => '',
-  lg: () => '',
-  xl: () => '',
-  xxl: () => ''
-};
-
 type BreakpointEntry = [keyof Breakpoints, Breakpoints[keyof Breakpoints]];
 type Interpolation<T> = {
   [key in keyof T]:
@@ -37,22 +28,29 @@ type Interpolation<T> = {
     | (() => string);
 };
 
+const initAcc: Interpolation<Breakpoints> = {
+  xs: () => '',
+  sm: () => '',
+  md: () => '',
+  lg: () => '',
+  xl: () => '',
+  xxl: () => ''
+};
+
 interface CustomObject extends ObjectConstructor {
   entries<K extends keyof Breakpoints, T>(o: { [s in K]: T } | ArrayLike<T>): [K, T][];
 }
 
 const object: CustomObject = Object;
 
-export const media = object
-  .entries(sizes)
-  .reduce<Interpolation<Breakpoints>>((acc, cur: BreakpointEntry) => {
-    const [key, value] = cur;
-    acc[key] = (first, ...interpolations) =>
-      css`
-        @media (max-width: ${value}px) {
-          ${css(first, ...interpolations)}
-        }
-      `;
+export const media = object.entries(sizes).reduce<Interpolation<Breakpoints>>((acc, cur: BreakpointEntry) => {
+  const [key, value] = cur;
+  acc[key] = (first, ...interpolations) =>
+    css`
+      @media (max-width: ${value}px) {
+        ${css(first, ...interpolations)}
+      }
+    `;
 
-    return acc;
-  }, initAcc);
+  return acc;
+}, initAcc);

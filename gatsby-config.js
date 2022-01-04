@@ -8,9 +8,7 @@ module.exports = {
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-typescript`,
-    `gatsby-plugin-glslify`,
     `gatsby-plugin-styled-components`,
-    '@chakra-ui/gatsby-plugin',
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-image`,
@@ -29,12 +27,11 @@ module.exports = {
         path: `${__dirname}/blog`
       }
     },
-
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `beardfriend`,
+        short_name: `bfBlog`,
         start_url: `/`,
         background_color: `#003D8D`,
         theme_color: `#003D8D`,
@@ -58,7 +55,6 @@ module.exports = {
         plugins: []
       }
     },
-
     {
       resolve: `gatsby-transformer-remark`,
       options: {

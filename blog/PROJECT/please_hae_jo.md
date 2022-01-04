@@ -2,7 +2,7 @@
 title: '철거 서비스'
 date: '2021-07-11 14:52:39'
 tags: ['REACT', 'REDUX']
-category: 'PROJECT'
+category: 'Front'
 subtitle: '철거해줘 프로젝트'
 featuredImgUrl: https://i.postimg.cc/SNNVPg8h/PROJECT2.png
 featuredImgAlt: 'PROJECT'

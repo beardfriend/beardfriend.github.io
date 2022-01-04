@@ -1,6 +1,5 @@
 import { Link, graphql, useStaticQuery } from 'gatsby';
 
-import { Button } from '@chakra-ui/react';
 import Img from 'gatsby-image';
 import React from 'react';
 import { media } from '@Globals/theme';
@@ -54,13 +53,7 @@ const index = () => {
                 <h1>{node.frontmatter.title}</h1>
               </Link>
               {node.frontmatter.tags.map((tag) => {
-                return (
-                  <>
-                    <Button w='20px' h='30px' fontSize='10px' mr={1} mt={3}>
-                      {tag}
-                    </Button>
-                  </>
-                );
+                return <>{tag}</>;
               })}
               <p style={{ position: 'absolute', bottom: 0 }}>{node.frontmatter.date}</p>
             </TextBox>

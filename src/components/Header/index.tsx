@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 import { AiFillGithub } from 'react-icons/ai';
-import Hamburger from './Hamburger';
+
 import { Link } from 'gatsby';
 import { TiUser } from 'react-icons/ti';
 import { media } from '@Globals/theme';
