@@ -6,7 +6,7 @@ export function ContextProvider({ children }) {
   const [tagList, setTagList] = useState([]);
   const [categoryList, setCategoryList] = useState(['ALL']);
   const [nowCategory, setNowCategory] = useState('Front');
-  const [nowTag, setNowTag] = useState(['ZSH', 'YOGA']);
+  const [nowTag, setNowTag] = useState([]);
   return (
     <Context.Provider value={{ tagList, setTagList, categoryList, setCategoryList, nowCategory, nowTag, setNowTag }}>
       {children}

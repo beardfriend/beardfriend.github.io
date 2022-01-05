@@ -92,14 +92,40 @@ function Post() {
       </>
     );
   }
+  if (nowTag.length === 0) {
+    return (
+      <>
+        {blogPost.map((nodes: any) => {
+          const { node } = nodes;
+          if (node.frontmatter.category === nowCategory) {
+            return (
+              <Layout key={node.id}>
+                <Link to={node.fields.slug}>
+                  {node.featuredImg.childImageSharp.fixed !== null && (
+                    <Img className='img' fluid={node.featuredImg.childImageSharp.fluid} />
+                  )}
+                </Link>
+
+                <Link to={node.fields.slug}>
+                  <h1>{node.frontmatter.title}</h1>
+                </Link>
+                {node.frontmatter.tags.map((tag: any) => {
+                  return <h2 key={tag.id}>{tag}</h2>;
+                })}
+                <p style={{ position: 'absolute', bottom: '2rem' }}>{node.frontmatter.date}</p>
+              </Layout>
+            );
+          }
+        })}
+      </>
+    );
+  }
   return (
     <>
       {blogPost.map((nodes: any) => {
         const { node } = nodes;
         if (node.frontmatter.category === nowCategory) {
-          const filtered = nowTag.filter((tagg) => tagg.includes(node.frontmatter.tags));
-          console.log(filtered);
-          if (filtered) {
+          if (nowTag.filter((tag) => node.frontmatter.tags.includes(tag)).length > 0) {
             return (
               <Layout key={node.id}>
                 <Link to={node.fields.slug}>
