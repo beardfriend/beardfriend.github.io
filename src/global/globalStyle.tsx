@@ -8,6 +8,7 @@ const GlobalStyle = createGlobalStyle`
 *::before,
 *::after {
   box-sizing: border-box;
+  font-size: 10px;
 }
 
 body,
@@ -31,8 +32,8 @@ dd {
 
 body {
   min-height:100vh;
-  font-size: 10px;
   font-family: 'Noto Sans KR', sans-serif;
+  font-size: 10px;
 }
 
 a {

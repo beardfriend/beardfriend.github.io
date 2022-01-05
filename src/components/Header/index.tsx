@@ -16,12 +16,6 @@ function Index({ isMobile }: IndexType): React.ReactElement {
         수염난친구 블로그
       </Link>
       <div className='right'>
-        <Link to='/' className='menu'>
-          전체글
-        </Link>
-        <Link to='/' className='menu'>
-          태그
-        </Link>
         <a href='https://github.com/beardfriend' target='_blank' rel='noreferrer'>
           <AiFillGithub className='git' />
         </a>
@@ -35,45 +29,46 @@ function Index({ isMobile }: IndexType): React.ReactElement {
     </MobileContainer>;
   }
   return (
-    <NavContainer>
-      <Left>
-        <Link to='/' className='title'>
-          수염난친구 블로그
-        </Link>
-        <div>
-          <Link to='/' className='menu'>
-            전체글
+    <Header>
+      <NavContainer>
+        <Left>
+          <Link to='/' className='title'>
+            수염난친구 블로그
           </Link>
-          <Link to='/' className='menu'>
-            태그
+        </Left>
+        <Right>
+          <a href='https://github.com/beardfriend' target='_blank' rel='noreferrer'>
+            <AiFillGithub className='git' />
+          </a>
+          <Link to='/introduce'>
+            <TiUser className='git' />
           </Link>
-        </div>
-      </Left>
-      <Right>
-        <a href='https://github.com/beardfriend' target='_blank' rel='noreferrer'>
-          <AiFillGithub className='git' />
-        </a>
-        <Link to='/introduce'>
-          <TiUser className='git' />
-        </Link>
-      </Right>
-    </NavContainer>
+        </Right>
+      </NavContainer>
+    </Header>
   );
 }
 
 export default Index;
 
+const Header = styled.header`
+  position: fixed;
+  width: 100%;
+  height: 6rem;
+  padding: 1.6rem 0;
+  z-index: 99;
+  background: #0a0b0c;
+`;
+
 const NavContainer = styled.nav`
   display: flex;
-  position: fixed;
-  z-index: 99;
-  width: 100%;
-  height: 60px;
-
+  margin: 0 auto;
+  width: calc(100% - 2rem);
+  max-width: 110rem;
   justify-content: space-between;
   align-items: center;
-  background: #0a0b0c;
-  padding: 0 20rem;
+
+  /* padding: 0 30rem;
   ${media.xxl({
     padding: `0 12rem`
   })}
@@ -88,7 +83,7 @@ const NavContainer = styled.nav`
   })}
   ${media.sm({
     padding: `0 1rem`
-  })}
+  })} */
 `;
 
 const MobileContainer = styled.nav`
@@ -112,7 +107,6 @@ const MobileContainer = styled.nav`
   }
   .title {
     font-size: 20px;
-
     letter-spacing: -4px;
     font-weight: bold;
   }
@@ -127,13 +121,8 @@ const MobileContainer = styled.nav`
 `;
 
 const Left = styled.div`
-  display: flex;
-
-  gap: 50px;
-  justify-content: space-between;
   a {
     color: white;
-    margin-left: 15px;
   }
   .title {
     font-size: 20px;

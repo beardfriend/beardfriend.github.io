@@ -1,5 +1,6 @@
 import Header from '@Components/Header';
 import media from '@Globals/theme';
+import sizeByDevice from '@Globals/common';
 import React, { useLayoutEffect, useState } from 'react';
 import styled from 'styled-components';
 
@@ -38,25 +39,11 @@ const FlexCol = styled.section`
 `;
 
 const Main = styled.div`
-  width: 100%;
   top: 60px;
-  padding: 0 20rem;
-  padding-top: 2rem;
-  ${media.xxl({
-    padding: `0 12rem`
-  })}
-  ${media.xl({
-    padding: `0 7rem`
-  })}
-  ${media.lg({
-    padding: `0 6rem`
-  })}
-  ${media.md({
-    padding: `0 4rem`
-  })}
-  ${media.sm({
-    padding: `0 1rem`
-  })}
+  margin: 0 auto;
+  width: calc(100% - 2rem);
+  max-width: 110rem;
+  margin-top: 2rem;
 
   position: relative;
 `;

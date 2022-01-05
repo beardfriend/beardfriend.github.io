@@ -1,11 +1,12 @@
 import React from 'react';
 import GlobalStyle from './src/global/globalStyle';
+import { ContextProvider } from './src/Context/context';
 
 export const wrapRootElement = ({ element, props }) => {
   return (
-    <div>
+    <ContextProvider>
       <GlobalStyle />
       {element}
-    </div>
+    </ContextProvider>
   );
 };
