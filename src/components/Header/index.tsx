@@ -22,9 +22,6 @@ function Index({ isMobile }: IndexType): React.ReactElement {
         <Link to='/introduce'>
           <TiUser className='git' />
         </Link>
-        <Link to='/stack'>
-          <TiUser className='git' />
-        </Link>
       </div>
     </MobileContainer>;
   }
@@ -70,19 +67,19 @@ const NavContainer = styled.nav`
 
   /* padding: 0 30rem;
   ${media.xxl({
-    padding: `0 12rem`
+    padding: `0 12rem`,
   })}
   ${media.xl({
-    padding: `0 7rem`
+    padding: `0 7rem`,
   })}
   ${media.lg({
-    padding: `0 6rem`
+    padding: `0 6rem`,
   })}
   ${media.md({
-    padding: `0 4rem`
+    padding: `0 4rem`,
   })}
   ${media.sm({
-    padding: `0 1rem`
+    padding: `0 1rem`,
   })} */
 `;
 

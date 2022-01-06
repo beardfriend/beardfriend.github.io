@@ -5,8 +5,28 @@ import Img from 'gatsby-image';
 import React from 'react';
 import styled from 'styled-components';
 
+function PostUI({ node }) {
+  return (
+    <Layout key={node.id}>
+      <Link to={node.fields.slug}>
+        {node.featuredImg.childImageSharp.fixed !== null && (
+          <Img className='img' fluid={node.featuredImg.childImageSharp.fluid} />
+        )}
+      </Link>
+
+      <Link to={node.fields.slug}>
+        <h1>{node.frontmatter.title}</h1>
+      </Link>
+      {node.frontmatter.tags.map((tag: any) => {
+        return <h2 key={tag.id}>{tag}</h2>;
+      })}
+      <p style={{ position: 'absolute', bottom: '2rem' }}>{node.frontmatter.date}</p>
+    </Layout>
+  );
+}
+
 function Post() {
-  const { categoryList, tagList, nowCategory, nowTag } = useGlobalContext();
+  const { nowCategory, nowTag } = useGlobalContext();
   const data = useStaticQuery(graphql`
     query {
       allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
@@ -37,29 +57,14 @@ function Post() {
     }
   `);
   const blogPost = data.allMarkdownRemark.edges;
+
   if (nowCategory === 'ALL') {
     if (nowTag.length === 0) {
       return (
         <>
           {blogPost.map((nodes: any) => {
             const { node } = nodes;
-            return (
-              <Layout key={node.id}>
-                <Link to={node.fields.slug}>
-                  {node.featuredImg.childImageSharp.fixed !== null && (
-                    <Img className='img' fluid={node.featuredImg.childImageSharp.fluid} />
-                  )}
-                </Link>
-
-                <Link to={node.fields.slug}>
-                  <h1>{node.frontmatter.title}</h1>
-                </Link>
-                {node.frontmatter.tags.map((tag: any) => {
-                  return <h2 key={tag.id}>{tag}</h2>;
-                })}
-                <p style={{ position: 'absolute', bottom: '2rem' }}>{node.frontmatter.date}</p>
-              </Layout>
-            );
+            return <PostUI key={node.id} node={node} />;
           })}
         </>
       );
@@ -68,25 +73,8 @@ function Post() {
       <>
         {blogPost.map((nodes: any) => {
           const { node } = nodes;
-          console.log(node.frontmatter.tags.filter((tag) => nowTag.includes(tag)));
           if (nowTag.filter((tag) => node.frontmatter.tags.includes(tag)).length > 0) {
-            return (
-              <Layout key={node.id}>
-                <Link to={node.fields.slug}>
-                  {node.featuredImg.childImageSharp.fixed !== null && (
-                    <Img className='img' fluid={node.featuredImg.childImageSharp.fluid} />
-                  )}
-                </Link>
-
-                <Link to={node.fields.slug}>
-                  <h1>{node.frontmatter.title}</h1>
-                </Link>
-                {node.frontmatter.tags.map((tag: any) => {
-                  return <h2 key={tag.id}>{tag}</h2>;
-                })}
-                <p style={{ position: 'absolute', bottom: '2rem' }}>{node.frontmatter.date}</p>
-              </Layout>
-            );
+            return <PostUI node={node} />;
           }
         })}
       </>
@@ -98,23 +86,7 @@ function Post() {
         {blogPost.map((nodes: any) => {
           const { node } = nodes;
           if (node.frontmatter.category === nowCategory) {
-            return (
-              <Layout key={node.id}>
-                <Link to={node.fields.slug}>
-                  {node.featuredImg.childImageSharp.fixed !== null && (
-                    <Img className='img' fluid={node.featuredImg.childImageSharp.fluid} />
-                  )}
-                </Link>
-
-                <Link to={node.fields.slug}>
-                  <h1>{node.frontmatter.title}</h1>
-                </Link>
-                {node.frontmatter.tags.map((tag: any) => {
-                  return <h2 key={tag.id}>{tag}</h2>;
-                })}
-                <p style={{ position: 'absolute', bottom: '2rem' }}>{node.frontmatter.date}</p>
-              </Layout>
-            );
+            return <PostUI node={node} />;
           }
         })}
       </>
@@ -126,23 +98,7 @@ function Post() {
         const { node } = nodes;
         if (node.frontmatter.category === nowCategory) {
           if (nowTag.filter((tag) => node.frontmatter.tags.includes(tag)).length > 0) {
-            return (
-              <Layout key={node.id}>
-                <Link to={node.fields.slug}>
-                  {node.featuredImg.childImageSharp.fixed !== null && (
-                    <Img className='img' fluid={node.featuredImg.childImageSharp.fluid} />
-                  )}
-                </Link>
-
-                <Link to={node.fields.slug}>
-                  <h1>{node.frontmatter.title}</h1>
-                </Link>
-                {node.frontmatter.tags.map((tag: any) => {
-                  return <h2 key={tag.id}>{tag}</h2>;
-                })}
-                <p style={{ position: 'absolute', bottom: '2rem' }}>{node.frontmatter.date}</p>
-              </Layout>
-            );
+            return <PostUI node={node} />;
           }
         }
       })}
@@ -163,7 +119,7 @@ const Layout = styled.div`
     font-size: 3.2rem;
     font-weight: bold;
     ${media.md({
-      fontSize: '15px'
+      fontSize: '15px',
     })}
   }
 

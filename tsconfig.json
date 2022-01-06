@@ -21,6 +21,6 @@
       "@Globals/*": ["./global/*"]
     }
   },
-  "exclude": ["node_modules"],
+  "exclude": ["node_modules",".cache","public"],
   "include": ["src"]
 }
