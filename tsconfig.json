@@ -18,9 +18,12 @@
     "paths": {
       "@Components/*": ["./components/*"],
       "@Containers/*": ["./containers/*"],
-      "@Globals/*": ["./global/*"]
+      "@Globals/*": ["./global/*"],
+      "@Contexts/*": ["./context/*"],
+      "@Images/*": ["./images/*"],
+      "@Templates/*": ["./templates/*"]
     }
   },
-  "exclude": ["node_modules",".cache","public"],
+  "exclude": ["node_modules", ".cache", "public"],
   "include": ["src"]
 }
