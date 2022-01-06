@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { useGlobalContext } from '../../Context/context';
+import React, { useEffect } from 'react';
+import { useGlobalContext } from '@Contexts/context';
 
 function CategoryList({ data }) {
   const { categoryList, setCategoryList } = useGlobalContext();

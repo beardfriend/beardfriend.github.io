@@ -4,7 +4,7 @@ const sizeByDevice = {
   xl: '7rem',
   lg: '6rem',
   md: '4rem',
-  sm: '1rem'
+  sm: '1rem',
 };
 
 export default sizeByDevice;

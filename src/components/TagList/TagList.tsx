@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useGlobalContext } from '../../Context/context';
+import { useGlobalContext } from '@Contexts/context';
 
 function TagList({ data }) {
   const { tagList, setTagList, nowCategory } = useGlobalContext();

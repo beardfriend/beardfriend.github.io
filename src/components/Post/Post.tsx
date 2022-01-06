@@ -1,5 +1,5 @@
 import media from '@Globals/theme';
-import { useGlobalContext } from '../../Context/context';
+import { useGlobalContext } from '@Contexts/context';
 import { graphql, Link, useStaticQuery } from 'gatsby';
 import Img from 'gatsby-image';
 import React from 'react';
