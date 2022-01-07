@@ -46,13 +46,37 @@ function TagList({ data }) {
     //
 
     if (NowCategory === 'All') {
-      count.map((tags) => {
-        dispatch({ type: 'TAG_MAP', payload: tags });
-      });
+      count
+        .sort(function (a, b) {
+          let x = a.tagname.toLowerCase();
+          let y = b.tagname.toLowerCase();
+          if (x < y) {
+            return -1;
+          }
+          if (x > y) {
+            return 1;
+          }
+          return 0;
+        })
+        .map((tags) => {
+          dispatch({ type: 'TAG_MAP', payload: tags });
+        });
     } else {
-      count.map((tags) => {
-        dispatch({ type: 'TAG_MAP', payload: tags });
-      });
+      count
+        .sort(function (a, b) {
+          let x = a.tagname.toLowerCase();
+          let y = b.tagname.toLowerCase();
+          if (x < y) {
+            return -1;
+          }
+          if (x > y) {
+            return 1;
+          }
+          return 0;
+        })
+        .map((tags) => {
+          dispatch({ type: 'TAG_MAP', payload: tags });
+        });
     }
 
     return () => result;

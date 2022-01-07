@@ -17,9 +17,10 @@ function CategoryList({ data }) {
         empty.push(node.frontmatter.category);
       }
     });
-    empty.map((categories) => {
+    empty.sort().map((categories) => {
       dispatch({ type: 'CATEGORY_MAP', payload: categories });
     });
+    console.log(empty);
     return () => result;
   }, []);
 
