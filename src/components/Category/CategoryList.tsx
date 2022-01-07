@@ -1,13 +1,15 @@
 import React, { useEffect } from 'react';
-import { useGlobalContext } from '@Contexts/context';
+import styled from 'styled-components';
+import { useGlobalReducer, useGlboalState } from '@Contexts/context';
 
 function CategoryList({ data }) {
-  const { categoryList, setCategoryList } = useGlobalContext();
+  const dispatch = useGlobalReducer();
+  const { AllCategory, NowCategory } = useGlboalState();
 
   useEffect(() => {
     const empty = [];
     const result = data.map(({ node }) => {
-      if (categoryList.includes(node.frontmatter.category)) {
+      if (AllCategory.includes(node.frontmatter.category)) {
         return;
       }
       const filteredCategory = empty.includes(node.frontmatter.category);
@@ -15,19 +17,46 @@ function CategoryList({ data }) {
         empty.push(node.frontmatter.category);
       }
     });
-    empty.map((data) => {
-      setCategoryList((datas) => [...datas, data]);
+    empty.map((categories) => {
+      dispatch({ type: 'CATEGORY_MAP', payload: categories });
     });
     return () => result;
   }, []);
 
   return (
     <>
-      {categoryList.map((datas, index) => {
-        return <div key={index}>{datas}</div>;
+      {AllCategory.map((datas) => {
+        return (
+          <CategoryButton
+            key={datas}
+            isActive={datas === NowCategory}
+            type='button'
+            onClick={() => {
+              dispatch({ type: 'NOW_CATEGORY', payload: datas });
+            }}
+          >
+            {datas}
+          </CategoryButton>
+        );
       })}
+      {NowCategory}
     </>
   );
 }
 
 export default CategoryList;
+
+const CategoryButton = styled.button<{ isActive: boolean }>`
+  padding: 0.8rem 1.4rem;
+  margin-left: 20px;
+  color: ${({ isActive }) => (isActive ? 'white' : 'black')};
+  font-size: 2rem;
+  border: 1px solid #ebebeb;
+  border-radius: 1rem;
+  background: ${({ isActive }) => (isActive ? 'black' : 'white')};
+
+  &:hover {
+    cursor: pointer;
+    background: ${({ isActive }) => !isActive && '#ebebeb'};
+  }
+`;

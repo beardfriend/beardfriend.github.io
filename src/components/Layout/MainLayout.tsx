@@ -1,6 +1,4 @@
 import Header from '@Components/Header';
-import media from '@Globals/theme';
-import sizeByDevice from '@Globals/common';
 import React, { useLayoutEffect, useState } from 'react';
 import styled from 'styled-components';
 

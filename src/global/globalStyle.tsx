@@ -40,6 +40,12 @@ a {
   text-decoration: none;
 }
 
+button {
+  display:inline-block;
+  min-width: 2rem;
+  border:none;
+}
+
 `;
 
 export default GlobalStyle;

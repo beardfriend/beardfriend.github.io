@@ -5,8 +5,8 @@
     "module": "commonjs",
     "allowJs": true,
     //엄격 타입 설정
-    "noImplicitAny": true, // any타입 허용 안함
-    "strictNullChecks": true, // null 체크 까다롭게
+    // "noImplicitAny": true, // any타입 허용 안함
+    // "strictNullChecks": true, // null 체크 까다롭게
     "strictFunctionTypes": true, // 함수 타입 까다롭게 체크
     "noUnusedLocals": true, //
     "noUnusedParameters": true,

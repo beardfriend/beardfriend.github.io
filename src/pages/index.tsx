@@ -24,17 +24,18 @@ function Index() {
   const asddd = datas.allMarkdownRemark.edges;
   return (
     <MainLayout>
+      <CategoryList data={asddd} />
       <div style={{ display: 'flex', gap: '5rem', justifyContent: 'center' }}>
         <div
           style={{
             display: 'flex',
             flexDirection: 'column',
             gap: '5rem',
-            width: 'calc(100% - 25rem)'
+            width: 'calc(100% - 25rem)',
           }}
         >
           <Post />
-          <CategoryList data={asddd} />
+
           <TagList data={asddd} />
         </div>
         <div style={{ width: '20rem', height: '60rem', background: 'red' }} />

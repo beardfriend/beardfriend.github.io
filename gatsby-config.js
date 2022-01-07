@@ -3,7 +3,7 @@ module.exports = {
   siteMetadata: {
     title: `Gatsby Default Starter`,
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`
+    author: `@gatsbyjs`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -23,33 +23,33 @@ module.exports = {
             '**/*.{graphql}',
             '**/*.{md,mdx}',
             '**/*.{html}',
-            '**/*.{yaml,yml}'
-          ]
+            '**/*.{yaml,yml}',
+          ],
         },
         eslint: {
           patterns: '**/*.{js,jsx,ts,tsx}',
           customOptions: {
             fix: true,
-            cache: true
-          }
-        }
-      }
+            cache: true,
+          },
+        },
+      },
     },
 
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: `${__dirname}/src/images/`
-      }
+        path: `${__dirname}/src/images/`,
+      },
     },
 
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `posts`,
-        path: `${__dirname}/blog`
-      }
+        path: `${__dirname}/blog`,
+      },
     },
     {
       resolve: `gatsby-plugin-manifest`,
@@ -60,8 +60,8 @@ module.exports = {
         background_color: `#003D8D`,
         theme_color: `#003D8D`,
         display: `minimal-ui`,
-        icon: `src/images/favicon.png` // This path is relative to the root of the site.
-      }
+        icon: `src/images/favicon.png`, // This path is relative to the root of the site.
+      },
     },
 
     {
@@ -76,8 +76,8 @@ module.exports = {
         // GitHub Flavored Markdown mode (default: true)
         gfm: true,
         // Plugins configs
-        plugins: []
-      }
+        plugins: [],
+      },
     },
     {
       resolve: `gatsby-transformer-remark`,
@@ -88,12 +88,12 @@ module.exports = {
             options: {
               theme: 'Dark+ (default dark)', // Or install your favorite theme from GitHub
               inlineCode: {
-                marker: '•'
-              }
-            }
-          }
-        ]
-      }
+                marker: '•',
+              },
+            },
+          },
+        ],
+      },
     },
 
     `gatsby-plugin-gatsby-cloud`,
@@ -107,11 +107,14 @@ module.exports = {
         alias: {
           '@Components': path.resolve(__dirname, 'src/components'),
           '@Containers': path.resolve(__dirname, 'src/containers'),
-          '@Globals': path.resolve(__dirname, 'src/global')
+          '@Globals': path.resolve(__dirname, 'src/global'),
+          '@Contexts': path.resolve(__dirname, 'src/context'),
+          '@Images': path.resolve(__dirname, 'src/images'),
+          '@Templates': path.resolve(__dirname, 'src/templates'),
         },
 
-        extensions: ['tsx', 'js', 'ts']
-      }
-    }
-  ]
+        extensions: ['tsx', 'js', 'ts'],
+      },
+    },
+  ],
 };

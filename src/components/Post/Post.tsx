@@ -1,5 +1,5 @@
 import media from '@Globals/theme';
-import { useGlobalContext } from '@Contexts/context';
+import { useGlboalState } from '@Contexts/context';
 import { graphql, Link, useStaticQuery } from 'gatsby';
 import Img from 'gatsby-image';
 import React from 'react';
@@ -26,7 +26,7 @@ function PostUI({ node }) {
 }
 
 function Post() {
-  const { nowCategory, nowTag } = useGlobalContext();
+  const { NowCategory, NowTag } = useGlboalState();
   const data = useStaticQuery(graphql`
     query {
       allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
@@ -58,8 +58,8 @@ function Post() {
   `);
   const blogPost = data.allMarkdownRemark.edges;
 
-  if (nowCategory === 'ALL') {
-    if (nowTag.length === 0) {
+  if (NowCategory === 'All') {
+    if (NowTag.length === 0) {
       return (
         <>
           {blogPost.map((nodes: any) => {
@@ -73,19 +73,19 @@ function Post() {
       <>
         {blogPost.map((nodes: any) => {
           const { node } = nodes;
-          if (nowTag.filter((tag) => node.frontmatter.tags.includes(tag)).length > 0) {
+          if (NowTag.filter((tag) => node.frontmatter.tags.includes(tag)).length > 0) {
             return <PostUI node={node} />;
           }
         })}
       </>
     );
   }
-  if (nowTag.length === 0) {
+  if (NowTag.length === 0) {
     return (
       <>
         {blogPost.map((nodes: any) => {
           const { node } = nodes;
-          if (node.frontmatter.category === nowCategory) {
+          if (node.frontmatter.category === NowCategory) {
             return <PostUI node={node} />;
           }
         })}
@@ -96,8 +96,8 @@ function Post() {
     <>
       {blogPost.map((nodes: any) => {
         const { node } = nodes;
-        if (node.frontmatter.category === nowCategory) {
-          if (nowTag.filter((tag) => node.frontmatter.tags.includes(tag)).length > 0) {
+        if (node.frontmatter.category === NowCategory) {
+          if (NowTag.filter((tag) => node.frontmatter.tags.includes(tag)).length > 0) {
             return <PostUI node={node} />;
           }
         }
