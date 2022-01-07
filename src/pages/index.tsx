@@ -3,6 +3,7 @@ import MainLayout from '@Components/Layout/MainLayout';
 import Post from '@Components/Post/Post';
 import TagList from '@Components/TagList/TagList';
 import CategoryList from '@Components/Category/CategoryList';
+import { useGlboalState } from '@Contexts/context';
 import { graphql, useStaticQuery } from 'gatsby';
 
 function Index() {
@@ -21,6 +22,7 @@ function Index() {
     }
   `);
   const asddd = datas.allMarkdownRemark.edges;
+  const { isMobile } = useGlboalState();
   return (
     <MainLayout>
       <CategoryList data={asddd} />
@@ -35,9 +37,11 @@ function Index() {
         >
           <Post />
         </div>
-        <div style={{ marginRight: 0, width: '20rem' }}>
-          <TagList data={asddd} />
-        </div>
+        {!isMobile && (
+          <div style={{ marginRight: 0, width: '20rem' }}>
+            <TagList data={asddd} />
+          </div>
+        )}
       </div>
     </MainLayout>
   );

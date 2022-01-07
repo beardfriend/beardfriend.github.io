@@ -82,7 +82,7 @@ const BlogLayout = styled.div`
     h1,
     h2,
     h3 {
-      margin: 1.2rem 0;
+      margin: 2rem 0;
     }
 
     ol {
@@ -93,6 +93,7 @@ const BlogLayout = styled.div`
       padding: 0.5rem 1rem;
     }
     li {
+      font-size: 13px;
       padding: 0.5rem 0;
     }
   }
@@ -106,6 +107,9 @@ const BlogLayout = styled.div`
     ${media.sm({
       fontSize: '12px',
     })}
+    font-size: 13px;
+  }
+  strong {
     font-size: 13px;
   }
   h1 {

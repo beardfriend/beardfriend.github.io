@@ -50,7 +50,7 @@ const CategoryButton = styled.button<{ isActive: boolean }>`
   padding: 0.8rem 1.4rem;
   margin-left: 20px;
   color: ${({ isActive }) => (isActive ? 'white' : 'black')};
-  font-size: 2rem;
+  font-size: 1.3rem;
   border: 1px solid #ebebeb;
   border-radius: 1rem;
   background: ${({ isActive }) => (isActive ? 'black' : 'white')};

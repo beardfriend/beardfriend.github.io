@@ -1,18 +1,20 @@
 import Header from '@Components/Header';
-import React, { useLayoutEffect, useState } from 'react';
+import React, { useLayoutEffect } from 'react';
+import { useGlboalState, useGlobalReducer } from '@Contexts/context';
 import styled from 'styled-components';
 
 const MainLayout: React.FC = function _({ children }) {
-  const [state, setState] = useState(false);
+  const dispatch = useGlobalReducer();
+  const state = useGlboalState();
   useLayoutEffect(() => {
     if (window.innerWidth < 768) {
-      setState(true);
+      dispatch({ type: 'SET_MOBILE', payload: true });
     }
     const add = () => {
       if (window.innerWidth < 768) {
-        setState(true);
+        dispatch({ type: 'SET_MOBILE', payload: true });
       } else {
-        setState(false);
+        dispatch({ type: 'SET_MOBILE', payload: false });
       }
     };
     window.addEventListener('resize', add);
@@ -22,7 +24,7 @@ const MainLayout: React.FC = function _({ children }) {
   }, []);
   return (
     <FlexCol>
-      <Header isMobile={state} />
+      <Header isMobile={state.isMobile} />
       <Main>{children}</Main>
     </FlexCol>
   );

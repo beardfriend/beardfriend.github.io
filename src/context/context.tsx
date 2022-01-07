@@ -1,7 +1,7 @@
 import React, { createContext, useContext, useReducer } from 'react';
 
 interface initiStateType {
-  first: boolean;
+  isMobile: boolean;
   AllCategory: string[];
   NowCategory: string;
   AllTag: string[];
@@ -9,7 +9,7 @@ interface initiStateType {
 }
 
 export const initialState: initiStateType = {
-  first: false,
+  isMobile: false,
   AllCategory: ['All'],
   NowCategory: 'All',
   AllTag: [],
@@ -23,7 +23,8 @@ type Reducer =
   | { type: 'RESET_TAG' }
   | { type: 'ADD_NOW_TAG'; payload: string }
   | { type: 'DELETE_NOW_TAG'; payload: string }
-  | { type: 'RESET_NOW_TAG' };
+  | { type: 'RESET_NOW_TAG' }
+  | { type: 'SET_MOBILE'; payload: boolean };
 
 export function reducer(state: initiStateType, action: Reducer) {
   switch (action.type) {
@@ -44,6 +45,8 @@ export function reducer(state: initiStateType, action: Reducer) {
     }
     case 'RESET_NOW_TAG':
       return { ...state, NowTag: [] };
+    case 'SET_MOBILE':
+      return { ...state, isMobile: action.payload };
     default:
       throw new Error('invalid action type');
   }
