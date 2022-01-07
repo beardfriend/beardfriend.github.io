@@ -1,2 +1,0 @@
-(self.webpackChunkgatsby_starter_default=self.webpackChunkgatsby_starter_default||[]).push([[927],{5456:function(e,t,r){"use strict";r.r(t),r.d(t,{default:function(){return s}});var a=r(9790),c=r(7294),n=r.p+"static/last-ed6ec357526565f4253c040332eea5c8.mp4",s=function(){return c.createElement(a.Z,null,c.createElement("video",{controls:!0,style:{marginTop:"10px"}},c.createElement("source",{type:"video/mp4",src:n})))}}}]);
-//# sourceMappingURL=component---src-pages-video-tsx-2cb0e1b7499fec6fd1be.js.map
