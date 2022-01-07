@@ -50,7 +50,8 @@ function TagList({ data }) {
   }
 
   return (
-    <>
+    <TagContainer>
+      <h1>TAG</h1>
       {AllTag.map((datas, index) => {
         return (
           <Tag type='button' isActive={NowTag.includes(datas)} key={index} onClick={() => handleChangeTag(datas)}>
@@ -58,13 +59,22 @@ function TagList({ data }) {
           </Tag>
         );
       })}
-    </>
+      <Tag type='button' onClick={() => console.log('hi')}>
+        Reset
+      </Tag>
+    </TagContainer>
   );
 }
 
 export default TagList;
-
-const Tag = styled.button<{ isActive: boolean }>`
+const TagContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 20rem;
+  width: 20rem;
+`;
+const Tag = styled.button<{ isActive?: boolean }>`
   padding: 0.8rem 1.4rem;
   margin-left: 20px;
   color: ${({ isActive }) => (isActive ? 'white' : 'black')};

@@ -2,7 +2,6 @@ import React from 'react';
 import MainLayout from '@Components/Layout/MainLayout';
 import Post from '@Components/Post/Post';
 import TagList from '@Components/TagList/TagList';
-
 import CategoryList from '@Components/Category/CategoryList';
 import { graphql, useStaticQuery } from 'gatsby';
 
@@ -25,7 +24,7 @@ function Index() {
   return (
     <MainLayout>
       <CategoryList data={asddd} />
-      <div style={{ display: 'flex', gap: '5rem', justifyContent: 'center' }}>
+      <div style={{ display: 'flex', gap: '5rem', position: 'relative' }}>
         <div
           style={{
             display: 'flex',
@@ -35,10 +34,10 @@ function Index() {
           }}
         >
           <Post />
-
+        </div>
+        <div style={{ marginRight: 0, width: '20rem' }}>
           <TagList data={asddd} />
         </div>
-        <div style={{ width: '20rem', height: '60rem', background: 'red' }} />
       </div>
     </MainLayout>
   );
