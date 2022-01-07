@@ -1,25 +1,18 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "beardfriend-blog",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
-  "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "description": "blog",
+  "version": "2.0.0",
+  "author": "beardfriend",
   "dependencies": {
-    "@chakra-ui/gatsby-plugin": "^2.0.1",
-    "@chakra-ui/react": "^1.6.4",
-    "@emotion/react": "^11.4.0",
-    "@emotion/styled": "^11.3.0",
-    "dat.gui": "^0.7.7",
-    "framer-motion": "^4.1.17",
     "gatsby": "^3.1.2",
-    "gatsby-alias-imports": "^1.0.6",
     "gatsby-image": "^3.2.0",
     "gatsby-plugin-alias-imports": "^1.0.5",
     "gatsby-plugin-gatsby-cloud": "^2.1.0",
-    "gatsby-plugin-glslify": "^1.0.1",
     "gatsby-plugin-image": "^1.1.2",
     "gatsby-plugin-manifest": "^3.1.0",
     "gatsby-plugin-offline": "^4.1.0",
+    "gatsby-plugin-prettier-eslint": "^1.0.6",
     "gatsby-plugin-react-helmet": "^4.1.0",
     "gatsby-plugin-sharp": "^3.1.2",
     "gatsby-plugin-styled-components": "^4.2.0",
@@ -29,27 +22,30 @@
     "gatsby-transformer-remark": "^3.2.0",
     "gatsby-transformer-sharp": "^3.1.0",
     "gh-pages": "^3.1.0",
-    "glslify": "^7.1.1",
-    "gsap": "^3.7.0",
-    "prop-types": "^15.7.2",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
     "react-helmet": "^6.1.0",
     "react-icons": "^4.2.0",
-    "react-spring": "^9.2.3",
-    "styled-components": "^5.2.3",
-    "three": "^0.129.0",
-    "typescript": "^4.2.3"
+    "styled-components": "^5.2.3"
   },
   "devDependencies": {
     "@types/node": "^15.12.4",
     "@types/react": "^17.0.11",
     "@types/react-dom": "^17.0.8",
     "@types/styled-components": "^5.1.9",
-    "@types/three": "^0.129.1",
-    "gatsby-plugin-root-import": "^2.0.6",
-    "gatsby-plugin-ts-config": "^1.1.5",
-    "prettier": "^2.3.2"
+    "@typescript-eslint/eslint-plugin": "^5.9.0",
+    "@typescript-eslint/parser": "^5.9.0",
+    "eslint": "^8.6.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-import-resolver-typescript": "^2.5.0",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.28.0",
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "prettier": "^2.5.1",
+    "typescript": "^4.2.3"
   },
   "keywords": [
     "gatsby"
@@ -64,12 +60,5 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
-  },
-  "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
   }
 }

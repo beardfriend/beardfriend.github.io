@@ -1,96 +1,83 @@
-import React, { useEffect, useState } from 'react';
-
-import { AiFillGithub } from 'react-icons/ai';
-import Hamburger from './Hamburger';
+import media from '@Globals/theme';
 import { Link } from 'gatsby';
+import React from 'react';
+import { AiFillGithub } from 'react-icons/ai';
 import { TiUser } from 'react-icons/ti';
-import { media } from '@Globals/theme';
 import styled from 'styled-components';
 
-const Index = ({ isMobile }) => {
+interface IndexType {
+  isMobile: boolean;
+}
+
+function Index({ isMobile }: IndexType): React.ReactElement {
   if (isMobile) {
-    return (
-      <>
-        <MobileContainer>
-          <Link to='/' className='title'>
-            수염난친구 블로그
-          </Link>
-          <div className='right'>
-            <Link to='/' className='menu'>
-              전체글
-            </Link>
-            <Link to='/' className='menu'>
-              태그
-            </Link>
-            <a href='https://github.com/beardfriend' target='_blank'>
-              <AiFillGithub className='git' />
-            </a>
-            <Link to='/introduce'>
-              <TiUser className='git' />
-            </Link>
-            <Link to='/stack'>
-              <TiUser className='git' />
-            </Link>
-          </div>
-        </MobileContainer>
-      </>
-    );
-  }
-  return (
-    <NavContainer>
-      <Left>
-        <Link to='/' className='title'>
-          수염난친구 블로그
-        </Link>
-        <div>
-          <Link to='/' className='menu'>
-            전체글
-          </Link>
-          <Link to='/' className='menu'>
-            태그
-          </Link>
-        </div>
-      </Left>
-      <Right>
-        <a href='https://github.com/beardfriend' target='_blank'>
+    <MobileContainer>
+      <Link to='/' className='title'>
+        수염난친구 블로그
+      </Link>
+      <div className='right'>
+        <a href='https://github.com/beardfriend' target='_blank' rel='noreferrer'>
           <AiFillGithub className='git' />
         </a>
         <Link to='/introduce'>
           <TiUser className='git' />
         </Link>
-      </Right>
-    </NavContainer>
+      </div>
+    </MobileContainer>;
+  }
+  return (
+    <Header>
+      <NavContainer>
+        <Left>
+          <Link to='/' className='title'>
+            수염난친구 블로그
+          </Link>
+        </Left>
+        <Right>
+          <a href='https://github.com/beardfriend' target='_blank' rel='noreferrer'>
+            <AiFillGithub className='git' />
+          </a>
+        </Right>
+      </NavContainer>
+    </Header>
   );
-};
+}
 
 export default Index;
 
+const Header = styled.header`
+  position: fixed;
+  width: 100%;
+  height: 6rem;
+  padding: 1.6rem 0;
+  z-index: 99;
+  background: #0a0b0c;
+`;
+
 const NavContainer = styled.nav`
   display: flex;
-  position: fixed;
-  z-index: 99;
-  width: 100%;
-  height: 60px;
-
+  margin: 0 auto;
+  width: calc(100% - 2rem);
+  max-width: 110rem;
   justify-content: space-between;
   align-items: center;
-  background: #0a0b0c;
-  padding: 0 20rem;
+
+  /* padding: 0 30rem;
   ${media.xxl({
-    padding: `0 12rem`
+    padding: `0 12rem`,
   })}
   ${media.xl({
-    padding: `0 7rem`
+    padding: `0 7rem`,
   })}
   ${media.lg({
-    padding: `0 6rem`
+    padding: `0 6rem`,
   })}
   ${media.md({
-    padding: `0 4rem`
+    padding: `0 4rem`,
   })}
   ${media.sm({
-    padding: `0 1rem`
-  })}
+    padding: `0 1rem`,
+  })} */
 `;
 
 const MobileContainer = styled.nav`
@@ -114,7 +101,6 @@ const MobileContainer = styled.nav`
   }
   .title {
     font-size: 20px;
-
     letter-spacing: -4px;
     font-weight: bold;
   }
@@ -129,13 +115,8 @@ const MobileContainer = styled.nav`
 `;
 
 const Left = styled.div`
-  display: flex;
-
-  gap: 50px;
-  justify-content: space-between;
   a {
     color: white;
-    margin-left: 15px;
   }
   .title {
     font-size: 20px;
