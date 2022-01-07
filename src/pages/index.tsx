@@ -24,7 +24,7 @@ function Index() {
   return (
     <MainLayout>
       <CategoryList data={asddd} />
-      <div style={{ display: 'flex', gap: '5rem', position: 'relative' }}>
+      <div style={{ display: 'flex', gap: '5rem', position: 'relative', marginTop: '5rem' }}>
         <div
           style={{
             display: 'flex',

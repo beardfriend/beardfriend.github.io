@@ -39,7 +39,6 @@ function CategoryList({ data }) {
           </CategoryButton>
         );
       })}
-      {NowCategory}
     </>
   );
 }

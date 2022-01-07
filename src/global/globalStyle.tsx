@@ -30,6 +30,16 @@ dd {
 }
 
 
+a {
+  text-decoration: none;
+}
+a:link,
+a:visited {
+  text-decoration: none;
+}
+pre {
+  margin: 10px !important;
+}
 body {
   min-height:100vh;
   font-family: 'Noto Sans KR', sans-serif;

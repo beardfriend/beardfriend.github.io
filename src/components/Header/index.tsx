@@ -37,9 +37,6 @@ function Index({ isMobile }: IndexType): React.ReactElement {
           <a href='https://github.com/beardfriend' target='_blank' rel='noreferrer'>
             <AiFillGithub className='git' />
           </a>
-          <Link to='/introduce'>
-            <TiUser className='git' />
-          </Link>
         </Right>
       </NavContainer>
     </Header>

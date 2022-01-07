@@ -6,7 +6,7 @@ import media from '@Globals/theme';
 import styled from 'styled-components';
 
 export default function Template({
-  data // this prop will be injected by the GraphQL query below.
+  data, // this prop will be injected by the GraphQL query below.
 }: any) {
   const { markdownRemark } = data; // data.markdownRemark holds your post data
   const { frontmatter, html } = markdownRemark;
@@ -51,28 +51,30 @@ export const pageQuery = graphql`
 const BlogLayout = styled.div`
   width: 800px;
   margin: 0 auto;
-
+  img {
+    width: 100%;
+  }
   ${media.lg({
-    width: '600px'
+    width: '600px',
   })}
   ${media.md({
-    width: '560px'
+    width: '560px',
   })}
   ${media.sm({
-    width: '90%'
+    width: '90%',
   })}
   ${media.xs({
-    width: '90%'
+    width: '90%',
   })}
   .html {
     width: 90%;
     ${media.md({
-      width: '100%'
+      width: '100%',
     })}
     margin: 0 auto;
     p {
       ${media.sm({
-        padding: `0.5rem`
+        padding: `0.5rem`,
       })}
       padding: 0.5rem 0;
     }
@@ -86,7 +88,7 @@ const BlogLayout = styled.div`
     ol {
       ${media.sm({
         padding: `0.5rem`,
-        marginLeft: '1rem'
+        marginLeft: '1rem',
       })}
       padding: 0.5rem 1rem;
     }
@@ -96,40 +98,40 @@ const BlogLayout = styled.div`
   }
   pre {
     ${media.sm({
-      fontSize: '10px'
+      fontSize: '10px',
     })}
     font-size: 13px;
   }
   p {
     ${media.sm({
-      fontSize: '12px'
+      fontSize: '12px',
     })}
     font-size: 13px;
   }
   h1 {
     ${media.sm({
-      fontSize: '20px'
+      fontSize: '20px',
     })}
     font-size: 30px;
     font-weight: 700;
   }
   h2 {
     ${media.sm({
-      fontSize: '18px'
+      fontSize: '18px',
     })}
     font-size: 26px;
     font-weight: 700;
   }
   h3 {
     ${media.sm({
-      fontSize: '16px'
+      fontSize: '16px',
     })}
     font-size: 23px;
     font-weight: 700;
   }
   ol {
     ${media.sm({
-      fontSize: '12px'
+      fontSize: '12px',
     })}
     font-size: 13px;
     font-weight: bold;
@@ -138,6 +140,7 @@ const BlogLayout = styled.div`
   video {
     margin: 0 auto;
   }
+  margin-bottom: 10rem;
 `;
 
 const Title = styled.div`
@@ -150,10 +153,10 @@ const Title = styled.div`
   h1 {
     font-size: 40px;
     ${media.md({
-      fontSize: '30px'
+      fontSize: '30px',
     })}
     ${media.sm({
-      fontSize: '25px'
+      fontSize: '25px',
     })}
   }
 `;

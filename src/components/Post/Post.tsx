@@ -7,7 +7,7 @@ import styled from 'styled-components';
 
 function PostUI({ node }) {
   return (
-    <Layout key={node.id}>
+    <Layout>
       <Link to={node.fields.slug}>
         {node.featuredImg.childImageSharp.fixed !== null && (
           <Img className='img' fluid={node.featuredImg.childImageSharp.fluid} />
@@ -74,7 +74,7 @@ function Post() {
         {blogPost.map((nodes: any) => {
           const { node } = nodes;
           if (NowTag.filter((tag) => node.frontmatter.tags.includes(tag)).length > 0) {
-            return <PostUI node={node} />;
+            return <PostUI key={node.id} node={node} />;
           }
         })}
       </>
@@ -86,7 +86,7 @@ function Post() {
         {blogPost.map((nodes: any) => {
           const { node } = nodes;
           if (node.frontmatter.category === NowCategory) {
-            return <PostUI node={node} />;
+            return <PostUI key={node.id} node={node} />;
           }
         })}
       </>
@@ -98,7 +98,7 @@ function Post() {
         const { node } = nodes;
         if (node.frontmatter.category === NowCategory) {
           if (NowTag.filter((tag) => node.frontmatter.tags.includes(tag)).length > 0) {
-            return <PostUI node={node} />;
+            return <PostUI key={node.id} node={node} />;
           }
         }
       })}
