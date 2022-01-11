@@ -187,8 +187,11 @@ const Left = styled.div`
     color: white;
   }
   .title {
+    ${media.xs({
+      fontSize: '15px',
+    })}
     font-size: 20px;
-    letter-spacing: -4px;
+    letter-spacing: -2px;
     font-weight: bold;
   }
   .menu {
