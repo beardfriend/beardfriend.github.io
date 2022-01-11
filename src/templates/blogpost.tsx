@@ -26,7 +26,7 @@ export default function Template({
           {Image !== null && <Img fluid={Image} />}
           <hr />
         </Title>
-
+        <hr></hr>
         <div className='html' dangerouslySetInnerHTML={{ __html: html }} />
       </BlogLayout>
     </MainLayout>
