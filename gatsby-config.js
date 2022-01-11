@@ -1,9 +1,9 @@
 const path = require('path');
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `수염난친구 블로그`,
+    description: `수염난친구 블로그`,
+    author: `beardfriend`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -34,8 +34,8 @@ module.exports = {
         name: `beardfriend`,
         short_name: `bfBlog`,
         start_url: `/`,
-        background_color: `#003D8D`,
-        theme_color: `#003D8D`,
+        background_color: `0a0b0c`,
+        theme_color: `0a0b0c`,
         display: `minimal-ui`,
         icon: `src/images/favicon.png`, // This path is relative to the root of the site.
       },

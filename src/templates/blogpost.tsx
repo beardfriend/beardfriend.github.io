@@ -1,6 +1,7 @@
 import Img from 'gatsby-image';
 import MainLayout from '@Components/Layout/MainLayout';
 import React, { useEffect } from 'react';
+import { Helmet } from 'react-helmet';
 import { graphql } from 'gatsby';
 import { useGlobalReducer } from '@Contexts/context';
 import media from '@Globals/theme';
@@ -20,6 +21,11 @@ export default function Template({
   return (
     <MainLayout>
       <BlogLayout>
+        <Helmet>
+          <meta charSet='utf-8' />
+          <meta name='description' content={frontmatter.subtitle} />
+          <title>{frontmatter.title} by 수염난친구</title>
+        </Helmet>
         <Title>
           <h1>{frontmatter.title}</h1>
           <h3 style={{ fontStyle: 'italic' }}>{frontmatter.date}</h3>
@@ -46,7 +52,7 @@ export const pageQuery = graphql`
       }
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
-
+        subtitle
         title
       }
     }
@@ -79,7 +85,7 @@ const BlogLayout = styled.div`
     margin: 0 auto;
     p {
       ${media.sm({
-        padding: `0.5rem`,
+        padding: `0.5rem 0`,
       })}
       padding: 0.5rem 0;
     }
@@ -103,12 +109,25 @@ const BlogLayout = styled.div`
     }
   }
   pre {
+    code,
+    span {
+      ${media.sm({
+        fontSize: '11.5px',
+      })}
+      font-size: 13px;
+    }
     ${media.sm({
       fontSize: '10px',
     })}
     font-size: 13px;
   }
   p {
+    ${media.sm({
+      fontSize: '12px',
+    })}
+    font-size: 13px;
+  }
+  a {
     ${media.sm({
       fontSize: '12px',
     })}

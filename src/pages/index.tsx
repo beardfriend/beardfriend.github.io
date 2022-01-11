@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { Helmet } from 'react-helmet';
 import styled, { css } from 'styled-components';
 import MainLayout from '@Components/Layout/MainLayout';
 import Post from '@Components/Post/Post';
@@ -31,6 +32,11 @@ function Index() {
 
   return (
     <MainLayout>
+      <Helmet>
+        <meta charSet='utf-8' />
+        <title>수염난친구블로그 : Home</title>
+        <meta name='description' content='수염난친구 블로그입니다!'></meta>
+      </Helmet>
       <CategoryList data={asddd} />
       <MainContainer isMobile={isMobile}>
         <PostContainer isMobile={isMobile}>
