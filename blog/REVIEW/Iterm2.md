@@ -1,7 +1,7 @@
 ---
 title: '맥북 터미널 편하게 사용하기'
 date: '2021-07-14 22:35:56'
-tags: ['ZSH', 'MacOs']
+tags: ['Zsh', 'MacOs']
 category: 'Review'
 subtitle: 'ohmyzsh, '
 featuredImgUrl: https://i.postimg.cc/J0kzg3V2/1.png
@@ -9,14 +9,16 @@ featuredImgAlt: 'Mountains with a starry sky'
 ---
 
 # 맥북 터미널 편리하고 예쁘게 사용하기.
+
 # 불친절한 설명 version
+
 ![1.png](https://i.postimg.cc/J0kzg3V2/1.png)
 
 맥북 기본 터미널대신, ITERM2라는 터미널을 사용할겁니다.<br>
 
 Iterm2의 장점
 
-하나, 단축키로 터미널을 실행합니다. 
+하나, 단축키로 터미널을 실행합니다.
 
 둘, 에러가 난 파일명을 cmd + 클릭했을 때,<br>
 vscode에서 파일을 바로 보여줍니다.
@@ -25,6 +27,7 @@ vscode에서 파일을 바로 보여줍니다.
 요 기능은 iterm2의 기능이라기보다는, zsh의 편리함입니다.
 
 # 🥑 단축키 터미널 실행
+
 ![gif](https://i.postimg.cc/05nxf2Ms/2.gif)
 
 ![hot](https://i.postimg.cc/4yV41j0S/hot.png)
@@ -40,7 +43,7 @@ iterm2를 먼저 다운받아주세요.
 [https://brew.sh/index_ko](https://brew.sh/index_ko)
 
 맥용 패키지 관리자입니다.
-윈도우에선  chocolatey, 우분투엔 apt-get, 맥엔 homebrew가 있습니다.
+윈도우에선 chocolatey, 우분투엔 apt-get, 맥엔 homebrew가 있습니다.
 다운받아주세요.
 
 # 🥑 ZSH 설치
@@ -59,7 +62,7 @@ curl을 이용하여 oh-my-zsh를 설치해줍니다.
 
 여기까지 하셨다면, 기본 준비는 다 된겁니다.
 
-# 🥑  터미널 꾸미기
+# 🥑 터미널 꾸미기
 
 ## oh-my-zsh 테마 바꿔주기
 
@@ -92,7 +95,6 @@ esc -> :wq!
 
 ZSH_THEME부분을 agnoster로 바꾼 뒤, 저장해주세요.
 
-
 ## 폰트 변경
 
 [https://github.com/naver/d2codingfont](https://github.com/naver/d2codingfont)
@@ -101,7 +103,7 @@ ZSH_THEME부분을 agnoster로 바꾼 뒤, 저장해주세요.
 
 다운로드 후 iterm2 실행
 
-cmd + , 
+cmd + ,
 
 preferences 실행
 
@@ -117,6 +119,7 @@ https://iterm2colorschemes.com/
 주소를 복사해줍니다.
 
 다운받기 전, 터미널에서, 다운받고 싶은 위치로 이동합니다.
+
 ```bash
 curl -LO https://raw.githubusercontent.com/mbadolato/iTerm2-Color-Schemes/master/schemes/Snazzy.itermcolors
 ```
@@ -138,7 +141,9 @@ Add the following line to your ~/.bash_profile or ~/.zshrc file:
     [ -f $(brew --prefix)/etc/profile.d/autojump.sh ] && . $(brew --prefix)/etc/profile.d/autojump.sh
 
 ```
+
 ---
+
 ```
 brew install zsh-autosuggestions
 ```
@@ -155,6 +160,7 @@ You will also need to force reload of your .zshrc:
 ```
 
 ---
+
 ```bash
 brew install zsh-syntax-highlighting
 ```
@@ -172,7 +178,9 @@ you may need to add the following to your .zshenv:
 # 🥑 zsh custom
 
 ### Delete Computer Name
+
 .zshrc
+
 ```bash
 prompt_context() {
   if [[ "$USER" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
@@ -181,9 +189,10 @@ prompt_context() {
 }
 ```
 
-
 ### Cursor in New line
+
 .zshrc
+
 ```bash
 build_prompt() {
   RETVAL=$?
@@ -198,7 +207,9 @@ build_prompt() {
   prompt_end
 }
 ```
+
 .zshrc 맨 하단
+
 ```bash
 prompt_newline() {
   if [[ -n $CURRENT_BG ]]; then
@@ -213,6 +224,3 @@ prompt_newline() {
 }
 
 ```
-
-
-
