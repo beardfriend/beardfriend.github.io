@@ -95,6 +95,15 @@ const Title = styled.h1<{ isShow }>`
   }
 
   animation: ${({ isShow }) => isShow && `showup 0.6s`};
+  -webkit-animation: ${({ isShow }) => isShow && `showup 0.6s`};
+  @-webkit-keyframes showup {
+    from {
+      margin-top: -10%;
+    }
+    to {
+      margint-top: 0;
+    }
+  }
   @keyframes showup {
     from {
       margin-top: -10%;
