@@ -1,11 +1,11 @@
 ---
 title: '맥북 터미널 편하게 사용하기'
 date: '2021-07-14 22:35:56'
-tags: ['Zsh', 'MacOs']
-category: 'Review'
+tags: ['MacOs']
+category: 'Server'
 subtitle: 'ohmyzsh, '
 featuredImgUrl: https://i.postimg.cc/J0kzg3V2/1.png
-featuredImgAlt: 'Mountains with a starry sky'
+featuredImgAlt: 'iterm2'
 ---
 
 # 맥북 터미널 편리하고 예쁘게 사용하기.

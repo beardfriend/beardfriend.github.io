@@ -104,7 +104,10 @@ const BlogLayout = styled.div`
       padding: 0.5rem 1rem;
     }
     li {
-      font-size: 13px;
+      ${media.sm({
+        fontSize: '13px',
+      })}
+      font-size: 16px;
       padding: 0.5rem 0;
     }
   }
@@ -123,18 +126,21 @@ const BlogLayout = styled.div`
   }
   p {
     ${media.sm({
-      fontSize: '12px',
+      fontSize: '13px',
     })}
-    font-size: 13px;
+    font-size: 16px;
   }
   a {
     ${media.sm({
-      fontSize: '12px',
+      fontSize: '13px',
     })}
-    font-size: 13px;
+    font-size: 16px;
   }
   strong {
-    font-size: 13px;
+    ${media.sm({
+      fontSize: '13px',
+    })}
+    font-size: 16px;
   }
   h1 {
     ${media.sm({

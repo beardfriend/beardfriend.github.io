@@ -12,6 +12,9 @@ function TagList({ data, isMobile }) {
     const count: { [property: string]: string }[] = [];
     dispatch({ type: 'RESET_TAG' });
     const result = data.map(({ node }) => {
+      if (node.frontmatter.tags === null) {
+        return;
+      }
       if (NowCategory === 'All') {
         node.frontmatter.tags.map((tag) => {
           let obj = {};
