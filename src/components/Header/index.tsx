@@ -17,7 +17,7 @@ function Index({ isMobile }: IndexType): React.ReactElement {
     if (window.scrollY === 0) {
       setIsShow(false);
     }
-    if (window.scrollY > 10) {
+    if (window.scrollY > 50) {
       setIsShow(true);
     }
   }
@@ -94,14 +94,12 @@ const Title = styled.h1<{ isShow }>`
     max-width: 250px;
   }
 
-  animation: ${({ isShow }) => isShow && `showup 0.8s`};
+  animation: ${({ isShow }) => isShow && `showup 0.6s`};
   @keyframes showup {
     from {
-      opacity: 0;
       margin-top: -10%;
     }
     to {
-      opcity: 1;
       margint-top: 0;
     }
   }
@@ -117,8 +115,7 @@ const Header = styled.header<{ isShow }>`
   padding: 1.6rem 0;
   z-index: 99;
   background: #0a0b0c;
-  animation: ${({ isShow }) => isShow && `back 0.8s`};
-  opacity: ${({ isShow }) => (isShow ? 0.9 : 1)};
+  opacity: ${({ isShow }) => (isShow ? 0.8 : 1)};
   @keyframes back {
     from {
       opacity: 0.9;
