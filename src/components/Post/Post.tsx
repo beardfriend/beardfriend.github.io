@@ -113,6 +113,7 @@ export default Post;
 const Layout = styled.div`
   position: relative;
   width: 100%;
+  max-width: 850px;
   height: 55rem;
   ${media.xs({
     height: '30rem',

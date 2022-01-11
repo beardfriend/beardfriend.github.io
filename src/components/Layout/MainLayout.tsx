@@ -1,14 +1,14 @@
 import Header from '@Components/Header';
-import React, { useLayoutEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useGlboalState, useGlobalReducer } from '@Contexts/context';
 import styled from 'styled-components';
 
 const MainLayout: React.FC = function _({ children }) {
   const dispatch = useGlobalReducer();
   const state = useGlboalState();
-  useLayoutEffect(() => {
-    if (window.innerWidth < 768) {
-      dispatch({ type: 'SET_MOBILE', payload: true });
+  useEffect(() => {
+    if (window.innerWidth > 768) {
+      dispatch({ type: 'SET_MOBILE', payload: false });
     }
     const add = () => {
       if (window.innerWidth < 768) {

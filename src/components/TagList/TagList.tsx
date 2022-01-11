@@ -5,9 +5,7 @@ import { GrPowerReset } from 'react-icons/gr';
 function TagList({ data, isMobile }) {
   const dispatch = useGlobalReducer();
   const { NowCategory, AllTag, NowTag } = useGlboalState();
-  if (isMobile) {
-    return;
-  }
+
   useEffect(() => {
     dispatch({ type: 'SET_LOADING_TRUE' });
     const newTag = [];

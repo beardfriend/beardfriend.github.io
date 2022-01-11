@@ -24,22 +24,11 @@ function Index() {
   `);
   const asddd = datas.allMarkdownRemark.edges;
   const dispatch = useGlobalReducer();
-  const { isMobile, isLoading } = useGlboalState();
+  const { isMobile } = useGlboalState();
   useEffect(() => {
     dispatch({ type: 'SET_TITLE', payload: '' });
   }, []);
-  if (isMobile) {
-    return (
-      <MainLayout>
-        <CategoryList data={asddd} />
-        <MainContainer isMobile={isMobile}>
-          <PostContainer isMobile={isMobile}>
-            <Post />
-          </PostContainer>
-        </MainContainer>
-      </MainLayout>
-    );
-  }
+
   return (
     <MainLayout>
       <CategoryList data={asddd} />

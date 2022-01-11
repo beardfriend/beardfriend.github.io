@@ -11,7 +11,7 @@ interface initiStateType {
 }
 
 export const initialState: initiStateType = {
-  isMobile: false,
+  isMobile: true,
   AllCategory: ['All'],
   NowCategory: 'All',
   AllTag: [],
