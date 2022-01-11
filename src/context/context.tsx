@@ -7,6 +7,7 @@ interface initiStateType {
   AllTag: string[];
   NowTag: string[];
   NowTitle: string;
+  isLoading: boolean | null;
 }
 
 export const initialState: initiStateType = {
@@ -16,6 +17,7 @@ export const initialState: initiStateType = {
   AllTag: [],
   NowTag: [],
   NowTitle: '',
+  isLoading: null,
 };
 
 type Reducer =
@@ -27,7 +29,9 @@ type Reducer =
   | { type: 'DELETE_NOW_TAG'; payload: string }
   | { type: 'RESET_NOW_TAG' }
   | { type: 'SET_MOBILE'; payload: boolean }
-  | { type: 'SET_TITLE'; payload: string };
+  | { type: 'SET_TITLE'; payload: string }
+  | { type: 'SET_LOADING_TRUE' }
+  | { type: 'SET_LOADING_FALSE' };
 
 export function reducer(state: initiStateType, action: Reducer) {
   switch (action.type) {
@@ -52,6 +56,10 @@ export function reducer(state: initiStateType, action: Reducer) {
       return { ...state, isMobile: action.payload };
     case 'SET_TITLE':
       return { ...state, NowTitle: action.payload };
+    case 'SET_LOADING_TRUE':
+      return { ...state, isLoading: true };
+    case 'SET_LOADING_FALSE':
+      return { ...state, isLoading: false };
     default:
       throw new Error('invalid action type');
   }
