@@ -25,7 +25,7 @@ function CategoryList({ data }) {
   }, []);
 
   return (
-    <>
+    <CategoryContainer>
       {AllCategory.map((datas) => {
         return (
           <CategoryButton
@@ -40,21 +40,31 @@ function CategoryList({ data }) {
           </CategoryButton>
         );
       })}
-    </>
+    </CategoryContainer>
   );
 }
 
 export default CategoryList;
 
+const CategoryContainer = styled.div`
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+`;
+
 const CategoryButton = styled.button<{ isActive: boolean }>`
+  display: inline;
   padding: 0.8rem 1.4rem;
-  margin-left: 20px;
+
+  &:not(:first-child) {
+    margin-left: 2rem;
+  }
   color: ${({ isActive }) => (isActive ? 'white' : 'black')};
   font-size: 1.3rem;
   border: 1px solid #ebebeb;
   border-radius: 1rem;
   background: ${({ isActive }) => (isActive ? 'black' : 'white')};
-
+  width: fit-content;
   &:hover {
     cursor: pointer;
     background: ${({ isActive }) => !isActive && '#ebebeb'};

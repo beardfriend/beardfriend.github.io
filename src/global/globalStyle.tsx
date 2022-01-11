@@ -36,6 +36,7 @@ a {
 a:link,
 a:visited {
   text-decoration: none;
+  color:inherit;
 }
 pre {
   margin: 10px !important;

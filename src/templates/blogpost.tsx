@@ -2,6 +2,7 @@ import Img from 'gatsby-image';
 import MainLayout from '@Components/Layout/MainLayout';
 import React from 'react';
 import { graphql } from 'gatsby';
+import { useGlobalReducer } from '@Contexts/context';
 import media from '@Globals/theme';
 import styled from 'styled-components';
 
@@ -11,7 +12,8 @@ export default function Template({
   const { markdownRemark } = data; // data.markdownRemark holds your post data
   const { frontmatter, html } = markdownRemark;
   const Image = markdownRemark?.featuredImg?.childImageSharp?.fluid;
-
+  const dispatch = useGlobalReducer();
+  dispatch({ type: 'SET_TITLE', payload: frontmatter.title });
   return (
     <MainLayout>
       <BlogLayout>
@@ -64,7 +66,7 @@ const BlogLayout = styled.div`
     width: '90%',
   })}
   ${media.xs({
-    width: '90%',
+    width: '95%',
   })}
   .html {
     width: 90%;

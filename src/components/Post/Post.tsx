@@ -15,11 +15,13 @@ function PostUI({ node }) {
       </Link>
 
       <Link to={node.fields.slug}>
-        <h1>{node.frontmatter.title}</h1>
+        <h1 className='title'>{node.frontmatter.title}</h1>
       </Link>
-      {node.frontmatter.tags.map((tag: any) => {
-        return <h2 key={tag.id}>{tag}</h2>;
-      })}
+      <div className='tagContainer'>
+        {node.frontmatter.tags.map((tag: any) => {
+          return <h2 key={tag.id}>#{tag}</h2>;
+        })}
+      </div>
       <p style={{ position: 'absolute', bottom: '2rem' }}>{node.frontmatter.date}</p>
     </Layout>
   );
@@ -112,17 +114,10 @@ const Layout = styled.div`
   position: relative;
   width: 100%;
   height: 55rem;
+  ${media.xs({
+    height: '30rem',
+  })}
   border-bottom: 1px solid #dddddd;
-
-  h1 {
-    cursor: pointer;
-    font-size: 3.2rem;
-    font-weight: bold;
-    ${media.md({
-      fontSize: '15px',
-    })}
-  }
-
   a {
     text-decoration: none;
     &:hover,
@@ -135,5 +130,23 @@ const Layout = styled.div`
     min-width: 100%;
     min-height: 40rem;
     height: 40rem;
+    ${media.xs({
+      minHeight: '20rem',
+      height: '20rem',
+    })}
+  }
+  .title {
+    cursor: pointer;
+    font-size: 3rem;
+    font-weight: bold;
+    margin-top: 1rem;
+    ${media.md({
+      fontSize: '15px',
+    })}
+  }
+  .tagContainer {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
   }
 `;

@@ -93,10 +93,10 @@ function TagList({ data }) {
 
   return (
     <TagContainer>
-      <div style={{ display: 'flex', gap: '2rem', justifyContent: 'center' }}>
+      <div style={{ display: 'flex', gap: '2rem', justifyContent: 'center', marginBottom: '1rem' }}>
         <h1>TAG</h1>
         <GrPowerReset
-          style={{ fontSize: '3rem', cursor: 'pointer' }}
+          style={{ fontSize: '2rem', cursor: 'pointer', position: 'relative', top: '.5rem' }}
           onClick={() => dispatch({ type: 'RESET_NOW_TAG' })}
         />
       </div>

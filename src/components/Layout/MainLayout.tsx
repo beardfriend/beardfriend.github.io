@@ -32,7 +32,7 @@ const MainLayout: React.FC = function _({ children }) {
 
 export default MainLayout;
 
-const FlexCol = styled.section`
+const FlexCol = styled.div`
   display: flex;
   flex-direction: column;
   min-height: 100vh;
