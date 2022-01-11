@@ -24,10 +24,18 @@ function Index() {
   `);
   const asddd = datas.allMarkdownRemark.edges;
   const dispatch = useGlobalReducer();
-  const { isMobile } = useGlboalState();
+  const { isMobile, isLoading } = useGlboalState();
   useEffect(() => {
     dispatch({ type: 'SET_TITLE', payload: '' });
   }, []);
+
+  if (isLoading === true) {
+    return (
+      <div style={{ width: '100vw', minHeight: '100vh', background: 'red', zIndex: 999, position: 'absolute' }}>
+        <h1 style={{ position: 'absolute', top: '50%' }}>loading</h1>
+      </div>
+    );
+  }
   return (
     <MainLayout>
       <CategoryList data={asddd} />

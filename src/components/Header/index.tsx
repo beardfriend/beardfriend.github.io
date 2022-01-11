@@ -39,21 +39,6 @@ function Index({ isMobile }: IndexType): React.ReactElement {
   //   }
   // }, [isShow]);
 
-  if (isMobile) {
-    <MobileContainer>
-      <Link to='/' className='title'>
-        수염난친구 블로그
-      </Link>
-      <div className='right'>
-        <a href='https://github.com/beardfriend' target='_blank' rel='noreferrer'>
-          <AiFillGithub className='git' />
-        </a>
-        <Link to='/introduce'>
-          <TiUser className='git' />
-        </Link>
-      </div>
-    </MobileContainer>;
-  }
   return (
     <Header isShow={isShow}>
       <NavContainer>
@@ -142,7 +127,9 @@ const NavContainer = styled.nav`
   max-width: 110rem;
   justify-content: space-between;
   align-items: center;
-
+  .title {
+    color: white;
+  }
   /* padding: 0 30rem;
   ${media.xxl({
     padding: `0 12rem`,
