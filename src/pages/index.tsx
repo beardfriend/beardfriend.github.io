@@ -28,7 +28,18 @@ function Index() {
   useEffect(() => {
     dispatch({ type: 'SET_TITLE', payload: '' });
   }, []);
-
+  if (isMobile) {
+    return (
+      <MainLayout>
+        <CategoryList data={asddd} />
+        <MainContainer isMobile={isMobile}>
+          <PostContainer isMobile={isMobile}>
+            <Post />
+          </PostContainer>
+        </MainContainer>
+      </MainLayout>
+    );
+  }
   return (
     <MainLayout>
       <CategoryList data={asddd} />
@@ -38,7 +49,7 @@ function Index() {
         </PostContainer>
         {!isMobile && (
           <div style={{ marginRight: 0, width: '20rem' }}>
-            <TagList data={asddd} />
+            <TagList data={asddd} isMobile={isMobile} />
           </div>
         )}
       </MainContainer>

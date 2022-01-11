@@ -2,10 +2,12 @@ import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import { useGlobalReducer, useGlboalState } from '@Contexts/context';
 import { GrPowerReset } from 'react-icons/gr';
-function TagList({ data }) {
+function TagList({ data, isMobile }) {
   const dispatch = useGlobalReducer();
   const { NowCategory, AllTag, NowTag } = useGlboalState();
-
+  if (isMobile) {
+    return;
+  }
   useEffect(() => {
     dispatch({ type: 'SET_LOADING_TRUE' });
     const newTag = [];
