@@ -33,7 +33,7 @@ a:visited {
   color: inherit;
 }
 pre {
-  margin: 10px !important;
+  margin: 10px 0 !important;
 }
 body {
   min-height: 100vh;
