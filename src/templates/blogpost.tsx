@@ -1,6 +1,6 @@
 import Img from 'gatsby-image';
 import MainLayout from '@Components/Layout/MainLayout';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { graphql } from 'gatsby';
 import { useGlobalReducer } from '@Contexts/context';
 import media from '@Globals/theme';
@@ -13,7 +13,10 @@ export default function Template({
   const { frontmatter, html } = markdownRemark;
   const Image = markdownRemark?.featuredImg?.childImageSharp?.fluid;
   const dispatch = useGlobalReducer();
-  dispatch({ type: 'SET_TITLE', payload: frontmatter.title });
+  useEffect(() => {
+    dispatch({ type: 'SET_TITLE', payload: frontmatter.title });
+  }, []);
+
   return (
     <MainLayout>
       <BlogLayout>
