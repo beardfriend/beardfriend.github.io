@@ -157,5 +157,9 @@ const Layout = styled.div`
     right: 0;
     font-size: 1.5rem;
     text-align: right;
+    ${media.xs({
+      fontSize: '1rem',
+      marginTop: '0.5rem',
+    })}
   }
 `;
