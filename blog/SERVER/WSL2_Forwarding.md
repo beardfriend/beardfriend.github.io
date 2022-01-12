@@ -1,9 +1,9 @@
 ---
 title: 'WSL2 포트 포워딩'
 date: '2022-01-12 01:01:13'
-tags: ['WSL2', 'CS']
+tags: ['WSL2']
 category: 'Server'
-subtitle: 'WSL2 포트포워딩 방법과 기본 지식'
+subtitle: 'WSL2 포트포워딩 방법과 IP와 LAN에 대해'
 featuredImgUrl: https://i.postimg.cc/Hn0TJKgq/SERVER-wsl2.png
 featuredImgAlt: 'Mountains with a starry sky'
 ---

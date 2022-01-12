@@ -17,11 +17,13 @@ function PostUI({ node }) {
       <Link to={node.fields.slug}>
         <h1 className='title'>{node.frontmatter.title}</h1>
       </Link>
+      <p className='subtitle'>{node.frontmatter.subtitle}</p>
       <div className='tagContainer'>
         {node.frontmatter.tags?.map((tag: any) => {
           return <h2 key={tag.id}>#{tag}</h2>;
         })}
       </div>
+
       <p style={{ position: 'absolute', bottom: '2rem' }}>{node.frontmatter.date}</p>
     </Layout>
   );
@@ -149,5 +151,11 @@ const Layout = styled.div`
     display: flex;
     gap: 1rem;
     margin-top: 1rem;
+  }
+  .subtitle {
+    position: absolute;
+    right: 0;
+    font-size: 1.5rem;
+    text-align: right;
   }
 `;

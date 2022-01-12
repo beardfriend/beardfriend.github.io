@@ -1,9 +1,9 @@
 ---
 title: '철거 서비스'
 date: '2021-07-11 14:52:39'
-tags: ['React', 'Redux']
+tags: ['FrontEnd']
 category: 'Project'
-subtitle: '철거해줘 프로젝트'
+subtitle: 'Redux Thunk를 이용한 프론트엔드 프로젝트'
 featuredImgUrl: https://i.postimg.cc/SNNVPg8h/PROJECT2.png
 featuredImgAlt: 'PROJECT'
 ---
