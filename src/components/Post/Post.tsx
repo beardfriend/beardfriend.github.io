@@ -75,7 +75,7 @@ function Post() {
       <>
         {blogPost.map((nodes: any) => {
           const { node } = nodes;
-          if (NowTag.filter((tag) => node.frontmatter.tags.includes(tag)).length > 0) {
+          if (NowTag.filter((tag) => node.frontmatter.tags?.includes(tag)).length > 0) {
             return <PostUI key={node.id} node={node} />;
           }
         })}
@@ -99,7 +99,7 @@ function Post() {
       {blogPost.map((nodes: any) => {
         const { node } = nodes;
         if (node.frontmatter.category === NowCategory) {
-          if (NowTag.filter((tag) => node.frontmatter.tags.includes(tag)).length > 0) {
+          if (NowTag.filter((tag) => node.frontmatter.tags?.includes(tag)).length > 0) {
             return <PostUI key={node.id} node={node} />;
           }
         }

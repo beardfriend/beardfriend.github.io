@@ -7,7 +7,6 @@ function TagList({ data, isMobile }) {
   const { NowCategory, AllTag, NowTag } = useGlboalState();
 
   useEffect(() => {
-    dispatch({ type: 'SET_LOADING_TRUE' });
     const newTag = [];
     const count: { [property: string]: string }[] = [];
     dispatch({ type: 'RESET_TAG' });
@@ -82,7 +81,7 @@ function TagList({ data, isMobile }) {
           dispatch({ type: 'TAG_MAP', payload: tags });
         });
     }
-    dispatch({ type: 'SET_LOADING_FALSE' });
+
     return () => result;
   }, [NowCategory]);
 
