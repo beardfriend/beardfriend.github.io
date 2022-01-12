@@ -17,7 +17,7 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: `${__dirname}/src/images/`,
+        path: `${__dirname}/src/images`,
       },
     },
 
@@ -34,28 +34,13 @@ module.exports = {
         name: `beardfriend`,
         short_name: `bfBlog`,
         start_url: `/`,
-        background_color: `0a0b0c`,
-        theme_color: `0a0b0c`,
+        background_color: `#0a0b0c`,
+        theme_color: `#0a0b0c`,
         display: `minimal-ui`,
         icon: `src/images/favicon.png`, // This path is relative to the root of the site.
       },
     },
 
-    {
-      resolve: `gatsby-transformer-remark`,
-      options: {
-        // CommonMark mode (default: true)
-        commonmark: true,
-        // Footnotes mode (default: true)
-        footnotes: true,
-        // Pedantic mode (default: true)
-        pedantic: true,
-        // GitHub Flavored Markdown mode (default: true)
-        gfm: true,
-        // Plugins configs
-        plugins: [],
-      },
-    },
     {
       resolve: `gatsby-transformer-remark`,
       options: {
@@ -67,6 +52,16 @@ module.exports = {
               inlineCode: {
                 marker: '•',
               },
+            },
+          },
+          `gatsby-remark-relative-images`,
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 800,
+              linkImagesToOriginal: false,
+              sizeByPixelDensity: true,
+              showCaptions: true,
             },
           },
         ],
