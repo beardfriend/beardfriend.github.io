@@ -34,6 +34,7 @@ function Index() {
     <MainLayout>
       <Helmet>
         <meta charSet='utf-8' />
+        <meta name='google-site-verification' content='udSyTzyvdORnQg9JYBJqNxUAZ-hvai2vuUSvQ4M4b3Y' />
         <title>수염난친구블로그 : Home</title>
         <meta name='description' content='수염난친구 블로그입니다!'></meta>
       </Helmet>
