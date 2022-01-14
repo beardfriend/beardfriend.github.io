@@ -50,6 +50,7 @@ const CategoryContainer = styled.div`
   overflow-x: auto;
   overflow-y: hidden;
   white-space: nowrap;
+  padding: 1.5rem 0;
 `;
 
 const CategoryButton = styled.button<{ isActive: boolean }>`
