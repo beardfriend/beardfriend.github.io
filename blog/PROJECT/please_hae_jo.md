@@ -290,7 +290,6 @@ const filterUndefinedData = () => {
 useEffect(() => {
   const undeFinedDataKey = Object.entries(undeFinedData).map((datas) => {
     const key = datas[0] as any;
-    console.log(key);
     return key;
   });
 

@@ -20,7 +20,6 @@ function CategoryList({ data }) {
     empty.sort().map((categories) => {
       dispatch({ type: 'CATEGORY_MAP', payload: categories });
     });
-    console.log(empty);
     return () => result;
   }, []);
 

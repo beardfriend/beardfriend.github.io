@@ -22,7 +22,6 @@ function Index({ isMobile }: IndexType): React.ReactElement {
     }
   }
   useEffect(() => {
-    console.log(isShow, window.scrollY);
     if (!isShow) {
       window.addEventListener('scroll', func);
       return () => window.removeEventListener('scroll', func);
