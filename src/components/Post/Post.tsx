@@ -2,7 +2,7 @@ import media from '@Globals/theme';
 import { useGlboalState } from '@Contexts/context';
 import { graphql, Link, useStaticQuery } from 'gatsby';
 import Img from 'gatsby-image';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 
 function PostUI({ node }) {
@@ -10,7 +10,7 @@ function PostUI({ node }) {
     <Layout>
       <Link to={node.fields.slug}>
         {node.featuredImg.childImageSharp.fixed !== null && (
-          <Img className='img' fluid={node.featuredImg.childImageSharp.fluid} />
+          <Img className='img' fluid={node.featuredImg?.childImageSharp.fluid} />
         )}
       </Link>
 
@@ -60,8 +60,11 @@ function Post() {
       }
     }
   `);
-  const blogPost = data.allMarkdownRemark.edges;
-
+  const [blogPost, setBlogPost] = useState(data.allMarkdownRemark.edges);
+  useEffect(() => {
+    blogPost.map((data) => {});
+  }, []);
+  console.log(blogPost);
   if (NowCategory === 'All') {
     if (NowTag.length === 0) {
       return (
