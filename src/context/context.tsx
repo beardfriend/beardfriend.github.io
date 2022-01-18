@@ -1,6 +1,7 @@
 import React, { createContext, useContext, useReducer } from 'react';
 
 interface initiStateType {
+  allPost: any;
   isMobile: boolean;
   AllCategory: string[];
   NowCategory: string;
@@ -11,6 +12,7 @@ interface initiStateType {
 }
 
 export const initialState: initiStateType = {
+  allPost: [],
   isMobile: true,
   AllCategory: ['All'],
   NowCategory: 'All',
@@ -31,7 +33,9 @@ type Reducer =
   | { type: 'SET_MOBILE'; payload: boolean }
   | { type: 'SET_TITLE'; payload: string }
   | { type: 'SET_LOADING_TRUE' }
-  | { type: 'SET_LOADING_FALSE' };
+  | { type: 'SET_LOADING_FALSE' }
+  | { type: 'SET_POST'; payload: any }
+  | { type: 'RESET_POST' };
 
 export function reducer(state: initiStateType, action: Reducer) {
   switch (action.type) {
@@ -60,6 +64,10 @@ export function reducer(state: initiStateType, action: Reducer) {
       return { ...state, isLoading: true };
     case 'SET_LOADING_FALSE':
       return { ...state, isLoading: false };
+    case 'SET_POST':
+      return { ...state, allPost: action.payload };
+    case 'RESET_POST':
+      return { ...state, allPost: [] };
     default:
       throw new Error('invalid action type');
   }

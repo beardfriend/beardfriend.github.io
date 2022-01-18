@@ -1,8 +1,8 @@
 import media from '@Globals/theme';
-import { useGlboalState } from '@Contexts/context';
+import { useGlboalState, useGlobalReducer } from '@Contexts/context';
 import { graphql, Link, useStaticQuery } from 'gatsby';
 import Img from 'gatsby-image';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useLayoutEffect, useState } from 'react';
 import styled from 'styled-components';
 
 function PostUI({ node }) {
@@ -23,15 +23,13 @@ function PostUI({ node }) {
           return <h2 key={tag.id}>#{tag}</h2>;
         })}
       </div>
-
       <p style={{ position: 'absolute', bottom: '2rem' }}>{node.frontmatter.date}</p>
     </Layout>
   );
 }
 
 function Post() {
-  const { NowCategory, NowTag } = useGlboalState();
-  const data = useStaticQuery(graphql`
+  const datas = useStaticQuery(graphql`
     query {
       allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
         edges {
@@ -60,54 +58,73 @@ function Post() {
       }
     }
   `);
-  const [blogPost, setBlogPost] = useState(data.allMarkdownRemark.edges);
+  const post = datas.allMarkdownRemark.edges;
+  const { NowCategory, NowTag, allPost } = useGlboalState();
+  const dispatch = useGlobalReducer();
+
   useEffect(() => {
-    blogPost.map((data) => {});
+    const array = [];
+    post.map((nodes) => {
+      const { node } = nodes;
+      array.push(node);
+    });
+    dispatch({ type: 'SET_POST', payload: array });
   }, []);
-  console.log(blogPost);
-  if (NowCategory === 'All') {
-    if (NowTag.length === 0) {
-      return (
-        <>
-          {blogPost.map((nodes: any) => {
-            const { node } = nodes;
-            return <PostUI key={node.id} node={node} />;
-          })}
-        </>
-      );
-    }
-    return (
-      <>
-        {blogPost.map((nodes: any) => {
+
+  useEffect(() => {
+    const array = [];
+    if (NowCategory === 'All') {
+      if (NowTag.length !== 0) {
+        post.map((nodes) => {
           const { node } = nodes;
           if (NowTag.filter((tag) => node.frontmatter.tags?.includes(tag)).length > 0) {
-            return <PostUI key={node.id} node={node} />;
+            array.push(node);
           }
-        })}
-      </>
-    );
-  }
-  if (NowTag.length === 0) {
+        });
+        dispatch({ type: 'SET_POST', payload: array });
+        return;
+      }
+      post.map((nodes) => {
+        const { node } = nodes;
+        array.push(node);
+      });
+      dispatch({ type: 'SET_POST', payload: array });
+    } else {
+      if (NowTag.length !== 0) {
+        post.map((nodes) => {
+          const { node } = nodes;
+          if (NowTag.filter((tag) => node.frontmatter.tags?.includes(tag)).length > 0) {
+            array.push(node);
+          }
+        });
+        dispatch({ type: 'SET_POST', payload: array });
+        return;
+      }
+
+      post.map((nodes) => {
+        const { node } = nodes;
+        if (NowCategory === node.frontmatter.category) {
+          array.push(node);
+        }
+      });
+      dispatch({ type: 'SET_POST', payload: array });
+    }
+  }, [NowCategory, NowTag]);
+
+  if (allPost.length === 0) {
     return (
       <>
-        {blogPost.map((nodes: any) => {
+        {post.map((nodes: any) => {
           const { node } = nodes;
-          if (node.frontmatter.category === NowCategory) {
-            return <PostUI key={node.id} node={node} />;
-          }
+          return <PostUI key={node.id} node={node} />;
         })}
       </>
     );
   }
   return (
     <>
-      {blogPost.map((nodes: any) => {
-        const { node } = nodes;
-        if (node.frontmatter.category === NowCategory) {
-          if (NowTag.filter((tag) => node.frontmatter.tags?.includes(tag)).length > 0) {
-            return <PostUI key={node.id} node={node} />;
-          }
-        }
+      {allPost.map((nodes: any) => {
+        return <PostUI key={nodes.id} node={nodes} />;
       })}
     </>
   );

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useLayoutEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import styled, { css } from 'styled-components';
 import MainLayout from '@Components/Layout/MainLayout';
@@ -14,9 +14,24 @@ function Index() {
       allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
         edges {
           node {
+            id
+            featuredImg {
+              childImageSharp {
+                fluid(maxWidth: 1000, quality: 100) {
+                  ...GatsbyImageSharpFluid
+                  ...GatsbyImageSharpFluidLimitPresentationSize
+                }
+              }
+            }
+            fields {
+              slug
+            }
             frontmatter {
               tags
+              title
               category
+              date(formatString: "YYYY.MM.DD")
+              subtitle
             }
           }
         }
@@ -24,8 +39,9 @@ function Index() {
     }
   `);
   const asddd = datas.allMarkdownRemark.edges;
+  const { isMobile, allPost } = useGlboalState();
   const dispatch = useGlobalReducer();
-  const { isMobile } = useGlboalState();
+  useLayoutEffect(() => {}, []);
   useEffect(() => {
     dispatch({ type: 'SET_TITLE', payload: '' });
   }, []);
