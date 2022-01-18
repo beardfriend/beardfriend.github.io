@@ -49,6 +49,7 @@ const CategoryContainer = styled.div`
   overflow-x: auto;
   overflow-y: hidden;
   white-space: nowrap;
+  height: 5rem;
 `;
 
 const CategoryButton = styled.button<{ isActive: boolean }>`
