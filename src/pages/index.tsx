@@ -50,9 +50,16 @@ function Index() {
     <MainLayout>
       <Helmet>
         <meta charSet='utf-8' />
+        <meta name='viewport' content='width=device-width'></meta>
         <meta name='google-site-verification' content='udSyTzyvdORnQg9JYBJqNxUAZ-hvai2vuUSvQ4M4b3Y' />
         <title>수염난친구블로그 : Home</title>
-        <meta name='description' content='수염난친구 블로그입니다!'></meta>
+        <meta name='description' content='수염난친구 블로그입니다.'></meta>
+        <meta name='keywords' content='메인페이지'></meta>
+        <meta name='og:title' content='수염난친구블로그 : Home'></meta>
+        <meta name='og:site_name' content='수염난친구블로그'></meta>
+        <meta name='twitter:title' content='수염난친구 블로그'></meta>
+        <meta name='twitter:description' content='수염난친구 블로그'></meta>
+        <meta name='twitter:card' content='summary'></meta>
       </Helmet>
       <CategoryList data={asddd} />
       <MainContainer isMobile={isMobile}>

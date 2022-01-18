@@ -78,7 +78,6 @@ function PostUI({ node, setRef }) {
 }
 
 function Post() {
-  const [count, setCount] = useState(4);
   const [loading, setLoading] = useState(false);
   const [ref, setRef] = useInfiniteScroll(() => {
     loadMorePost();
@@ -115,7 +114,7 @@ function Post() {
   `);
   const post = datas.allMarkdownRemark.edges;
 
-  const { NowCategory, NowTag, allPost } = useGlboalState();
+  const { NowCategory, NowTag, allPost, count } = useGlboalState();
   const dispatch = useGlobalReducer();
   async function loadMorePost() {
     if (post.length < count) {
@@ -123,14 +122,16 @@ function Post() {
     }
     setLoading(true);
     await new Promise((resolve) => setTimeout(resolve, 600));
-    setCount((num) => {
-      if (NowCategory === 'All') {
-        if (num <= post.length) return num + 4;
-        return num;
+    if (NowCategory === 'All') {
+      if (count <= post.length) {
+        dispatch({ type: 'ADD_COUNT' });
       }
-      if (num <= allPost.length) return num + 4;
-      return num;
-    });
+    }
+
+    if (count <= allPost.length) {
+      dispatch({ type: 'ADD_COUNT' });
+    }
+
     setLoading(false);
   }
   useEffect(() => {

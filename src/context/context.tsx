@@ -9,6 +9,7 @@ interface initiStateType {
   NowTag: string[];
   NowTitle: string;
   isLoading: boolean | null;
+  count: number;
 }
 
 export const initialState: initiStateType = {
@@ -20,6 +21,7 @@ export const initialState: initiStateType = {
   NowTag: [],
   NowTitle: '',
   isLoading: null,
+  count: 4,
 };
 
 type Reducer =
@@ -35,7 +37,8 @@ type Reducer =
   | { type: 'SET_LOADING_TRUE' }
   | { type: 'SET_LOADING_FALSE' }
   | { type: 'SET_POST'; payload: any }
-  | { type: 'RESET_POST' };
+  | { type: 'RESET_POST' }
+  | { type: 'ADD_COUNT' };
 
 export function reducer(state: initiStateType, action: Reducer) {
   switch (action.type) {
@@ -68,6 +71,9 @@ export function reducer(state: initiStateType, action: Reducer) {
       return { ...state, allPost: action.payload };
     case 'RESET_POST':
       return { ...state, allPost: [] };
+
+    case 'ADD_COUNT':
+      return { ...state, count: state.count + 4 };
     default:
       throw new Error('invalid action type');
   }
