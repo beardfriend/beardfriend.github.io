@@ -66,11 +66,8 @@ function Index() {
         <PostContainer isMobile={isMobile}>
           <Post />
         </PostContainer>
-        {!isMobile && (
-          <div style={{ marginRight: 0, width: '20rem' }}>
-            <TagList data={asddd} isMobile={isMobile} />
-          </div>
-        )}
+
+        <TagList data={asddd} isMobile={isMobile} />
       </MainContainer>
     </MainLayout>
   );

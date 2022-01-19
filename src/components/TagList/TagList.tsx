@@ -1,8 +1,9 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { useGlobalReducer, useGlboalState } from '@Contexts/context';
 import { GrPowerReset } from 'react-icons/gr';
 function TagList({ data, isMobile }) {
+  const [isOpen, setIsOpen] = useState(false);
   const dispatch = useGlobalReducer();
   const { NowCategory, AllTag, NowTag } = useGlboalState();
 
@@ -93,30 +94,57 @@ function TagList({ data, isMobile }) {
     }
     dispatch({ type: 'DELETE_NOW_TAG', payload: datas.tagname });
   }
-
+  if (isMobile) {
+    return (
+      <>
+        <TagButton onClick={() => setIsOpen(!isOpen)} isOpen={isOpen}>
+          TAG
+        </TagButton>
+        {isOpen && (
+          <MobileTagContainer>
+            {AllTag.map((datas, index) => {
+              return (
+                <Tag
+                  type='button'
+                  isActive={NowTag.includes(datas.tagname)}
+                  key={index}
+                  onClick={() => handleChangeTag(datas)}
+                >
+                  {datas.tagname}
+                  <span>({datas.count})</span>
+                </Tag>
+              );
+            })}
+          </MobileTagContainer>
+        )}
+      </>
+    );
+  }
   return (
-    <TagContainer>
-      <div style={{ display: 'flex', gap: '2rem', justifyContent: 'center', marginBottom: '1rem' }}>
-        <h1>TAG</h1>
-        <GrPowerReset
-          style={{ fontSize: '2rem', cursor: 'pointer', position: 'relative', top: '.5rem' }}
-          onClick={() => dispatch({ type: 'RESET_NOW_TAG' })}
-        />
-      </div>
-      {AllTag.map((datas, index) => {
-        return (
-          <Tag
-            type='button'
-            isActive={NowTag.includes(datas.tagname)}
-            key={index}
-            onClick={() => handleChangeTag(datas)}
-          >
-            {datas.tagname}
-            <span>({datas.count})</span>
-          </Tag>
-        );
-      })}
-    </TagContainer>
+    <div style={{ marginRight: 0, width: '20rem' }}>
+      <TagContainer>
+        <div style={{ display: 'flex', gap: '2rem', justifyContent: 'center', marginBottom: '1rem' }}>
+          <h1>TAG</h1>
+          <GrPowerReset
+            style={{ fontSize: '2rem', cursor: 'pointer', position: 'relative', top: '.5rem' }}
+            onClick={() => dispatch({ type: 'RESET_NOW_TAG' })}
+          />
+        </div>
+        {AllTag.map((datas, index) => {
+          return (
+            <Tag
+              type='button'
+              isActive={NowTag.includes(datas.tagname)}
+              key={index}
+              onClick={() => handleChangeTag(datas)}
+            >
+              {datas.tagname}
+              <span>({datas.count})</span>
+            </Tag>
+          );
+        })}
+      </TagContainer>
+    </div>
   );
 }
 
@@ -145,4 +173,24 @@ const Tag = styled.button<{ isActive?: boolean }>`
     cursor: pointer;
     background: ${({ isActive }) => !isActive && '#ebebeb'};
   }
+`;
+
+const TagButton = styled.button<{ isOpen }>`
+  position: fixed;
+  bottom: 2rem;
+  left: 2rem;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 5rem;
+  background: ${({ isOpen }) => (isOpen ? 'black' : 'gray')};
+  color: ${({ isOpen }) => (isOpen ? 'white' : 'black')};
+`;
+
+const MobileTagContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  position: fixed;
+  width: 15rem;
+  bottom: 7rem;
 `;
