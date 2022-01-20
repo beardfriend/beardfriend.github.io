@@ -42,7 +42,7 @@ export default function Template({
       ) : (
         headings.length !== 0 && (
           <TocContainer>
-            <h1 style={{ fontSize: '2rem', margin: `0 auto`, marginBottom: '1rem' }}>목차</h1>
+            <h1 style={{ fontSize: '2rem', width: '100%', textAlign: 'center', marginBottom: '1rem' }}>목차</h1>
             {headings.map((data) => {
               return (
                 <TocList depth={data.depth} href={`#${data.id}`}>
