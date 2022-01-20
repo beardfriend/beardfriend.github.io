@@ -168,10 +168,11 @@ const Tag = styled.button<{ isActive?: boolean }>`
   font-size: 1.5rem;
 
   background: ${({ isActive }) => (isActive ? 'black' : 'white')};
-
-  &:hover {
-    cursor: pointer;
-    background: ${({ isActive }) => !isActive && '#ebebeb'};
+  @media (hover: hover) {
+    &:hover {
+      cursor: pointer;
+      background: ${({ isActive }) => !isActive && '#ebebeb'};
+    }
   }
 `;
 
