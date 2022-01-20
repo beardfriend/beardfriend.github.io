@@ -59,9 +59,7 @@ export default function Template({
           <meta charSet='utf-8' />
           <meta name='viewport' content='width=device-width'></meta>
           <title>{frontmatter.title} by 수염난친구</title>
-          <meta name='description' content={frontmatter.subtitle} />
           <meta name='description' content={frontmatter.subtitle}></meta>
-          <meta name='keywords' content={frontmatter.category}></meta>
           <meta name='og:title' content={`${frontmatter.title} by 수염난친구`}></meta>
           <meta name='og:site_name' content='수염난친구블로그'></meta>
           <meta name='twitter:title' content={`${frontmatter.title} by 수염난친구`}></meta>
