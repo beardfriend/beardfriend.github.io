@@ -44,6 +44,5 @@ const Main = styled.div`
   width: calc(100% - 2rem);
   max-width: 110rem;
   margin-top: 2rem;
-
   position: relative;
 `;

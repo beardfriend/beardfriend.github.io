@@ -64,6 +64,17 @@ module.exports = {
               showCaptions: true,
             },
           },
+          {
+            resolve: `gatsby-remark-autolink-headers`,
+            options: {
+              offsetY: `-500`,
+              className: `custom-class`,
+              maintainCase: true,
+              removeAccents: true,
+              isIconAfterHeader: true,
+              elements: [`h1`, `h2`, `h3`],
+            },
+          },
         ],
       },
     },

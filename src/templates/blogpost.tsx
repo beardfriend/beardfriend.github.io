@@ -1,9 +1,9 @@
 import Img from 'gatsby-image';
 import MainLayout from '@Components/Layout/MainLayout';
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { graphql } from 'gatsby';
-import { useGlobalReducer } from '@Contexts/context';
+import { useGlboalState, useGlobalReducer } from '@Contexts/context';
 import media from '@Globals/theme';
 import styled from 'styled-components';
 
@@ -11,15 +11,49 @@ export default function Template({
   data, // this prop will be injected by the GraphQL query below.
 }: any) {
   const { markdownRemark } = data; // data.markdownRemark holds your post data
-  const { frontmatter, html } = markdownRemark;
+  const { frontmatter, html, headings } = markdownRemark;
   const Image = markdownRemark?.featuredImg?.childImageSharp?.fluid;
   const dispatch = useGlobalReducer();
+  const { isMobile } = useGlboalState();
+  const [isOpen, setIsOpen] = useState(false);
   useEffect(() => {
     dispatch({ type: 'SET_TITLE', payload: frontmatter.title });
   }, []);
-
   return (
     <MainLayout>
+      {isMobile ? (
+        <>
+          <TocButton isOpen={isOpen} onClick={() => setIsOpen(!isOpen)}>
+            목차
+          </TocButton>
+          {isOpen && (
+            <MobileTocContainer>
+              <h1 style={{ fontSize: '2rem', margin: `0 auto`, marginBottom: '1rem' }}>목차</h1>
+              {headings.map((data) => {
+                return (
+                  <TocList depth={data.depth} href={`#${data.id}`}>
+                    {data.value}
+                  </TocList>
+                );
+              })}
+            </MobileTocContainer>
+          )}
+        </>
+      ) : (
+        headings.length !== 0 && (
+          <TocContainer>
+            <h1 style={{ fontSize: '2rem', margin: `0 auto`, marginBottom: '1rem' }}>목차</h1>
+            {headings.map((data) => {
+              return (
+                <TocList depth={data.depth} href={`#${data.id}`}>
+                  {data.value}
+                </TocList>
+              );
+            })}
+          </TocContainer>
+        )
+      )}
+
       <BlogLayout>
         <Helmet>
           <meta charSet='utf-8' />
@@ -63,6 +97,11 @@ export const pageQuery = graphql`
         subtitle
         title
       }
+      headings {
+        depth
+        id
+        value
+      }
     }
   }
 `;
@@ -97,13 +136,32 @@ const BlogLayout = styled.div`
       })}
       padding: 0.5rem 0;
     }
-    hr,
+    svg {
+      display: none;
+    }
+    h1 {
+      z-index: 3;
+    }
+    h2,
+    h3 {
+      z-index: 2;
+    }
     h1,
     h2,
     h3 {
+      margin-top: -4rem;
+
+      padding-top: 6rem;
+      position: relative;
+      /* padding-top: 6rem;
+      height: 6rem;
+      top: -6rem; */
+    }
+    hr {
       margin: 2rem 0;
     }
-
+    a.custom-class {
+    }
     ol {
       ${media.sm({
         padding: `0.5rem`,
@@ -201,4 +259,69 @@ const Title = styled.div`
       fontSize: '25px',
     })}
   }
+`;
+
+const MobileTocContainer = styled.div`
+  display: flex;
+  flex: auto;
+  gap: 1rem;
+  flex-wrap: wrap;
+  overflow: scroll;
+  width: 70%;
+  height: 50vh;
+  position: fixed;
+  padding: 4rem 1.5rem;
+  bottom: 6rem;
+  margin: 0 auto;
+  z-index: 99;
+  background: white;
+  border: 1px solid gray;
+`;
+
+const TocContainer = styled.div`
+  @media screen and (max-width: 1400px) {
+    display: none;
+  }
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  position: fixed;
+  top: 10rem;
+  left: 2rem;
+  width: 20rem;
+  border: 1px solid gray;
+  padding: 4rem 2rem;
+  border-radius: 2rem;
+`;
+
+const TocList = styled.a<{ depth }>`
+  font-size: 1.1rem;
+  margin-left: ${({ depth }) => (depth === 2 ? '1rem' : depth === 3 ? '2rem' : 0)};
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+  @media (hover: hover) {
+    &:hover {
+      cursor: pointer;
+      color: blue;
+    }
+  }
+`;
+
+const Container = styled.div`
+  display: flex;
+`;
+
+const TocButton = styled.button<{ isOpen }>`
+  position: fixed;
+  bottom: 2rem;
+  left: 2rem;
+  width: 5rem;
+  height: 3rem;
+  border-radius: 5rem;
+  background: ${({ isOpen }) => (isOpen ? 'black' : 'gray')};
+  color: white;
+  font-weight: bold;
+  z-index: 999;
 `;
