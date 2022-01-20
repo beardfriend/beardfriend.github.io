@@ -181,10 +181,11 @@ const TagButton = styled.button<{ isOpen }>`
   bottom: 2rem;
   left: 2rem;
   width: 5rem;
-  height: 5rem;
+  height: 3rem;
   border-radius: 5rem;
   background: ${({ isOpen }) => (isOpen ? 'black' : 'gray')};
-  color: ${({ isOpen }) => (isOpen ? 'white' : 'black')};
+  color: white;
+  font-weight: bold;
 `;
 
 const MobileTagContainer = styled.div`
