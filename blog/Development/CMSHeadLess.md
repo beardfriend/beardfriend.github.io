@@ -1,9 +1,10 @@
 ---
 title: 'CMS HeadLess는 무엇일까?'
 date: '2021-07-10 11:27:49'
-category: 'Review'
+category: 'Development'
+tags: ['Info']
 subtitle: 'CMS와 SSG는 무엇인가'
-featuredImgUrl: https://i.postimg.cc/MG2ng7Cp/ghost-logo.png
+featuredImgUrl: https://i.postimg.cc/zvV3wP5c/Dev.png
 featuredImgAlt: 'Ghost'
 ---
 

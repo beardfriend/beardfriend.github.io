@@ -4,7 +4,7 @@ date: '2021-07-11 14:52:39'
 tags: ['FrontEnd']
 category: 'Project'
 subtitle: 'Redux Thunk를 이용한 프론트엔드 프로젝트'
-featuredImgUrl: https://i.postimg.cc/SNNVPg8h/PROJECT2.png
+featuredImgUrl: https://i.postimg.cc/bYDzTnkW/project.png
 featuredImgAlt: 'PROJECT'
 ---
 

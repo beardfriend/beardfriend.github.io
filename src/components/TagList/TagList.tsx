@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { useGlobalReducer, useGlboalState } from '@Contexts/context';
 import { GrPowerReset } from 'react-icons/gr';
+import media from '@Globals/theme';
 function TagList({ data, isMobile }) {
   const [isOpen, setIsOpen] = useState(false);
   const dispatch = useGlobalReducer();
@@ -166,7 +167,10 @@ const Tag = styled.button<{ isActive?: boolean }>`
   margin-left: 20px;
   color: ${({ isActive }) => (isActive ? 'white' : 'black')};
   font-size: 1.5rem;
-
+  ${media.sm({
+    width: '100%',
+    margin: 0,
+  })}
   background: ${({ isActive }) => (isActive ? 'black' : 'white')};
   @media (hover: hover) {
     &:hover {
@@ -190,9 +194,17 @@ const TagButton = styled.button<{ isOpen }>`
 
 const MobileTagContainer = styled.div`
   display: flex;
-  flex-direction: column;
-
+  flex: auto;
+  flex-wrap: wrap;
+  overflow: scroll;
   position: fixed;
-  width: 15rem;
-  bottom: 7rem;
+  width: 20rem;
+  height: 40vh;
+  bottom: 6rem;
+  left: 2rem;
+  background: #ebebeb;
+  border: 1px solid gray;
+  padding: 4rem 2rem;
+
+  gap: 1rem;
 `;

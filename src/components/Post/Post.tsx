@@ -66,6 +66,7 @@ function PostUI({ node, setRef }) {
         <h1 className='title'>{node.frontmatter.title}</h1>
       </Link>
       <p className='subtitle'>{node.frontmatter.subtitle}</p>
+
       <div className='tagContainer'>
         {node.frontmatter.tags?.map((tag: any) => {
           return <h2 key={tag.id}>#{tag}</h2>;

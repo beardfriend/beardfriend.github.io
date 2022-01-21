@@ -1,10 +1,10 @@
 ---
 title: 'SQL 컬럼 명이 대문자일 때.'
 date: '2022-01-15 00:12:10'
-tags: ['SQL']
-category: 'Database'
+tags: ['Database']
+category: 'Development'
 subtitle: 'SQL 문을 작성하는데, 컬럼 명이 대문자라면?'
-featuredImgUrl: https://i.postimg.cc/tRhZvJk1/database.png
+featuredImgUrl: https://i.postimg.cc/zvV3wP5c/Dev.png
 featuredImgAlt: 'title'
 ---
 

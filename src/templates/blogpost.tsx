@@ -46,7 +46,9 @@ export default function Template({
             {headings.map((data) => {
               return (
                 <TocList depth={data.depth} href={`#${data.id}`}>
-                  {data.value}
+                  {data.value.includes('<center>')
+                    ? data.value.replace('<center>', '').replace('</center>', '')
+                    : data.value}
                 </TocList>
               );
             })}
@@ -154,6 +156,12 @@ const BlogLayout = styled.div`
       /* padding-top: 6rem;
       height: 6rem;
       top: -6rem; */
+    }
+
+    center {
+      font-size: 3rem;
+      font-weight: bold;
+      margin: 2rem 0;
     }
     hr {
       margin: 2rem 0;

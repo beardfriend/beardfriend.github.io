@@ -1,10 +1,10 @@
 ---
 title: '맥북 터미널 편하게 사용하기'
 date: '2021-07-14 22:35:56'
-tags: ['MacOs']
-category: 'Server'
+tags: ['Server']
+category: 'Development'
 subtitle: 'oh-my-zsh 터미널 설정 (유틸), Iterm 설정'
-featuredImgUrl: https://i.postimg.cc/J0kzg3V2/1.png
+featuredImgUrl: https://i.postimg.cc/zvV3wP5c/Dev.png
 featuredImgAlt: 'iterm2'
 ---
 

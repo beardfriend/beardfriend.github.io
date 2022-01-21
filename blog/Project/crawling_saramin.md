@@ -2,9 +2,9 @@
 title: 'YOGO 마케팅 프로젝트_1차'
 date: '2022-01-12 23:45:17'
 category: 'Project'
-tags: ['Python']
+tags: ['Backend', 'Database']
 subtitle: '사람인 크롤링 && 메일 보내기 && 디자인'
-featuredImgUrl: https://i.postimg.cc/SNNVPg8h/PROJECT2.png
+featuredImgUrl: https://i.postimg.cc/bYDzTnkW/project.png
 featuredImgAlt: 'PROJECT'
 ---
 
