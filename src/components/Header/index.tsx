@@ -66,6 +66,10 @@ const Title = styled.h1<{ isShow }>`
   text-overflow: ellipsis;
   white-space: nowrap;
   max-width: 100px;
+  font-size: 1.2rem;
+  @media screen and (min-width: 350px) {
+    max-width: 150px;
+  }
   @media screen and (min-width: 375px) {
     max-width: 170px;
   }
@@ -76,6 +80,7 @@ const Title = styled.h1<{ isShow }>`
 
   @media screen and (min-width: 600px) {
     max-width: 250px;
+    font-size: 1.5rem;
   }
 
   animation: ${({ isShow }) => isShow && `showup 0.6s`};
@@ -98,7 +103,6 @@ const Title = styled.h1<{ isShow }>`
   }
 
   color: white;
-  font-size: 1.5rem;
 `;
 
 const Header = styled.header<{ isShow }>`

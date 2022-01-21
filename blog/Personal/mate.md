@@ -1,6 +1,6 @@
 ---
 title: '음식 한 점'
-date: '2022-01-21 20:00:30'
+date: '2018-01-21 20:00:30'
 category: 'Personal'
 tags: ['Essay']
 subtitle: '마테복음 4.4'
@@ -38,6 +38,6 @@ featuredImgAlt: 'Essay'
 하느님의 입에서 나온 모든 말씀으로 산다.  
 (마태4.4)
 
--수염난친구-
+-수염난친구 @2018-
 
 </div>

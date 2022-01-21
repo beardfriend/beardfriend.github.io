@@ -172,7 +172,7 @@ const Tag = styled.button<{ isActive?: boolean }>`
     margin: 0,
   })}
   background: ${({ isActive }) => (isActive ? 'black' : 'white')};
-  @media (hover: hover) {
+  @media screen and (min-width: 768px) {
     &:hover {
       cursor: pointer;
       background: ${({ isActive }) => !isActive && '#ebebeb'};
