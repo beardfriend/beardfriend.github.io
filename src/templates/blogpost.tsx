@@ -140,11 +140,11 @@ const BlogLayout = styled.div`
       display: none;
     }
     h1 {
-      z-index: 3;
+      z-index: -1;
     }
     h2,
     h3 {
-      z-index: 2;
+      z-index: -2;
     }
     h1,
     h2,
@@ -307,11 +307,13 @@ const TocList = styled.a<{ depth }>`
   text-overflow: ellipsis;
   white-space: nowrap;
   width: 100%;
-  @media (hover: hover) {
+  @media screen and (min-width: 768px) {
     &:hover {
       cursor: pointer;
       color: blue;
     }
+  }
+  
   }
 `;
 
