@@ -159,6 +159,9 @@ const BlogLayout = styled.div`
     }
 
     center {
+      ${media.sm({
+        fontSize: `1.5rem`,
+      })}
       font-size: 3rem;
       font-weight: bold;
       margin: 2rem 0;
