@@ -166,8 +166,10 @@ function Post() {
       if (NowTag.length !== 0) {
         post.map((nodes) => {
           const { node } = nodes;
-          if (NowTag.filter((tag) => node.frontmatter.tags?.includes(tag)).length > 0) {
-            array.push(node);
+          if (NowCategory === node.frontmatter.category) {
+            if (NowTag.filter((tag) => node.frontmatter.tags?.includes(tag)).length > 0) {
+              array.push(node);
+            }
           }
         });
         dispatch({ type: 'SET_POST', payload: array });
