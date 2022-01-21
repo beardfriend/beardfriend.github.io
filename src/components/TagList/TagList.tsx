@@ -1,10 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef, useCallback } from 'react';
 import styled from 'styled-components';
 import { useGlobalReducer, useGlboalState } from '@Contexts/context';
 import { GrPowerReset } from 'react-icons/gr';
+import Background from '@Components/Background/Background';
 import media from '@Globals/theme';
 function TagList({ data, isMobile }) {
   const [isOpen, setIsOpen] = useState(false);
+  const ref = useRef();
   const dispatch = useGlobalReducer();
   const { NowCategory, AllTag, NowTag } = useGlboalState();
 
@@ -95,14 +97,48 @@ function TagList({ data, isMobile }) {
     }
     dispatch({ type: 'DELETE_NOW_TAG', payload: datas.tagname });
   }
+
+  function TagOpen() {
+    setIsOpen(!isOpen);
+  }
+  const clickFunc = useCallback(
+    (e) => {
+      if (isOpen) {
+        console.log(e.clientX, e.clientY, ref?.current?.getBoundingClientRect());
+        if (
+          e.clientX > ref?.current?.getBoundingClientRect().right ||
+          e.clientX < ref?.current?.getBoundingClientRect().left ||
+          e.clientY < ref?.current?.getBoundingClientRect().top ||
+          e.clientY > ref?.current?.getBoundingClientRect().bottom
+        ) {
+          setIsOpen(false);
+        }
+      }
+    },
+    [isOpen]
+  );
+
+  useEffect(() => {
+    !isOpen ? (document.body.style.overflow = 'auto') : (document.body.style.overflow = 'hidden');
+    if (isOpen) {
+      window.addEventListener('click', clickFunc);
+      return () => {
+        window.removeEventListener('click', clickFunc);
+      };
+    }
+  }, [isOpen]);
   if (isMobile) {
     return (
       <>
-        <TagButton onClick={() => setIsOpen(!isOpen)} isOpen={isOpen}>
+        <TagButton onClick={TagOpen} isOpen={isOpen}>
           TAG
         </TagButton>
         {isOpen && (
-          <MobileTagContainer>
+          <MobileTagContainer ref={ref}>
+            <GrPowerReset
+              style={{ fontSize: '2rem', cursor: 'pointer', position: 'relative', top: '-0.5rem', width: '100%' }}
+              onClick={() => dispatch({ type: 'RESET_NOW_TAG' })}
+            />
             {AllTag.map((datas, index) => {
               return (
                 <Tag
@@ -118,6 +154,7 @@ function TagList({ data, isMobile }) {
             })}
           </MobileTagContainer>
         )}
+        <Background open={isOpen} />
       </>
     );
   }
@@ -172,6 +209,7 @@ const Tag = styled.button<{ isActive?: boolean }>`
   ${media.sm({
     width: '100%',
     margin: 0,
+    height: '3rem',
   })}
   background: ${({ isActive }) => (isActive ? 'black' : 'white')};
   @media screen and (min-width: 768px) {
@@ -180,9 +218,13 @@ const Tag = styled.button<{ isActive?: boolean }>`
       background: ${({ isActive }) => !isActive && '#ebebeb'};
     }
   }
+  &:not(:last-child) {
+    margin-bottom: 1rem;
+  }
 `;
 
 const TagButton = styled.button<{ isOpen }>`
+  z-index: 100;
   position: fixed;
   bottom: 2rem;
   left: 2rem;
@@ -195,18 +237,14 @@ const TagButton = styled.button<{ isOpen }>`
 `;
 
 const MobileTagContainer = styled.div`
-  display: flex;
-  flex: auto;
-  flex-wrap: wrap;
+  z-index: 100;
   overflow: scroll;
   position: fixed;
   width: 20rem;
-  height: 40vh;
+  height: 30rem;
   bottom: 6rem;
   left: 2rem;
   background: #ebebeb;
   border: 1px solid gray;
   padding: 4rem 2rem;
-
-  gap: 1rem;
 `;

@@ -277,7 +277,7 @@ const MobileTocContainer = styled.div`
   flex-wrap: wrap;
   overflow: scroll;
   width: 70%;
-  height: 50vh;
+  height: 40rem;
   position: fixed;
   padding: 4rem 1.5rem;
   bottom: 6rem;
