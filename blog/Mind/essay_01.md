@@ -8,8 +8,7 @@ featuredImgUrl: https://i.postimg.cc/L6BXfxC9/mind.png
 featuredImgAlt: 'Mind'
 ---
 
-<br/>
-<br/>
+<center>내가 바뀌면 주위가 바뀐다.</center>
 <div style="text-align:center">
 
 물구나무를 선 뒤 호수, 나무를 바라봤을 때  
