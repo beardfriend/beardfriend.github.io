@@ -119,7 +119,7 @@ function TagList({ data, isMobile }) {
 
   useEffect(() => {
     !isOpen ? (document.body.style.overflow = 'auto') : (document.body.style.overflow = 'hidden');
-    // !isOpen ? (document.body.style.touchAction = 'auto') : (document.body.style.touchAction = 'none');
+    !isOpen ? (document.body.style.touchAction = 'auto') : (document.body.style.touchAction = 'none');
     if (isOpen) {
       window.addEventListener('click', clickFunc);
       return () => {
