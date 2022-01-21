@@ -301,7 +301,7 @@ const TocContainer = styled.div`
 `;
 
 const TocList = styled.a<{ depth }>`
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   margin-left: ${({ depth }) => (depth === 2 ? '1rem' : depth === 3 ? '2rem' : 0)};
   overflow: hidden;
   text-overflow: ellipsis;

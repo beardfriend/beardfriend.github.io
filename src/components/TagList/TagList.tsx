@@ -157,6 +157,8 @@ const TagContainer = styled.div`
   position: fixed;
   top: 20rem;
   width: 20rem;
+  height: 30vh;
+  overflow-y: scroll;
   h1 {
     font-size: 2rem;
     text-align: center;
