@@ -104,7 +104,6 @@ function TagList({ data, isMobile }) {
   const clickFunc = useCallback(
     (e) => {
       if (isOpen) {
-        console.log(e.clientX, e.clientY, ref?.current?.getBoundingClientRect());
         if (
           e.clientX > ref?.current?.getBoundingClientRect().right ||
           e.clientX < ref?.current?.getBoundingClientRect().left ||
@@ -120,6 +119,7 @@ function TagList({ data, isMobile }) {
 
   useEffect(() => {
     !isOpen ? (document.body.style.overflow = 'auto') : (document.body.style.overflow = 'hidden');
+    !isOpen ? (document.body.style.touchAction = 'auto') : (document.body.style.touchAction = 'none');
     if (isOpen) {
       window.addEventListener('click', clickFunc);
       return () => {
