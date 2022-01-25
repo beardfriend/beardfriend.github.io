@@ -4,7 +4,7 @@ date: '2021-07-14 22:35:56'
 tags: ['Server']
 category: 'Development'
 subtitle: 'oh-my-zsh 터미널 설정 (유틸), Iterm 설정'
-featuredImgUrl: https://i.postimg.cc/zvV3wP5c/Dev.png
+featuredImgUrl: https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbpPIw7%2FbtrrDydq1ND%2FPC2UdAAbMVWw7PKAjtyr3k%2Fimg.png
 featuredImgAlt: 'iterm2'
 ---
 

@@ -4,7 +4,7 @@ date: '2018-03-21 21:20:30'
 category: 'Mind'
 tags: ['Quotes', 'Essay']
 subtitle: '희망을 찾아서, 어바웃타임'
-featuredImgUrl: https://i.postimg.cc/L6BXfxC9/mind.png
+featuredImgUrl: https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fcfjodg%2FbtrrKH7gI7S%2FzP9K2jJPhQN2KPPZuPMah1%2Fimg.png
 featuredImgAlt: 'Mind'
 ---
 

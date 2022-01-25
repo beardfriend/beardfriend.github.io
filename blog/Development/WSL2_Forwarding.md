@@ -4,7 +4,7 @@ date: '2022-01-12 01:01:13'
 tags: ['Server']
 category: 'Development'
 subtitle: 'WSL2 포트포워딩 방법과 IP와 LAN에 대해'
-featuredImgUrl: https://i.postimg.cc/zvV3wP5c/Dev.png
+featuredImgUrl: https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbpPIw7%2FbtrrDydq1ND%2FPC2UdAAbMVWw7PKAjtyr3k%2Fimg.png
 featuredImgAlt: 'Mountains with a starry sky'
 ---
 

@@ -4,7 +4,7 @@ date: '2022-01-12 23:45:17'
 category: 'Project'
 tags: ['Backend', 'Database']
 subtitle: '사람인 크롤링 && 메일 보내기 && 디자인'
-featuredImgUrl: https://i.postimg.cc/bYDzTnkW/project.png
+featuredImgUrl: https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FMZd4E%2FbtrrF6NXR2o%2F5zhUCnuxHWCpmLwo4ar1y0%2Fimg.png
 featuredImgAlt: 'PROJECT'
 ---
 

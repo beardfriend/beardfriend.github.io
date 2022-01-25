@@ -4,7 +4,7 @@ title: '고백록'
 category: 'Book'
 tags: ['Quotes']
 subtitle: '아우구스티누스'
-featuredImgUrl: https://i.postimg.cc/cJsX01CR/book.png
+featuredImgUrl: https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FViMoo%2FbtrrEDZlXIU%2FBQhMeH7PGszwl12EoGK4e1%2Fimg.png
 featuredImgAlt: 'imageDes'
 ---
 

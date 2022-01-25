@@ -4,7 +4,7 @@ date: '2018-01-21 20:00:30'
 category: 'Personal'
 tags: ['Essay']
 subtitle: '마테복음 4.4'
-featuredImgUrl: https://i.postimg.cc/wBmV20x3/personal.png
+featuredImgUrl: https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FkJJfY%2FbtrrJavyuJF%2F3hgnR9IkU4UGccQ5OgZbw1%2Fimg.png
 featuredImgAlt: 'Essay'
 ---
 

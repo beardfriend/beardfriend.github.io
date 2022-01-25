@@ -4,7 +4,7 @@ date: '2022-01-15 00:12:10'
 tags: ['Database']
 category: 'Development'
 subtitle: 'SQL 문을 작성하는데, 컬럼 명이 대문자라면?'
-featuredImgUrl: https://i.postimg.cc/zvV3wP5c/Dev.png
+featuredImgUrl: https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbpPIw7%2FbtrrDydq1ND%2FPC2UdAAbMVWw7PKAjtyr3k%2Fimg.png
 featuredImgAlt: 'title'
 ---
 
