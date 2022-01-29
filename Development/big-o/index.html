@@ -1,0 +1,278 @@
+<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><style data-href="/styles.52c2e5602ebd6960c685.css" data-identity="gatsby-global-css">@import url(https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap);*,:after,:before{box-sizing:border-box;font-size:10px}blockquote,body,dd,dl,figcaption,figure,h1,h2,h3,h4,li,ol[class],p,ul[class]{margin:0;padding:0}a:link,a:visited{color:inherit;text-decoration:none}pre{margin:10px 0!important}body{font-family:Noto Sans KR,sans-serif;font-size:10px;min-height:100vh}a{text-decoration:none}button{border:none;display:inline-block;min-width:2rem}</style><meta name="generator" content="Gatsby 3.8.0"/><title data-react-helmet="true">BIG(O)의 정의 by 수염난친구</title><meta data-react-helmet="true" charSet="utf-8"/><meta data-react-helmet="true" name="viewport" content="width=device-width"/><meta data-react-helmet="true" name="description" content="O(1), O(N)은 무엇일까"/><meta data-react-helmet="true" name="og:title" content="BIG(O)의 정의 by 수염난친구"/><meta data-react-helmet="true" name="og:site_name" content="수염난친구블로그"/><meta data-react-helmet="true" name="twitter:title" content="BIG(O)의 정의 by 수염난친구"/><meta data-react-helmet="true" name="twitter:description" content="O(1), O(N)은 무엇일까"/><meta data-react-helmet="true" name="twitter:card" content="summary"/><style data-styled="" data-styled-version="5.3.0">.iUwqEA{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:100px;font-size:1.2rem;color:white;}/*!sc*/
+@media screen and (min-width:350px){.iUwqEA{max-width:150px;}}/*!sc*/
+@media screen and (min-width:375px){.iUwqEA{max-width:170px;}}/*!sc*/
+@media screen and (min-width:400px){.iUwqEA{max-width:200px;}}/*!sc*/
+@media screen and (min-width:600px){.iUwqEA{max-width:250px;font-size:1.5rem;}}/*!sc*/
+@-webkit-keyframes showup{.iUwqEA from{margin-top:-10%;}.iUwqEA to{margint-top:0;}}/*!sc*/
+@-webkit-keyframes showup{from{margin-top:-10%;}to{margint-top:0;}}/*!sc*/
+@keyframes showup{from{margin-top:-10%;}to{margint-top:0;}}/*!sc*/
+data-styled.g1[id="Header__Title-muu8pi-0"]{content:"iUwqEA,"}/*!sc*/
+.jtlNRL{position:fixed;width:100%;height:6rem;padding:1.6rem 0;z-index:99;background:#0a0b0c;opacity:1;}/*!sc*/
+@-webkit-keyframes back{from{opacity:0.9;}to{opcity:1;}}/*!sc*/
+@keyframes back{from{opacity:0.9;}to{opcity:1;}}/*!sc*/
+data-styled.g2[id="Header-muu8pi-1"]{content:"jtlNRL,"}/*!sc*/
+.iElmGS{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;margin:0 auto;width:calc(100% - 2rem);max-width:110rem;-webkit-box-pack:justify;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;}/*!sc*/
+.iElmGS .title{color:white;}/*!sc*/
+data-styled.g3[id="Header__NavContainer-muu8pi-2"]{content:"iElmGS,"}/*!sc*/
+.cqazwh a{color:white;}/*!sc*/
+.cqazwh .title{font-size:20px;-webkit-letter-spacing:-2px;-moz-letter-spacing:-2px;-ms-letter-spacing:-2px;letter-spacing:-2px;font-weight:bold;}/*!sc*/
+@media (max-width:480px){.cqazwh .title{font-size:15px;}}/*!sc*/
+.cqazwh .menu{font-size:15px;opacity:0.8;}/*!sc*/
+data-styled.g5[id="Header__Left-muu8pi-4"]{content:"cqazwh,"}/*!sc*/
+.iLyZmv{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;gap:20px;}/*!sc*/
+.iLyZmv .git{color:white;font-size:25px;}/*!sc*/
+data-styled.g6[id="Header__Right-muu8pi-5"]{content:"iLyZmv,"}/*!sc*/
+.gTSSky{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;min-height:100vh;}/*!sc*/
+data-styled.g7[id="MainLayout__FlexCol-sc-17jkaf8-0"]{content:"gTSSky,"}/*!sc*/
+.fWAWHj{top:60px;margin:0 auto;width:calc(100% - 2rem);max-width:110rem;margin-top:2rem;position:relative;}/*!sc*/
+data-styled.g8[id="MainLayout__Main-sc-17jkaf8-1"]{content:"fWAWHj,"}/*!sc*/
+.bwKMuD{width:800px;margin:0 auto;margin-bottom:10rem;}/*!sc*/
+.bwKMuD img{width:100%;}/*!sc*/
+@media (max-width:992px){.bwKMuD{width:600px;}}/*!sc*/
+@media (max-width:768px){.bwKMuD{width:560px;}}/*!sc*/
+@media (max-width:576px){.bwKMuD{width:90%;}}/*!sc*/
+@media (max-width:480px){.bwKMuD{width:95%;}}/*!sc*/
+.bwKMuD .html{width:90%;margin:0 auto;}/*!sc*/
+@media (max-width:768px){.bwKMuD .html{width:100%;}}/*!sc*/
+.bwKMuD .html p{padding:0.5rem 0;}/*!sc*/
+@media (max-width:576px){.bwKMuD .html p{padding:0.5rem 0;}}/*!sc*/
+.bwKMuD .html svg{display:none;}/*!sc*/
+.bwKMuD .html h1{z-index:-1;}/*!sc*/
+.bwKMuD .html h2,.bwKMuD .html h3{z-index:-2;}/*!sc*/
+.bwKMuD .html h1,.bwKMuD .html h2,.bwKMuD .html h3{margin-top:-4rem;padding-top:6rem;position:relative;}/*!sc*/
+.bwKMuD .html center{font-size:3rem;font-weight:bold;margin:2rem 0;}/*!sc*/
+@media (max-width:576px){.bwKMuD .html center{font-size:1.5rem;}}/*!sc*/
+.bwKMuD .html hr{margin:2rem 0;}/*!sc*/
+.bwKMuD .html ol{padding:0.5rem 1rem;}/*!sc*/
+@media (max-width:576px){.bwKMuD .html ol{padding:0.5rem;margin-left:1rem;}}/*!sc*/
+.bwKMuD .html li{font-size:16px;padding:0.5rem 0;}/*!sc*/
+@media (max-width:576px){.bwKMuD .html li{font-size:13px;}}/*!sc*/
+.bwKMuD pre{font-size:13px;}/*!sc*/
+.bwKMuD pre code,.bwKMuD pre span{font-size:13px;}/*!sc*/
+@media (max-width:576px){.bwKMuD pre code,.bwKMuD pre span{font-size:11.5px;}}/*!sc*/
+@media (max-width:576px){.bwKMuD pre{font-size:10px;}}/*!sc*/
+.bwKMuD p{font-size:16px;}/*!sc*/
+@media (max-width:576px){.bwKMuD p{font-size:13px;}}/*!sc*/
+.bwKMuD a{font-size:16px;}/*!sc*/
+@media (max-width:576px){.bwKMuD a{font-size:13px;}}/*!sc*/
+.bwKMuD strong{font-size:16px;}/*!sc*/
+@media (max-width:576px){.bwKMuD strong{font-size:13px;}}/*!sc*/
+.bwKMuD h1{font-size:30px;font-weight:700;}/*!sc*/
+@media (max-width:576px){.bwKMuD h1{font-size:20px;}}/*!sc*/
+.bwKMuD h2{font-size:26px;font-weight:700;}/*!sc*/
+@media (max-width:576px){.bwKMuD h2{font-size:18px;}}/*!sc*/
+.bwKMuD h3{font-size:23px;font-weight:700;}/*!sc*/
+@media (max-width:576px){.bwKMuD h3{font-size:16px;}}/*!sc*/
+.bwKMuD ol{font-size:13px;font-weight:bold;}/*!sc*/
+@media (max-width:576px){.bwKMuD ol{font-size:12px;}}/*!sc*/
+.bwKMuD img,.bwKMuD video{margin:0 auto;}/*!sc*/
+data-styled.g20[id="blogpost__BlogLayout-e0k29y-0"]{content:"bwKMuD,"}/*!sc*/
+.jtxHDC{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-wrap:nowrap;-ms-flex-wrap:nowrap;flex-wrap:nowrap;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;gap:20px;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;}/*!sc*/
+.jtxHDC h1{font-size:40px;}/*!sc*/
+@media (max-width:768px){.jtxHDC h1{font-size:30px;}}/*!sc*/
+@media (max-width:576px){.jtxHDC h1{font-size:25px;}}/*!sc*/
+data-styled.g21[id="blogpost__Title-e0k29y-1"]{content:"jtxHDC,"}/*!sc*/
+.gDVbIn{position:fixed;bottom:2rem;left:2rem;width:5rem;height:3rem;border-radius:5rem;background:gray;color:white;font-weight:bold;z-index:999;}/*!sc*/
+data-styled.g26[id="blogpost__TocButton-e0k29y-6"]{content:"gDVbIn,"}/*!sc*/
+</style><style>.gatsby-image-wrapper{position:relative;overflow:hidden}.gatsby-image-wrapper img{bottom:0;height:100%;left:0;margin:0;max-width:none;padding:0;position:absolute;right:0;top:0;width:100%;object-fit:cover}.gatsby-image-wrapper [data-main-image]{opacity:0;transform:translateZ(0);transition:opacity .25s linear;will-change:opacity}.gatsby-image-wrapper-constrained{display:inline-block;vertical-align:top}</style><noscript><style>.gatsby-image-wrapper noscript [data-main-image]{opacity:1!important}.gatsby-image-wrapper [data-placeholder-image]{opacity:0!important}</style></noscript><script type="module">const e="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;e&&document.body.addEventListener("load",(function(e){if(void 0===e.target.dataset.mainImage)return;if(void 0===e.target.dataset.gatsbyImageSsr)return;const t=e.target;let a=null,n=t;for(;null===a&&n;)void 0!==n.parentNode.dataset.gatsbyImageWrapper&&(a=n.parentNode),n=n.parentNode;const o=a.querySelector("[data-placeholder-image]"),r=new Image;r.src=t.currentSrc,r.decode().catch((()=>{})).then((()=>{t.style.opacity=1,o&&(o.style.opacity=0,o.style.transition="opacity 500ms linear")}))}),!0);</script><link rel="icon" href="/favicon-32x32.png?v=16937cfa43d0e606648b54849b221429" type="image/png"/><link rel="manifest" href="/manifest.webmanifest" crossorigin="anonymous"/><meta name="theme-color" content="#0a0b0c"/><link rel="apple-touch-icon" sizes="48x48" href="/icons/icon-48x48.png?v=16937cfa43d0e606648b54849b221429"/><link rel="apple-touch-icon" sizes="72x72" href="/icons/icon-72x72.png?v=16937cfa43d0e606648b54849b221429"/><link rel="apple-touch-icon" sizes="96x96" href="/icons/icon-96x96.png?v=16937cfa43d0e606648b54849b221429"/><link rel="apple-touch-icon" sizes="144x144" href="/icons/icon-144x144.png?v=16937cfa43d0e606648b54849b221429"/><link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192x192.png?v=16937cfa43d0e606648b54849b221429"/><link rel="apple-touch-icon" sizes="256x256" href="/icons/icon-256x256.png?v=16937cfa43d0e606648b54849b221429"/><link rel="apple-touch-icon" sizes="384x384" href="/icons/icon-384x384.png?v=16937cfa43d0e606648b54849b221429"/><link rel="apple-touch-icon" sizes="512x512" href="/icons/icon-512x512.png?v=16937cfa43d0e606648b54849b221429"/><style type="text/css">
+    .custom-class.before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translateX(-100%);
+      padding-right: 4px;
+    }
+    .custom-class.after {
+      display: inline-block;
+      padding-left: 4px;
+    }
+    h1 .custom-class svg,
+    h2 .custom-class svg,
+    h3 .custom-class svg,
+    h4 .custom-class svg,
+    h5 .custom-class svg,
+    h6 .custom-class svg {
+      visibility: hidden;
+    }
+    h1:hover .custom-class svg,
+    h2:hover .custom-class svg,
+    h3:hover .custom-class svg,
+    h4:hover .custom-class svg,
+    h5:hover .custom-class svg,
+    h6:hover .custom-class svg,
+    h1 .custom-class:focus svg,
+    h2 .custom-class:focus svg,
+    h3 .custom-class:focus svg,
+    h4 .custom-class:focus svg,
+    h5 .custom-class:focus svg,
+    h6 .custom-class:focus svg {
+      visibility: visible;
+    }
+  </style><script>
+    document.addEventListener("DOMContentLoaded", function(event) {
+      var hash = window.decodeURI(location.hash.replace('#', ''))
+      if (hash !== '') {
+        var element = document.getElementById(hash)
+        if (element) {
+          var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
+          var clientTop = document.documentElement.clientTop || document.body.clientTop || 0
+          var offset = element.getBoundingClientRect().top + scrollTop - clientTop
+          // Wait for the browser to finish rendering before scrolling.
+          setTimeout((function() {
+            window.scrollTo(0, offset - -500)
+          }), 0)
+        }
+      }
+    })
+  </script><link as="script" rel="preload" href="/webpack-runtime-f8644ab135ec1270553e.js"/><link as="script" rel="preload" href="/framework-a2f0ade1f236e4a019f3.js"/><link as="script" rel="preload" href="/app-4aa4d54bb1963b1ae9f3.js"/><link as="script" rel="preload" href="/d7eeaac4-d00015ca26e423ace025.js"/><link as="script" rel="preload" href="/696db27a630c7a98ac73425722a5f58751a28ca5-586da3a5ce7758ce721e.js"/><link as="script" rel="preload" href="/component---src-templates-blogpost-tsx-db942a957006bc7ac830.js"/><link as="fetch" rel="preload" href="/page-data/Development/big-o/page-data.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/app-data.json" crossorigin="anonymous"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="MainLayout__FlexCol-sc-17jkaf8-0 gTSSky"><header class="Header-muu8pi-1 jtlNRL"><nav class="Header__NavContainer-muu8pi-2 iElmGS"><div class="Header__Left-muu8pi-4 cqazwh"><a class="title" href="/">수염난친구 블로그</a></div><h1 class="Header__Title-muu8pi-0 iUwqEA"></h1><div class="Header__Right-muu8pi-5 iLyZmv"><a href="https://github.com/beardfriend" target="_blank" rel="noreferrer"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" class="git" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M511.6 76.3C264.3 76.2 64 276.4 64 523.5 64 718.9 189.3 885 363.8 946c23.5 5.9 19.9-10.8 19.9-22.2v-77.5c-135.7 15.9-141.2-73.9-150.3-88.9C215 726 171.5 718 184.5 703c30.9-15.9 62.4 4 98.9 57.9 26.4 39.1 77.9 32.5 104 26 5.7-23.5 17.9-44.5 34.7-60.8-140.6-25.2-199.2-111-199.2-213 0-49.5 16.3-95 48.3-131.7-20.4-60.5 1.9-112.3 4.9-120 58.1-5.2 118.5 41.6 123.2 45.3 33-8.9 70.7-13.6 112.9-13.6 42.4 0 80.2 4.9 113.5 13.9 11.3-8.6 67.3-48.8 121.3-43.9 2.9 7.7 24.7 58.3 5.5 118 32.4 36.8 48.9 82.7 48.9 132.3 0 102.2-59 188.1-200 212.9a127.5 127.5 0 0 1 38.1 91v112.5c.8 9 0 17.9 15 17.9 177.1-59.7 304.6-227 304.6-424.1 0-247.2-200.4-447.3-447.5-447.3z"></path></svg></a></div></nav></header><div class="MainLayout__Main-sc-17jkaf8-1 fWAWHj"><button class="blogpost__TocButton-e0k29y-6 gDVbIn">목차</button><div class="blogpost__BlogLayout-e0k29y-0 bwKMuD"><div class="blogpost__Title-e0k29y-1 jtxHDC"><h1>BIG(O)의 정의</h1><h3 style="font-style:italic">January 30, 2022</h3><div class=" gatsby-image-wrapper" style="position:relative;overflow:hidden"><div aria-hidden="true" style="width:100%;padding-bottom:50%"></div><img aria-hidden="true" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAIAAAA7N+mxAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAmklEQVQoz6WSOwqEMBCGPcBAHswjpk6V3MCQyntYCt5DsBYCue7CwlYqq7tfO3z8wz/T0R90VwMR+VFGRK01M4uIc46Z78qI6JyLMSql4I219pYsIgCQc661zvO8LMs0TcMwGGOO+edyKWXf923b1nVtrY3jCADHFs7X7vs+pUREIQTvPTMj4oPCjDFEZK091b6fij88lu88yQuaGD0w5ZmeywAAAABJRU5ErkJggg==" alt="" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:1;transition-delay:500ms"/><noscript><picture><source srcset="/static/d69521d8ac0792af6e325f6833bbca06/69585/R1280x0.png 200w,
+/static/d69521d8ac0792af6e325f6833bbca06/497c6/R1280x0.png 400w,
+/static/d69521d8ac0792af6e325f6833bbca06/17c4b/R1280x0.png 743w" sizes="(max-width: 743px) 100vw, 743px" /><img loading="lazy" sizes="(max-width: 743px) 100vw, 743px" srcset="/static/d69521d8ac0792af6e325f6833bbca06/69585/R1280x0.png 200w,
+/static/d69521d8ac0792af6e325f6833bbca06/497c6/R1280x0.png 400w,
+/static/d69521d8ac0792af6e325f6833bbca06/17c4b/R1280x0.png 743w" src="/static/d69521d8ac0792af6e325f6833bbca06/17c4b/R1280x0.png" alt="" style="position:absolute;top:0;left:0;opacity:1;width:100%;height:100%;object-fit:cover;object-position:center"/></picture></noscript></div><hr/></div><hr/><div class="html"><p>위 내용은 <strong>"누구나 자료구조와 알고리즘 &#x3C;제이 웬그로우, 심지현 옮김> 길벗"</strong>에서 발췌했습니다.</p>
+<h1 id="1-BIGO-빅오" style="position:relative;">1. BIG(O) 빅오<a href="#1-BIGO-%EB%B9%85%EC%98%A4" aria-label="1 BIGO 빅오 permalink" class="custom-class after"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h1>
+<p>빅 오는 알고리즘에 필요한 단계 수만 고려함으로써 일관성을 유지한다.</p>
+<p>O(1)은 데이터 크기와 상관없이 알고리즘에 필요한 단계 수가 1단계다.<br>
+구형 컴퓨터는 20분이 걸렸다면, 요즘 컴퓨터는 1초만에 처리할 수도 있다.</p>
+<p>연산에 필요한 단계가 1단계이기 때문에 효율성을 O(1)이라 표기한다.</p>
+<h2 id="11-선형검색" style="position:relative;">1.1. 선형검색<a href="#11-%EC%84%A0%ED%98%95%EA%B2%80%EC%83%89" aria-label="11 선형검색 permalink" class="custom-class after"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h2>
+<p>빅 오 표기법으로 선형검색은 O(N)으로 표기할 수 있다.<br>
+선형 검색은 한 번에 한 셀씩 확인해서 배열에서 특정 값을 검색한다.<br>
+따라서 원소가 N개 있을 때 최악의 경우 N번의 단계를 거칠 수 있기 때문에,<br>
+O(N)이라 표기한다.</p>
+<p><figure class="gatsby-resp-image-figure" style="">
+    <span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1398px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 79.80000000000001%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAQCAYAAAAWGF8bAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAAs0lEQVQ4y6WT6w7CMAiF+/4va4ysQCHB4NbaqBi6/SDrbV/OOaUFEU1VTUSWa0O29rFWiGgJoscXKltrYqoXgP1nwN+wAXTLWdtbhwX7KWDf65lFZ309bRkqhTaXFQ6biVhCoCYzk5W2Ga2x0FYh8F9rpCyLaLo1Ugp7hmeVDSAivV9APa9sAPlQuNtsXzCdbnweR/OCALZBteZKHX6xyu3+MKJdnedJzGHxPPezr5rGzPYEtjPp/O7VxFIAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="그래프"
+        title="그래프"
+        src="/static/d92390f49b47ec39c3751387912717c4/82c1e/1.png"
+        srcset="/static/d92390f49b47ec39c3751387912717c4/0b533/1.png 500w,
+/static/d92390f49b47ec39c3751387912717c4/00d43/1.png 1000w,
+/static/d92390f49b47ec39c3751387912717c4/82c1e/1.png 1398w"
+        sizes="(max-width: 1398px) 100vw, 1398px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span>
+    <figcaption class="gatsby-resp-image-figcaption">그래프</figcaption>
+  </figure></p>
+<p>위의 사진에서,<br>
+y = x와 y = 1의 그래프가 존재한다.</p>
+<p>y=1는 O(1), y=x O(N)이다.</p>
+<p>O(N)은 데이터가 추가될 때마다, x값이 커질 때마다,<br>
+알고리즘이 한 단계가 더 걸린다.<br>
+이러한 이유로 O(N)을 선형시간(linear time)이라고도 부른다.</p>
+<p>O(1)은 데이터와 관계없이 항상 일정하다.<br>
+상수시간이라고 부르기도 한다.</p>
+<h2 id="2-본질" style="position:relative;">2. 본질<a href="#2-%EB%B3%B8%EC%A7%88" aria-label="2 본질 permalink" class="custom-class after"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h2>
+<p>빅 오는 <strong>데이터 양이 변할 때</strong> 알고리즘 성능이 어떻게 변하는지를 설명한다.<br>
+두 단계 이상 걸리는 알고리즘이라도 O(1)로 표기할 수 있다.<br>
+데이터가 아무리 커져도 3단계가 걸리는 알고리즘이 있다고 하자.<br>
+이 알고리즘은 데이터가 아무리 늘어나도 단계 수는 상수로 유지되므로<br>
+상수 시간이라고 할 수 있고 O(1)로 표기가 가능하다.</p>
+<p>그럼 O(3)이라교 표기해야 되는 거 아니야?<br>
+라고 생각할 수 있지만,<br>
+빅 오 표기법에서는 단계의 실질적인 개수보다<br>
+데이터가 늘어나도 단계가 늘어나느냐에 집중한다.</p>
+<p>O(1)은 데이터가 아무리 커지더라도 단계 수가 변하지 않는<br>
+모든 알고리즘을 표현하는 방법이다.</p>
+<h2 id="-Olog-N" style="position:relative;">💡 O(log N)<a href="#-Olog-N" aria-label=" Olog N permalink" class="custom-class after"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h2>
+<p>O(logN)은 데이터가 두 배로 증가할 때마다 한 단계씩 늘어나는 알고리즘이다.</p>
+<style class="grvsc-styles">
+  .grvsc-container {
+    overflow: auto;
+    position: relative;
+    -webkit-overflow-scrolling: touch;
+    padding-top: 1rem;
+    padding-top: var(--grvsc-padding-top, var(--grvsc-padding-v, 1rem));
+    padding-bottom: 1rem;
+    padding-bottom: var(--grvsc-padding-bottom, var(--grvsc-padding-v, 1rem));
+    border-radius: 8px;
+    border-radius: var(--grvsc-border-radius, 8px);
+    font-feature-settings: normal;
+    line-height: 1.4;
+  }
+  
+  .grvsc-code {
+    display: table;
+  }
+  
+  .grvsc-line {
+    display: table-row;
+    box-sizing: border-box;
+    width: 100%;
+    position: relative;
+  }
+  
+  .grvsc-line > * {
+    position: relative;
+  }
+  
+  .grvsc-gutter-pad {
+    display: table-cell;
+    padding-left: 0.75rem;
+    padding-left: calc(var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem)) / 2);
+  }
+  
+  .grvsc-gutter {
+    display: table-cell;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+  
+  .grvsc-gutter::before {
+    content: attr(data-content);
+  }
+  
+  .grvsc-source {
+    display: table-cell;
+    padding-left: 1.5rem;
+    padding-left: var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem));
+    padding-right: 1.5rem;
+    padding-right: var(--grvsc-padding-right, var(--grvsc-padding-h, 1.5rem));
+  }
+  
+  .grvsc-source:empty::after {
+    content: ' ';
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+  
+  .grvsc-gutter + .grvsc-source {
+    padding-left: 0.75rem;
+    padding-left: calc(var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem)) / 2);
+  }
+  
+  /* Line transformer styles */
+  
+  .grvsc-has-line-highlighting > .grvsc-code > .grvsc-line::before {
+    content: ' ';
+    position: absolute;
+    width: 100%;
+  }
+  
+  .grvsc-line-diff-add::before {
+    background-color: var(--grvsc-line-diff-add-background-color, rgba(0, 255, 60, 0.2));
+  }
+  
+  .grvsc-line-diff-del::before {
+    background-color: var(--grvsc-line-diff-del-background-color, rgba(255, 0, 20, 0.2));
+  }
+  
+  .grvsc-line-number {
+    padding: 0 2px;
+    text-align: right;
+    opacity: 0.7;
+  }
+  
+</style></div></div></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/Development/big-o/";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-ae6365792b89ef341262.js"],"app":["/app-4aa4d54bb1963b1ae9f3.js"],"component---src-pages-404-tsx":["/component---src-pages-404-tsx-5a0ab9c72d6d5a86684a.js"],"component---src-pages-index-tsx":["/component---src-pages-index-tsx-76638955ca26a4d1b9bc.js"],"component---src-templates-blogpost-tsx":["/component---src-templates-blogpost-tsx-db942a957006bc7ac830.js"]};/*]]>*/</script><script src="/polyfill-ae6365792b89ef341262.js" nomodule=""></script><script src="/component---src-templates-blogpost-tsx-db942a957006bc7ac830.js" async=""></script><script src="/696db27a630c7a98ac73425722a5f58751a28ca5-586da3a5ce7758ce721e.js" async=""></script><script src="/d7eeaac4-d00015ca26e423ace025.js" async=""></script><script src="/app-4aa4d54bb1963b1ae9f3.js" async=""></script><script src="/framework-a2f0ade1f236e4a019f3.js" async=""></script><script src="/webpack-runtime-f8644ab135ec1270553e.js" async=""></script></body></html>
