@@ -87,18 +87,18 @@ const Title = styled.h1<{ isShow }>`
   -webkit-animation: ${({ isShow }) => isShow && `showup 0.6s`};
   @-webkit-keyframes showup {
     from {
-      margin-top: -10%;
+      -webkit-transform: translateY(-2rem);
     }
     to {
-      margint-top: 0;
+      -webkit-transform: translateY(0);
     }
   }
   @keyframes showup {
     from {
-      margin-top: -10%;
+      transform: translateY(-2rem);
     }
     to {
-      margint-top: 0;
+      transform: translateY(0);
     }
   }
 
@@ -113,6 +113,8 @@ const Header = styled.header<{ isShow }>`
   z-index: 99;
   background: #0a0b0c;
   opacity: ${({ isShow }) => (isShow ? 0.8 : 1)};
+  -webkit-opacity: ${({ isShow }) => (isShow ? 0.8 : 1)};
+
   @keyframes back {
     from {
       opacity: 0.9;
