@@ -250,7 +250,7 @@ const BlogLayout = styled.div`
   }
   img,
   video {
-    margin: 0 auto;
+    margin: 2rem auto;
   }
   margin-bottom: 10rem;
 `;
