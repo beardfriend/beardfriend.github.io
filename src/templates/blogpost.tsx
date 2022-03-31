@@ -223,6 +223,7 @@ const BlogLayout = styled.div`
     })}
     font-size: 30px;
     font-weight: 700;
+    margin-bottom: 1rem;
   }
   h2 {
     ${media.sm({
@@ -230,6 +231,7 @@ const BlogLayout = styled.div`
     })}
     font-size: 26px;
     font-weight: 700;
+    margin-bottom: 1rem;
   }
   h3 {
     ${media.sm({
@@ -237,6 +239,7 @@ const BlogLayout = styled.div`
     })}
     font-size: 23px;
     font-weight: 700;
+    margin-bottom: 1rem;
   }
   ol {
     ${media.sm({
