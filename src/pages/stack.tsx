@@ -3,10 +3,15 @@ import { graphql, useStaticQuery } from 'gatsby';
 import { Badge } from '@chakra-ui/react';
 import Img from 'gatsby-image';
 import MainLayout from '@Components/Layout/MainLayout';
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
+import { useGlobalReducer } from '@Contexts/context';
 
 const Stack = ({ data }) => {
+  const dispatch = useGlobalReducer();
+  useEffect(() => {
+    dispatch({ type: 'SET_TITLE', payload: '' });
+  }, []);
   const { edges } = data;
   const regExp = /[0-9.;\-#!@]/gi;
   return (

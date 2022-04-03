@@ -46,9 +46,11 @@ function Index({ isMobile }: IndexType): React.ReactElement {
           <a href='https://github.com/beardfriend' target='_blank' rel='noreferrer'>
             <AiFillGithub className='git' />
           </a>
-          <Link to='/stack'>
-            <GiStack className='git'></GiStack>
-          </Link>
+          {!isMobile && (
+            <Link to='/stack'>
+              <GiStack className='git'></GiStack>
+            </Link>
+          )}
         </Right>
       </NavContainer>
     </Header>
