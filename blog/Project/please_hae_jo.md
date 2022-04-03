@@ -26,7 +26,7 @@ featuredImgAlt: 'PROJECT'
 
 **✔ 저장소링크**: 비공개
 
-**✔ 사이트 주소** : https://beardfriend.github.io/video (영상으로 대체)
+**✔ 사이트 주소** : https://beardfriend.tistory.com/10 (영상으로 대체)
 
 ---
 

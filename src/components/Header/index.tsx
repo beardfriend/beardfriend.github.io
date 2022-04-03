@@ -2,7 +2,7 @@ import media from '@Globals/theme';
 import { Link } from 'gatsby';
 import React, { useEffect, useState } from 'react';
 import { AiFillGithub } from 'react-icons/ai';
-import { TiUser } from 'react-icons/ti';
+import { GiStack } from 'react-icons/gi';
 import { useGlboalState } from '@Contexts/context';
 import styled from 'styled-components';
 
@@ -31,13 +31,6 @@ function Index({ isMobile }: IndexType): React.ReactElement {
     }
   }, [isShow]);
 
-  // useEffect(() => {
-  //   if (isShow) {
-  //     console.log(isShow);
-  //     window.removeEventListener('scroll', func);
-  //   }
-  // }, [isShow]);
-
   return (
     <Header isShow={isShow}>
       <NavContainer>
@@ -53,6 +46,9 @@ function Index({ isMobile }: IndexType): React.ReactElement {
           <a href='https://github.com/beardfriend' target='_blank' rel='noreferrer'>
             <AiFillGithub className='git' />
           </a>
+          <Link to='/stack'>
+            <GiStack className='git'></GiStack>
+          </Link>
         </Right>
       </NavContainer>
     </Header>
