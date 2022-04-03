@@ -253,6 +253,21 @@ const BlogLayout = styled.div`
     margin: 2rem auto;
   }
   margin-bottom: 10rem;
+  blockquote {
+    box-sizing: border-box;
+
+    margin: 20px 50px 20px 50px;
+    padding: 10px 20px 10px 50px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-shadow: 1px 1px 1px #ccc;
+    font-style: italic;
+
+    p {
+      font-size: 1.2rem;
+    }
+  }
 `;
 
 const Title = styled.div`
