@@ -45,11 +45,13 @@ export default function Template({
             <h1 style={{ fontSize: '2rem', width: '100%', textAlign: 'center', marginBottom: '1rem' }}>목차</h1>
             {headings.map((data) => {
               return (
-                <TocList depth={data.depth} href={`#${data.id}`}>
-                  {data.value.includes('<center>')
-                    ? data.value.replace('<center>', '').replace('</center>', '')
-                    : data.value}
-                </TocList>
+                <div style={{ marginTop: '1rem', overflowX: 'hidden', whiteSpace: 'nowrap', textOverflow: 'ellipsis' }}>
+                  <TocList depth={data.depth} href={`#${data.id}`}>
+                    {data.value.includes('<center>')
+                      ? data.value.replace('<center>', '').replace('</center>', '')
+                      : data.value}
+                  </TocList>
+                </div>
               );
             })}
           </TocContainer>
@@ -309,25 +311,29 @@ const TocContainer = styled.div`
   @media screen and (max-width: 1400px) {
     display: none;
   }
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+
   position: fixed;
   top: 10rem;
   left: 2rem;
   width: 20rem;
+  min-height: 50vh;
+  max-height: 70vh;
+  overflow-y: scroll;
   border: 1px solid gray;
   padding: 4rem 2rem;
   border-radius: 2rem;
 `;
 
 const TocList = styled.a<{ depth }>`
-  font-size: 1.2rem;
-  margin-left: ${({ depth }) => (depth === 2 ? '1rem' : depth === 3 ? '2rem' : 0)};
-  overflow: hidden;
-  text-overflow: ellipsis;
+
+  overflow-x: hidden;
   white-space: nowrap;
-  width: 100%;
+  text-overflow: ellipsis;
+  font-size: 1.3rem;
+  margin-left: ${({ depth }) => (depth === 2 ? '1rem' : depth === 3 ? '2rem' : 0)};
+
+
+  z-index:999;
   @media screen and (min-width: 768px) {
     &:hover {
       cursor: pointer;
