@@ -31,9 +31,13 @@ export default function Template({
               <h1 style={{ fontSize: '2rem', margin: `0 auto`, marginBottom: '1rem' }}>목차</h1>
               {headings.map((data) => {
                 return (
-                  <TocList depth={data.depth} href={`#${data.id}`}>
-                    {data.value}
-                  </TocList>
+                  <div
+                    style={{ marginTop: '1rem', overflowX: 'hidden', whiteSpace: 'nowrap', textOverflow: 'ellipsis' }}
+                  >
+                    <TocList depth={data.depth} href={`#${data.id}`}>
+                      {data.value}
+                    </TocList>
+                  </div>
                 );
               })}
             </MobileTocContainer>
@@ -291,11 +295,7 @@ const Title = styled.div`
 `;
 
 const MobileTocContainer = styled.div`
-  display: flex;
-  flex: auto;
-  gap: 1rem;
-  flex-wrap: wrap;
-  overflow: scroll;
+  overflow-y: scroll;
   width: 70%;
   height: 40rem;
   position: fixed;
@@ -311,7 +311,6 @@ const TocContainer = styled.div`
   @media screen and (max-width: 1400px) {
     display: none;
   }
-
   position: fixed;
   top: 10rem;
   left: 2rem;
