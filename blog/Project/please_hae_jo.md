@@ -24,7 +24,7 @@ featuredImgAlt: 'PROJECT'
 
 **✔ 상세업무** : 퍼블리싱, 로그인, 로그아웃, 프로필수정, 권한별 페이지 접근 금지, 견적서 작성, 삭제
 
-**✔ 저장소링크**: 비공개
+**✔ 저장소링크**: https://github.com/beardfriend/firstRedux.git
 
 **✔ 사이트 주소** : https://beardfriend.tistory.com/10 (영상으로 대체)
 
