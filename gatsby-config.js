@@ -4,6 +4,7 @@ module.exports = {
     title: `수염난친구 블로그`,
     description: `수염난친구 블로그`,
     author: `beardfriend`,
+    siteUrl: 'https://beardfriend.github.io/',
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
