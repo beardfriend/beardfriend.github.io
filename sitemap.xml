@@ -1,1 +1,25 @@
-<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="sitemap.xsl"?><sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><sitemap><loc>https://beardfriend.github.io/sitemap-pages.xml</loc><lastmod>2022-04-07T01:15:04.955Z</lastmod></sitemap></sitemapindex>
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+<url> <loc>https://beardfriend.github.io/Personal/essay1/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://beardfriend.github.io/Project/relax.server/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://beardfriend.github.io/Project/crawling_saramin/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://beardfriend.github.io/Development/typeorm_delete/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://beardfriend.github.io/Development/typeorm_update/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://beardfriend.github.io/Personal/love/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://beardfriend.github.io/Development/big-o/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://beardfriend.github.io/Book/ajhanbram/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://beardfriend.github.io/Mind/budhha_01/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://beardfriend.github.io/Development/relax01/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://beardfriend.github.io/Book/gobkac/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://beardfriend.github.io/Development/2022-01-20-compile/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://beardfriend.github.io/Development/SQL_capital_error/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://beardfriend.github.io/Development/WSL2_Forwarding/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://beardfriend.github.io/Development/Iterm2/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://beardfriend.github.io/Project/please_hae_jo/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://beardfriend.github.io/Development/CMSHeadLess/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://beardfriend.github.io/Personal/poem1/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://beardfriend.github.io/Mind/essay_01/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://beardfriend.github.io/Personal/mate/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://beardfriend.github.io/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://beardfriend.github.io/stack/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+</urlset>
