@@ -279,7 +279,6 @@ const BlogLayout = styled.div`
 const Title = styled.div`
   display: flex;
   flex-wrap: nowrap;
-
   flex-direction: column;
   gap: 20px;
   justify-content: center;
