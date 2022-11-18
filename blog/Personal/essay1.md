@@ -1,7 +1,7 @@
 ---
 date: '2022-04-03 20:39:42'
 title: '가치관'
-category: 'Perosnal'
+category: 'Personal'
 tags: ['Essay']
 subtitle: '가치관에 대해서'
 featuredImgUrl: https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FkJJfY%2FbtrrJavyuJF%2F3hgnR9IkU4UGccQ5OgZbw1%2Fimg.png

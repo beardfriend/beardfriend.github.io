@@ -262,7 +262,6 @@ const BlogLayout = styled.div`
   blockquote {
     box-sizing: border-box;
 
-    margin: 20px 50px 20px 50px;
     padding: 10px 20px 10px 50px;
     background-color: #f9f9f9;
     border: 1px solid #ccc;

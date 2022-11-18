@@ -1,7 +1,7 @@
 ---
 date: '2022-02-03 23:23:16'
 title: '나에게 사랑이 없으면 나는 아무것도 아닙니다.'
-category: 'Perosnal'
+category: 'Personal'
 tags: ['Quotes', 'Essay']
 subtitle: '코린토1서 13장'
 featuredImgUrl: https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FkJJfY%2FbtrrJavyuJF%2F3hgnR9IkU4UGccQ5OgZbw1%2Fimg.png
